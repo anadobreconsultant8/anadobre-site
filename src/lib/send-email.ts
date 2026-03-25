@@ -64,7 +64,7 @@ export async function sendEmailWithPDF(data: EmailData) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Ana Dobre <hello@anadobre.com>',
+      from: 'Ana Dobre <onboarding@resend.dev>', // TODO: schimbă înapoi la hello@anadobre.com după verificarea domeniului
       to: data.email,
       subject: `Raportul t\u0103u de mini-audit \u2014 Scor: ${data.scor}/16 (${data.nivel})`,
       html: htmlContent,
