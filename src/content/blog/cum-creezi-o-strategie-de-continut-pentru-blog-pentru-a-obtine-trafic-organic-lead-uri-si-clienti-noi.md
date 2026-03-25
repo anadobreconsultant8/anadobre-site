@@ -2,7 +2,7 @@
 title: "Cum creezi o strategie de conținut pentru blog, pentru a obține trafic organic, lead-uri și clienți noi"
 date: "2024-11-07"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2024/07/dreamstime_m_114841041.jpg"
+image: "/blog/dreamstime_m_114841041.jpg"
 excerpt: "În mediul schimbător și competitiv actual, utilizarea blogului companiei ca instrument pentru atragerea potențialilor clienți, precum și pentru poziționarea"
 ---
 

@@ -2,7 +2,7 @@
 title: "Ce este ChatGPT Agent Mode și cum îl poți folosi concret în marketing – exemplu practic de Audit SEO"
 date: "2025-09-11"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/09/chatgpt-ai-agent-mode-pentru-audit-site.png"
+image: "/blog/chatgpt-ai-agent-mode-pentru-audit-site.png"
 excerpt: "Probabil folosești ChatGPT sau alte LLMs, pentru generarea de texte (emails, postări, articole, oferte, LPs etc.) - pe care sper că (și îți recomand cu toată"
 ---
 

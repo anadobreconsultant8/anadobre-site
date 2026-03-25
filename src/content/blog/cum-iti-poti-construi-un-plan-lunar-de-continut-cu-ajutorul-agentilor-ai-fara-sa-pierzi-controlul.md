@@ -2,7 +2,7 @@
 title: "Cum poți construi un plan lunar de conținut cu ajutorul automatizării și agenților AI, fără să pierzi controlul"
 date: "2026-02-05"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2026/02/automatizare-orchestrare-agenti-ai-n8n-planificare-continut.png"
+image: "/blog/automatizare-orchestrare-agenti-ai-n8n-planificare-continut.png"
 excerpt: "Unele automatizări de marketing au nevoie de inputul tău, ca să facă în mod corect următorii pași. Cum sunt cele care presupun generare de conținut cu AI. Și"
 ---
 

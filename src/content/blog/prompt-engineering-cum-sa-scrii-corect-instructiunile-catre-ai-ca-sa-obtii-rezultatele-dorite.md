@@ -2,7 +2,7 @@
 title: "Prompt engineering: cum să scrii corect instrucțiunile către AI, ca să obții rezultatele dorite"
 date: "2025-09-15"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/09/prompt-engineering.png"
+image: "/blog/prompt-engineering.png"
 excerpt: "Vrei rezultate mai bune cu ChatGPT, Gemini sau alte modele generative AI? Învață prompt engineering, respectiv cum să-i dai instrucțiuni lui AI, ca să-ți"
 ---
 

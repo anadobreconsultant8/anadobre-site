@@ -2,7 +2,7 @@
 title: "Cum să construiești un funnel de vânzare eficient: tactici pentru atragerea, convingerea și transformarea audienței în clienți"
 date: "2025-05-19"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2025/05/Cum-contruiesti-un-funnel-de-vanzare-eficient-tofu-mofu-bofu.jpg"
+image: "/blog/Cum-contruiesti-un-funnel-de-vanzare-eficient-tofu-mofu-bofu.jpg"
 excerpt: "Un funnel de vânzare (cunoscut și ca pâlnie de conversie sau sales funnel) este un model strategic care descrie pașii prin care trece cineva de la primul"
 ---
 

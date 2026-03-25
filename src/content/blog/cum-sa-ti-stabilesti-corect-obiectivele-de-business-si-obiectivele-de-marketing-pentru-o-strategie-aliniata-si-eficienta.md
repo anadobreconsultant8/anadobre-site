@@ -2,7 +2,7 @@
 title: "Cum să-ți stabilești corect obiectivele de business și obiectivele de marketing pentru o strategie aliniată și eficientă"
 date: "2024-11-08"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2024/11/cum-stabilesti-obiectivele-marketing.jpg"
+image: "/blog/cum-stabilesti-obiectivele-marketing.jpg"
 excerpt: "Stabilirea obiectivelor este fundamentală pentru orice afacere care vrea să crească și să-și folosească resursele în mod eficient, cu direcție și claritate."
 ---
 

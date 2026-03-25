@@ -2,7 +2,7 @@
 title: "Cum să folosești AI în marketing - basics"
 date: "2025-08-29"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/08/ai-in-marketing-introducere.png"
+image: "/blog/ai-in-marketing-introducere.png"
 excerpt: "Inteligența artificială (AI) este acum un instrument accesibil, care poate transforma modul în care faci marketing, indiferent de industria în care activezi"
 ---
 

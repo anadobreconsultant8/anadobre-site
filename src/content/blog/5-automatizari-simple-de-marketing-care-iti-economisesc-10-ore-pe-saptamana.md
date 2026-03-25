@@ -2,7 +2,7 @@
 title: "5 automatizări de marketing care îti economisesc minim 10 ore pe săptămână"
 date: "2025-08-27"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/08/5-automatizari-marketing-care-iti-salveaza-10-ore-saptamana-1.jpg"
+image: "/blog/5-automatizari-marketing-care-iti-salveaza-10-ore-saptamana-1.jpg"
 excerpt: "Marketingul zilelor noastre consumă mult timp dacă faci totul manual. De la emailuri de bun venit până la postări pe rețele sociale și rapoarte, fiecare"
 ---
 

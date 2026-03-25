@@ -2,7 +2,7 @@
 title: "Strategia digitală ca antidot la astenia de marketing"
 date: "2025-04-09"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2025/04/Strategia-digitala-ca-antidot-la-astenia-de-marketing.jpg"
+image: "/blog/Strategia-digitala-ca-antidot-la-astenia-de-marketing.jpg"
 excerpt: "Marketingul online nu este greu, dar este foarte obositor când îl faci fără direcție. Mai ales în luna aprilie. Și acum sigur te întrebi de ce spun asta."
 ---
 

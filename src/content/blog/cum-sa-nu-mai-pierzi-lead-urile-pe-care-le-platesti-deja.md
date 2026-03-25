@@ -2,7 +2,7 @@
 title: "Cum să nu mai pierzi lead-urile pe care le plătești deja"
 date: "2025-11-26"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/11/automatizari-marketing-lead-management.jpg"
+image: "/blog/automatizari-marketing-lead-management.jpg"
 excerpt: "Investești constant în ads, generezi lead-uri, însă încasările nu prea reflectă acest efort și probabil te întrebi care este problema. Pot să-ți spun din"
 ---
 

@@ -2,7 +2,7 @@
 title: "Cum creezi o strategie de marketing digital eficientă pentru afacerea ta"
 date: "2024-11-06"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2024/07/cum-creezi-strategie-marketing-online-eficienta.jpg"
+image: "/blog/cum-creezi-strategie-marketing-online-eficienta.jpg"
 excerpt: "Implementarea completă și corectă a strategiei de marketing online este extrem de importantă pentru succesul unei afaceri, mai ales acum când aproape orice"
 ---
 

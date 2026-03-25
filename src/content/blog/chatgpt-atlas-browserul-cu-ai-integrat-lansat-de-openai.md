@@ -2,7 +2,7 @@
 title: "ChatGPT Atlas, browserul cu AI integrat lansat de OpenAI"
 date: "2025-10-23"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/10/browser-openai-chatgpt-atlas.jpg"
+image: "/blog/browser-openai-chatgpt-atlas.jpg"
 excerpt: "Pe 21 octombrie 2025, OpenAI a lansat ChatGPT Atlas, primul browser construit în jurul inteligenței artificiale. Dacă ești antreprenor sau marketer, e posibil"
 ---
 

@@ -2,7 +2,7 @@
 title: "Email automation: pași de implementare a unei secvențe și exemple concrete"
 date: "2025-08-28"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/08/secvente-email-marketing-automation-implementare-exemple.jpg"
+image: "/blog/secvente-email-marketing-automation-implementare-exemple.jpg"
 excerpt: "Secvențele de email automation reprezintă un instrument esențial pentru îmbunătățirea comunicării cu clienții și optimizarea resurselor pentru activitatea de"
 ---
 

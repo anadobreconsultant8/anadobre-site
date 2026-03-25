@@ -2,7 +2,7 @@
 title: "Strategia Tripwire: Cum O Folosești Ca Să Îți Dublezi Conversiile și Vânzările Online"
 date: "2025-05-05"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2025/05/strategia-marketing-tripwire.jpg"
+image: "/blog/strategia-marketing-tripwire.jpg"
 excerpt: "Strategia de marketing Tripwire rămâne una dintre cele mai puternice și eficiente metode de a transforma lead-urile reci în clienți plătitori. Este o tehnică"
 ---
 

@@ -2,7 +2,7 @@
 title: "De ce unele strategii de marketing eșuează și cum să eviți capcanele frecvente"
 date: "2025-05-12"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2025/05/De-la-greseli-la-actiune-strategica-cum-eviti-greseli-frecvente-strategie-marketing.jpg"
+image: "/blog/De-la-greseli-la-actiune-strategica-cum-eviti-greseli-frecvente-strategie-marketing.jpg"
 excerpt: "Ai investit timp, cel mai probabil și bani. Ai încercat să fii prezent(ă) online, ai publicat postări, ai testat niște reclame, ai scris un articol sau două și"
 ---
 

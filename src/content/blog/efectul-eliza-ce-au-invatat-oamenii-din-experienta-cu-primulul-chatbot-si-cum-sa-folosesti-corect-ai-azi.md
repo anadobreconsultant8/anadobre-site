@@ -2,7 +2,7 @@
 title: "Efectul ELIZA: ce au învățat oamenii din experiența cu primul chatbot și cum să folosești corect AI azi"
 date: "2025-09-12"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2025/09/eliza-chatbot.jpg"
+image: "/blog/eliza-chatbot.jpg"
 excerpt: "Uite o informație interesantă pe care poate nu o știai: chatbots aveam și acum 60 de ani. Se numea ELIZA și a fost creat la MIT prin anii ’60. Da, putem spune"
 ---
 

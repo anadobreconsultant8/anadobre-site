@@ -2,7 +2,7 @@
 title: "Cum să creezi un roadmap de marketing online care îți aduce rezultate măsurabile"
 date: "2025-08-13"
 category: "Strategie marketing online"
-image: "https://anadobre.com/wp-content/uploads/2025/08/roadmap-marketing-online.png"
+image: "/blog/roadmap-marketing-online.png"
 excerpt: "Ce este un roadmap de marketing digital și de ce este important Un roadmap de marketing este un plan strategic care stabilește pașii, resursele și termenele"
 ---
 

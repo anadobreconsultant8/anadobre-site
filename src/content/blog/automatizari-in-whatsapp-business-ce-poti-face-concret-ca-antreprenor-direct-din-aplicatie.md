@@ -2,7 +2,7 @@
 title: "Automatizări în WhatsApp Business: ce poți face concret ca antreprenor, direct din aplicație"
 date: "2026-01-21"
 category: "Automatizări și AI în marketing"
-image: "https://anadobre.com/wp-content/uploads/2026/01/automatizari-simple-whatsapp-business-scaled.jpeg"
+image: "/blog/automatizari-simple-whatsapp-business-scaled.jpeg"
 excerpt: "WhatsApp Business este o aplicație gratuită, disponibilă pe Android și iPhone, creată special pentru afacerile mici și antreprenorii care folosesc WhatsApp în"
 ---
 
