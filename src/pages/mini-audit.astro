@@ -393,6 +393,12 @@ import Footer from '../components/Footer.astro';
     if (hiddenScore) hiddenScore.value = String(total);
     if (hiddenLevel) hiddenLevel.value = level.level;
 
+    // Salvează scorul global pentru formularul de submit
+    const nivelText = total <= 5 ? 'Începător' : total <= 10 ? 'Intermediar' : 'Avansat';
+    (window as any).auditScor = total;
+    (window as any).auditNivel = nivelText;
+    (window as any).auditRaspunsuri = [...scores];
+
     // Scroll to results
     resultsEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -421,22 +427,63 @@ import Footer from '../components/Footer.astro';
     });
   });
 
-  // Result form submit
+  // Result form submit → /api/mini-audit-submit
   const auditForm = document.getElementById('audit-result-form') as HTMLFormElement | null;
   const auditSuccess = document.getElementById('audit-success');
+  const submitBtn = auditForm?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  const formMessage = document.createElement('p');
+  formMessage.className = 'text-sm mt-2 text-center';
+  auditForm?.after(formMessage);
+
   auditForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(auditForm!);
-    try {
-      await fetch('/api/newsletter-subscribe', {
-        method: 'POST',
-        body: JSON.stringify(Object.fromEntries(data)),
-        headers: { 'Content-Type': 'application/json' },
-      });
-    } catch {
-      // silent
+    const formData = new FormData(auditForm!);
+    const prenume = (formData.get('prenume') as string)?.trim();
+    const email   = (formData.get('email')   as string)?.trim();
+    const companie = (formData.get('companie') as string)?.trim();
+
+    if (!prenume || !email || !companie) {
+      formMessage.textContent = 'Te rog completează toate câmpurile.';
+      formMessage.style.color = '#DC3535';
+      return;
     }
-    auditForm!.classList.add('hidden');
-    auditSuccess?.classList.remove('hidden');
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Se trimite raportul...';
+    }
+    formMessage.textContent = '';
+
+    try {
+      const res = await fetch('/api/mini-audit-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prenume,
+          email,
+          companie,
+          scor:       (window as any).auditScor,
+          nivel:      (window as any).auditNivel,
+          raspunsuri: (window as any).auditRaspunsuri,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        auditForm!.classList.add('hidden');
+        formMessage.textContent = '';
+        auditSuccess?.classList.remove('hidden');
+      } else {
+        throw new Error(result.error || 'Eroare');
+      }
+    } catch {
+      formMessage.textContent = 'Ceva nu a mers. Încearcă din nou sau scrie-mi la hello@anadobre.com';
+      formMessage.style.color = '#DC3535';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Trimite-mi raportul →';
+      }
+    }
   });
 </script>
