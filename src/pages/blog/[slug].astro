@@ -1,0 +1,248 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'plan-lunar-continut-automatizare-ai' },
+      props: {
+        title: 'Cum poți construi un plan lunar de conținut cu ajutorul automatizării și agenților AI, fără să pierzi controlul',
+        description: 'Agenții AI pot genera structuri de conținut în secunde. Dar fără un sistem clar, ajungi cu mult conținut și puțin control. Iată cum construiești un proces care funcționează.',
+        category: 'Automatizări',
+        date: '2026-01-15',
+        readTime: '8 min',
+        relatedSlugs: ['automatizari-whatsapp-business', 'nu-mai-pierde-lead-urile'],
+        content: `
+          <h2>De ce conținutul singur nu e suficient</h2>
+          <p>Mulți antreprenori și marketeri au descoperit că agenții AI pot genera idei de conținut în câteva secunde. Dar cantitatea nu înseamnă calitate, și mai ales nu înseamnă consistență. Fără un sistem în spate, ajungi cu un document plin de idei pe care nu le publici niciodată.</p>
+          <p>Problema nu e AI-ul. Problema e lipsa unui proces clar care să transforme ideile în conținut publicat, distribuit și măsurat.</p>
+
+          <h2>Componentele unui sistem de conținut automatizat</h2>
+          <p>Un sistem eficient de planificare a conținutului cu ajutorul AI are mai multe componente:</p>
+          <ul>
+            <li><strong>Un brief de brand</strong> — ce tonuri, teme și subiecte sunt relevante pentru audiența ta</li>
+            <li><strong>Un calendar editorial</strong> — cadrul temporal în care conținutul este planificat și publicat</li>
+            <li><strong>Un workflow de aprobare</strong> — cine revizuiește și aprobă conținutul generat</li>
+            <li><strong>Automatizări de distribuție</strong> — cum ajunge conținutul la audiență fără intervenție manuală constantă</li>
+            <li><strong>Raportare și optimizare</strong> — ce funcționează și ce trebuie ajustat</li>
+          </ul>
+
+          <h2>Pasul 1: Definește pilonii de conținut</h2>
+          <p>Înainte să deschizi orice tool AI, ai nevoie de claritate strategică. Care sunt cele 3-5 subiecte centrale pentru care vrei să fii recunoscut în nișa ta? Acestea devin pilonii de conținut — temele în jurul cărora construiești tot planul lunar.</p>
+          <p>De exemplu, pentru un consultant de marketing, pilonii pot fi: automatizări, lead management, CRM, studii de caz, și tendințe din industrie.</p>
+
+          <h2>Pasul 2: Folosește AI pentru ideație, nu pentru execuție finală</h2>
+          <p>AI-ul e cel mai util în faza de ideație și structurare. Îi dai un pilon și contextul brandului, și primești zece variante de unghi pentru un articol. Tu alegi, adaptezi, și adaugi perspectiva ta personală — experiența și exemplele reale care fac conținutul valoros.</p>
+          <p>Un prompt bun include: audiența țintă, tonul dorit, pilonul de conținut, și formatul (articol blog, post LinkedIn, email newsletter).</p>
+
+          <h2>Pasul 3: Automatizează distribuția, nu creația</h2>
+          <p>Unde automatizarea aduce cel mai mare beneficiu nu e în generarea conținutului, ci în distribuția lui. Un flux automatizat poate publica conținut pe mai multe canale simultan, trimite newsletter-ul la ora optimă, și retargeta cu conținut relevant segmente specifice din audiență.</p>
+          <p>Tool-uri ca n8n sau Zapier pot conecta CMS-ul tău cu platformele de social media și cu platforma de email marketing, eliminând publicarea manuală.</p>
+
+          <h2>Concluzie</h2>
+          <p>AI-ul nu înlocuiește strategia de conținut — o accelerează. Dar dacă nu ai un sistem în spate, viteza se transformă în haos. Construiește mai întâi procesul, apoi automatizează-l.</p>
+        `,
+      },
+    },
+    {
+      params: { slug: 'automatizari-whatsapp-business' },
+      props: {
+        title: 'Automatizări în WhatsApp Business: ce poți face concret ca antreprenor, direct din aplicație',
+        description: 'WhatsApp Business oferă mai mult decât mesaje automate de bun venit. Iată ce poți automatiza fără tool-uri externe și cum să configurezi totul corect.',
+        category: 'WhatsApp Business',
+        date: '2025-12-10',
+        readTime: '6 min',
+        relatedSlugs: ['plan-lunar-continut-automatizare-ai', 'nu-mai-pierde-lead-urile'],
+        content: `
+          <h2>WhatsApp Business — mai mult decât un chat</h2>
+          <p>Mulți antreprenori folosesc WhatsApp Business doar pentru a răspunde la întrebări. Dar aplicația oferă câteva funcționalități native de automatizare care pot economisi ore pe săptămână și pot îmbunătăți experiența clienților.</p>
+          <p>Vestea bună: nu ai nevoie de tool-uri externe sau integrări complexe pentru funcționalitățile de bază.</p>
+
+          <h2>Mesajul de bun venit automat</h2>
+          <p>Prima automatizare pe care o poți seta este mesajul de bun venit — un mesaj care se trimite automat când un client te contactează pentru prima dată sau după 14 zile de inactivitate.</p>
+          <p>Un mesaj de bun venit eficient: confirmă că ai primit mesajul, setează așteptările de timp de răspuns, și oferă informații utile imediate (program, link catalog, FAQ).</p>
+
+          <h2>Mesaje de absență</h2>
+          <p>Similar, poți configura mesaje automate care se trimit în afara orelor de program. Acestea pot include o estimare a timpului de răspuns și un link către resurse utile — site, catalog, pagina de FAQ.</p>
+          <p>Cheia: mesajul trebuie să fie util, nu doar un "suntem plecați". Oferă o acțiune pe care clientul o poate face imediat.</p>
+
+          <h2>Răspunsuri rapide (shortcuts)</h2>
+          <p>Răspunsurile rapide sunt mesaje pre-salvate pe care le poți trimite cu o comandă scurtă. În loc să scrii de fiecare dată același mesaj despre prețuri, program sau politica de retur, salvezi un template și îl trimiți cu câteva taste.</p>
+          <p>Recomand să creezi 10-15 răspunsuri rapide pentru cele mai frecvente întrebări.</p>
+
+          <h2>Catalogul de produse/servicii</h2>
+          <p>WhatsApp Business îți permite să creezi un catalog digital cu produsele sau serviciile tale. Clienții pot browsa catalogul direct din chat și pot adăuga articole la coș. Pentru antreprenorii cu servicii, catalogul e un mod elegant de a prezenta oferta fără a trimite un PDF.</p>
+
+          <h2>Când ai nevoie de tool-uri externe</h2>
+          <p>Automatizările native sunt un punct de start. Dacă vrei să integrezi WhatsApp Business cu CRM-ul tău, să trimiți notificări automate bazate pe acțiunile clienților, sau să gestionezi volume mari de conversații, ai nevoie de WhatsApp Business API și tool-uri ca n8n, Make, sau platforme dedicate.</p>
+          <p>Dar pentru 80% din antreprenorii cu business mic și mediu, funcționalitățile native sunt suficiente pentru un prim pas solid.</p>
+        `,
+      },
+    },
+    {
+      params: { slug: 'nu-mai-pierde-lead-urile' },
+      props: {
+        title: 'Cum să nu mai pierzi lead-urile pe care le plătești deja',
+        description: 'Cele mai multe companii plătesc pentru lead-uri pe care nu le convertesc niciodată. Nu din lipsă de interes, ci din lipsă de proces. Iată ce să schimbi.',
+        category: 'Lead Management',
+        date: '2025-11-20',
+        readTime: '7 min',
+        relatedSlugs: ['automatizari-whatsapp-business', 'plan-lunar-continut-automatizare-ai'],
+        content: `
+          <h2>Problema pe care puțini o recunosc</h2>
+          <p>Ai investit în Google Ads, în Facebook, poate și în SEO. Lead-urile vin. Dar dacă te uiți sincer la datele din CRM (sau la emailuri, sau la foaia de Excel), câte dintre acele lead-uri au ajuns clienți?</p>
+          <p>Industria vorbește mult despre generarea de lead-uri. Vorbește prea puțin despre ce se întâmplă după ce lead-ul a ajuns la tine.</p>
+
+          <h2>Cele 3 puncte unde se pierd lead-urile</h2>
+          <p>Din experiența cu zeci de companii, lead-urile se pierd în mod constant în aceleași locuri:</p>
+          <ul>
+            <li><strong>Primul răspuns prea lent.</strong> Studiile arată că rata de calificare a unui lead scade dramatic dacă primul răspuns vine după mai mult de 5 minute. La 24 de ore, șansele de conversie sunt cu 60% mai mici.</li>
+            <li><strong>Lipsa follow-up-ului structurat.</strong> Un lead care nu cumpără după primul contact nu e un lead pierdut. E un lead care are nevoie de nurturing. Fără o secvență structurată, el pur și simplu dispare din radarul tău.</li>
+            <li><strong>Date fragmentate.</strong> Dacă lead-urile vin din multiple surse și ajung în locuri diferite — email, CRM, Excel, WhatsApp — inevitabil unele se pierd în traducere.</li>
+          </ul>
+
+          <h2>Soluția: un sistem de lead management, nu o colecție de tool-uri</h2>
+          <p>Soluția nu e să adaugi mai multe tool-uri. E să construiești un sistem — un flux clar prin care fiecare lead trece, indiferent de sursa lui.</p>
+          <p>Un sistem de lead management funcțional are:</p>
+          <ul>
+            <li>Un singur punct de intrare (sau o sincronizare automată a tuturor surselor)</li>
+            <li>Un prim răspuns automat în mai puțin de 5 minute</li>
+            <li>O secvență de nurturing pentru lead-urile necalificate imediat</li>
+            <li>Un proces clar de follow-up pentru echipa de vânzări</li>
+            <li>Raportare care arată unde se pierd lead-urile</li>
+          </ul>
+
+          <h2>Pasul 1: Auditează fluxul actual</h2>
+          <p>Înainte să implementezi ceva nou, mapează ce se întâmplă acum. Urmărește un lead de la prima interacțiune până la decizia de cumpărare (sau abandonare). Notează fiecare pas, fiecare handoff, fiecare loc unde lead-ul poate cădea.</p>
+          <p>Garantez că vei găsi cel puțin 3 puncte de pierdere pe care nu le bănuiai.</p>
+
+          <h2>Pasul 2: Automatizează primul răspuns</h2>
+          <p>Acesta e cel mai mare câștig rapid. Un email automat de confirmare, trimis în secunde de la completarea formularului, face două lucruri: confirmă lead-ului că cererea lui a ajuns, și îți câștigă timp să răspunzi personalizat în câteva ore, nu în câteva secunde.</p>
+
+          <h2>Concluzie</h2>
+          <p>Nu ai nevoie de mai multe lead-uri. Ai nevoie să convertești mai bine lead-urile pe care le ai deja. Și asta e o problemă de sistem, nu de buget de marketing.</p>
+        `,
+      },
+    },
+  ];
+}
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  readTime: string;
+  relatedSlugs: string[];
+  content: string;
+}
+
+const { title, description, category, date, readTime, relatedSlugs, content } = Astro.props;
+
+const allPosts = [
+  { slug: 'plan-lunar-continut-automatizare-ai', title: 'Cum poți construi un plan lunar de conținut cu ajutorul automatizării și agenților AI, fără să pierzi controlul', category: 'Automatizări', date: '2026-01-15', excerpt: 'Agenții AI pot genera structuri de conținut în secunde. Dar fără un sistem clar, ajungi cu mult conținut și puțin control.' },
+  { slug: 'automatizari-whatsapp-business', title: 'Automatizări în WhatsApp Business: ce poți face concret ca antreprenor, direct din aplicație', category: 'WhatsApp Business', date: '2025-12-10', excerpt: 'WhatsApp Business oferă mai mult decât mesaje automate de bun venit. Iată ce poți automatiza fără tool-uri externe.' },
+  { slug: 'nu-mai-pierde-lead-urile', title: 'Cum să nu mai pierzi lead-urile pe care le plătești deja', category: 'Lead Management', date: '2025-11-20', excerpt: 'Cele mai multe companii plătesc pentru lead-uri pe care nu le convertesc niciodată. Nu din lipsă de interes, ci din lipsă de proces.' },
+];
+const relatedPosts = allPosts.filter(p => relatedSlugs.includes(p.slug));
+---
+<Layout title={`${title} — Ana Dobre`} description={description}>
+  <Navbar />
+
+  <!-- Article -->
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <!-- Meta -->
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full">
+          {category}
+        </span>
+        <span class="text-xs text-text-tertiary">·</span>
+        <time class="text-xs text-text-tertiary">
+          {new Date(date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </time>
+        <span class="text-xs text-text-tertiary">·</span>
+        <span class="text-xs text-text-tertiary">{readTime} citire</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-primary leading-tight mb-8">
+        {title}
+      </h1>
+
+      <!-- Featured image placeholder -->
+      <!-- REPLACE: Featured image for article -->
+      <div class="aspect-video bg-bg-tertiary rounded-xl border border-border flex items-center justify-center text-text-tertiary text-sm mb-10">
+        Imagine articol — {category}
+      </div>
+
+      <!-- Content -->
+      <div
+        class="prose prose-lg max-w-none
+          prose-headings:font-sans prose-headings:font-semibold prose-headings:text-primary
+          prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+          prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-5
+          prose-ul:text-text-secondary prose-li:mb-2
+          prose-strong:text-text-primary prose-strong:font-semibold
+          prose-a:text-primary-light prose-a:no-underline hover:prose-a:underline"
+        set:html={content}
+      />
+
+    </div>
+  </article>
+
+  <!-- CTA Box -->
+  <section class="py-12 bg-bg-secondary">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="bg-white rounded-xl p-8 border border-border text-center">
+        <h3 class="font-sans text-xl font-semibold text-primary mb-3">
+          Vrei să discutăm despre automatizarea proceselor din compania ta?
+        </h3>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/servicii#formular" class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px hover:shadow-md inline-block">
+            Programează o discuție →
+          </a>
+          <a href="/mini-audit" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-lg transition-all inline-block">
+            Evaluează-ți sistemul gratuit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  {relatedPosts.length > 0 && (
+    <section class="py-16 md:py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">Articole similare</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {relatedPosts.map(post => (
+            <a href={`/blog/${post.slug}`} class="group block bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+              <!-- REPLACE: Featured image for related post -->
+              <div class="aspect-video bg-bg-tertiary flex items-center justify-center text-text-tertiary text-xs p-4 text-center">
+                Imagine articol
+              </div>
+              <div class="p-6">
+                <span class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full mb-3">
+                  {post.category}
+                </span>
+                <h3 class="font-sans text-base font-semibold text-primary mb-2 leading-snug group-hover:text-primary-light transition-colors">
+                  {post.title}
+                </h3>
+                <p class="text-text-secondary text-sm leading-relaxed mb-3">{post.excerpt}</p>
+                <time class="text-xs text-text-tertiary">
+                  {new Date(post.date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </time>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</Layout>

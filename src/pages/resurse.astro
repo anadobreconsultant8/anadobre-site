@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Resurse gratuite — Ana Dobre | Automatizări Marketing & Vânzări"
+  description="Instrumente practice pentru automatizarea marketingului și vânzărilor: mini-audit, ebook și checklist — gratuit, fără obligații."
+>
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+        Resurse gratuite
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-primary leading-tight mb-6">
+        Resurse gratuite pentru automatizarea marketingului și vânzărilor
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto">
+        Instrumente practice pe care le poți folosi imediat — fără obligații.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESURSE -->
+  <section class="py-12 md:py-20 bg-bg-secondary">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 — PRINCIPAL -->
+        <div class="md:col-span-1 bg-white rounded-xl border-2 border-bg-tertiary p-8 relative">
+          <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
+            Recomandare #1
+          </div>
+          <h3 class="font-sans text-xl font-semibold text-primary mb-4 leading-snug">
+            Mini-audit: Evaluează-ți sistemul de automatizare
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Răspunde la 8 întrebări despre procesele tale de marketing și vânzări. Primești un scor de maturitate și recomandări personalizate — gratuit, în 3 minute.
+          </p>
+          <a href="/mini-audit" class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px hover:shadow-md inline-block">
+            Începe evaluarea →
+          </a>
+        </div>
+
+        <!-- Card 2 — Ebook -->
+        <div class="bg-white rounded-xl border border-border p-8">
+          <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
+            Ebook
+          </div>
+          <h3 class="font-sans text-xl font-semibold text-primary mb-4 leading-snug">
+            Ghidul companiei în creștere: Cum construiești un sistem de automatizare care produce clienți
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Tot ce trebuie să știi despre audit, strategie, implementare și optimizare a automatizărilor de marketing și vânzări. Cu exemple reale din piața din România.
+          </p>
+          <!-- Formular inline ebook -->
+          <!-- Tag AC: "lead-magnet-ghid-automatizare" -->
+          <form id="ebook-form" class="space-y-3">
+            <input
+              type="text"
+              name="prenume"
+              placeholder="Prenumele tău"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresa de email"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+            />
+            <input type="hidden" name="tag" value="lead-magnet-ghid-automatizare" />
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors"
+            >
+              Descarcă gratuit
+            </button>
+          </form>
+          <div id="ebook-success" class="hidden mt-3 p-3 bg-success/10 text-success rounded-lg text-sm font-medium text-center">
+            ✓ Verifică-ți inbox-ul!
+          </div>
+        </div>
+
+        <!-- Card 3 — Checklist -->
+        <div class="bg-white rounded-xl border border-border p-8">
+          <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-5">
+            Checklist
+          </div>
+          <h3 class="font-sans text-xl font-semibold text-primary mb-4 leading-snug">
+            7 semne că pierzi lead-uri din cauza lipsei de automatizare
+          </h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Un checklist de o pagină pe care îl poți parcurge în 2 minute. Dacă bifezi 3+ semne, e timpul să acționezi.
+          </p>
+          <!-- Formular inline checklist -->
+          <!-- Tag AC: "lead-magnet-checklist-pierdere-leaduri" -->
+          <form id="checklist-form" class="space-y-3">
+            <input
+              type="text"
+              name="prenume"
+              placeholder="Prenumele tău"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresa de email"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+            />
+            <input type="hidden" name="tag" value="lead-magnet-checklist-pierdere-leaduri" />
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors"
+            >
+              Descarcă checklist-ul
+            </button>
+          </form>
+          <div id="checklist-success" class="hidden mt-3 p-3 bg-success/10 text-success rounded-lg text-sm font-medium text-center">
+            ✓ Verifică-ți inbox-ul!
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl font-semibold text-primary mb-4">
+        Vrei să mergem mai departe?
+      </h2>
+      <p class="text-text-secondary leading-relaxed mb-8">
+        Resursele gratuite sunt un prim pas. Dacă vrei să transformi procesele tale într-un sistem complet, hai să discutăm.
+      </p>
+      <a href="/servicii#formular" class="bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-lg inline-block">
+        Programează o discuție →
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  function setupLeadForm(formId: string, successId: string) {
+    const form = document.getElementById(formId) as HTMLFormElement | null;
+    const success = document.getElementById(successId);
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form!);
+      try {
+        await fetch('/api/newsletter-subscribe', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(data)),
+          headers: { 'Content-Type': 'application/json' },
+        });
+      } catch {
+        // silent
+      }
+      form!.classList.add('hidden');
+      success?.classList.remove('hidden');
+    });
+  }
+  setupLeadForm('ebook-form', 'ebook-success');
+  setupLeadForm('checklist-form', 'checklist-success');
+</script>

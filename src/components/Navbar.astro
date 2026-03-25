@@ -1,0 +1,100 @@
+---
+const navLinks = [
+  { href: '/servicii', label: 'Servicii' },
+  { href: '/despre', label: 'Despre' },
+  { href: '/resurse', label: 'Resurse' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+const currentPath = Astro.url.pathname;
+---
+<header class="sticky top-0 z-50 bg-primary-darkest transition-shadow duration-200" id="navbar">
+  <div class="max-w-6xl mx-auto px-6">
+    <nav class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex flex-col leading-none gap-1">
+        <span style="font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 20px; color: #FFFFFF;">Ana Dobre</span>
+        <span style="font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #5A93CC;">
+          STRATEGY <span style="color: #C9880C;">→</span> AUTOMATION <span style="color: #C9880C;">→</span> RESULTS
+        </span>
+      </a>
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`text-sm font-medium transition-colors hover:text-white ${
+              currentPath === link.href || currentPath.startsWith(link.href + '/') ? 'text-white' : 'text-blue-200'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href="/servicii#formular"
+          class="bg-accent hover:bg-accent-hover text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all hover:-translate-y-px hover:shadow-md"
+        >
+          Programează o discuție
+        </a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button
+        id="menu-toggle"
+        class="md:hidden p-2 text-blue-200 hover:text-white"
+        aria-label="Meniu"
+        aria-expanded="false"
+      >
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-primary-darkest">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="text-sm font-medium text-blue-200 hover:text-white py-1 transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/servicii#formular"
+        class="bg-accent hover:bg-accent-hover text-white text-sm font-semibold px-5 py-3 rounded-lg text-center mt-2 transition-colors"
+      >
+        Programează o discuție
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const navbar = document.getElementById('navbar');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Scroll shadow
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('shadow-lg');
+    } else {
+      navbar?.classList.remove('shadow-lg');
+    }
+  }, { passive: true });
+</script>

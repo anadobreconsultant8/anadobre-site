@@ -1,0 +1,442 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Mini-audit — Evaluează-ți sistemul de automatizare | Ana Dobre"
+  description="Răspunde la 8 întrebări despre procesele tale de marketing și vânzări. Primești scorul tău de maturitate și recomandări concrete — gratuit, în 3 minute."
+>
+  <Navbar />
+
+  <section class="py-12 md:py-16 bg-white min-h-screen">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+          Mini-audit gratuit
+        </div>
+        <h1 class="font-display text-3xl md:text-4xl font-bold text-primary mb-4">
+          Cât de performant este sistemul tău de marketing și vânzări?
+        </h1>
+        <p class="text-text-secondary leading-relaxed">
+          8 întrebări. 3 minute. Scor de maturitate + recomandări personalizate.
+        </p>
+      </div>
+
+      <!-- Quiz container -->
+      <div id="quiz-container">
+
+        <!-- Progress bar -->
+        <div id="progress-section" class="mb-8">
+          <div class="flex justify-between items-center mb-2">
+            <span id="progress-label" class="text-sm font-medium text-text-secondary">Întrebarea 1 din 8</span>
+            <span id="progress-pct" class="text-sm font-semibold text-primary">0%</span>
+          </div>
+          <div class="w-full bg-bg-tertiary rounded-full h-2">
+            <div id="progress-bar" class="bg-accent h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Questions -->
+        <div id="questions-wrapper">
+
+          <!-- Q1 -->
+          <div class="question-slide" data-q="0">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Ce CRM folosiți?</h2>
+              <div class="space-y-3" data-q-index="0">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Nu folosim CRM
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Folosim unul, dar nu e configurat complet
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Folosim un CRM configurat și actualizat constant
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="question-slide hidden" data-q="1">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Cât durează în medie de la primirea unui lead până la primul răspuns?</h2>
+              <div class="space-y-3" data-q-index="1">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Peste 24 de ore / nu știm exact
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Între 2 și 24 de ore
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Sub 2 ore, avem proces clar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="question-slide hidden" data-q="2">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Aveți secvențe automate de email pentru lead-urile noi?</h2>
+              <div class="space-y-3" data-q-index="2">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Nu, fiecare email se trimite manual
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Avem un email automat de bun venit, dar atât
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Da, avem secvențe de nurturing active și segmentate
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="question-slide hidden" data-q="3">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Ce se întâmplă cu lead-urile care nu cumpără imediat?</h2>
+              <div class="space-y-3" data-q-index="3">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Nu avem un proces definit — rămân în baza de date
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Le contactăm ocazional, dar fără o secvență structurată
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Avem automatizări de follow-up și nurturing pe termen lung
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="question-slide hidden" data-q="4">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Măsurați rata de conversie lead → client?</h2>
+              <div class="space-y-3" data-q-index="4">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Nu o măsurăm
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  O estimăm aproximativ
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Da, o monitorizăm în CRM și raportăm lunar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="question-slide hidden" data-q="5">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Cât de integrate sunt platformele între ele? (CRM, email, formulare, ads)</h2>
+              <div class="space-y-3" data-q-index="5">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Fiecare funcționează separat
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Unele sunt conectate, dar nu toate
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Avem un sistem integrat, datele circulă automat între platforme
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="question-slide hidden" data-q="6">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibond text-primary mb-6">Cum gestionați lead-urile din surse diferite? (ads, organic, referral)</h2>
+              <div class="space-y-3" data-q-index="6">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Toate ajung în același loc, fără diferențiere
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Le separăm, dar nu avem fluxuri diferite pe surse
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Avem automatizări diferențiate pe surse, cu tag-uri și segmentare
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="question-slide hidden" data-q="7">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-4">
+              <h2 class="font-sans text-xl font-semibold text-primary mb-6">Cât de des revizuiți și optimizați automatizările existente?</h2>
+              <div class="space-y-3" data-q-index="7">
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
+                  Nu le-am mai atins de când au fost setate
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
+                  Le ajustăm ocazional, când apare o problemă
+                </button>
+                <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="2">
+                  Le analizăm și optimizăm lunar pe baza datelor
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /questions-wrapper -->
+      </div><!-- /quiz-container -->
+
+      <!-- RESULTS (hidden initially) -->
+      <div id="results-section" class="hidden">
+
+        <!-- Score display -->
+        <div class="text-center mb-8">
+          <p class="text-text-tertiary text-sm uppercase tracking-widest font-semibold mb-3">Scorul tău</p>
+          <div class="relative inline-flex items-center justify-center mb-4">
+            <svg class="w-36 h-36 -rotate-90" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#EEF2F5" stroke-width="10" />
+              <circle id="score-circle" cx="60" cy="60" r="50" fill="none" stroke-width="10" stroke-linecap="round"
+                stroke-dasharray="314"
+                stroke-dashoffset="314"
+                class="transition-all duration-1000"
+              />
+            </svg>
+            <div class="absolute text-center">
+              <span id="score-number" class="font-display text-4xl font-bold text-primary">0</span>
+              <span class="block text-xs text-text-tertiary font-medium">din 16</span>
+            </div>
+          </div>
+
+          <!-- Score bar -->
+          <div class="max-w-sm mx-auto">
+            <div class="w-full bg-bg-tertiary rounded-full h-3 mb-2">
+              <div id="score-bar" class="h-3 rounded-full transition-all duration-1000" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level result card -->
+        <div id="result-card" class="rounded-xl p-8 border-2 mb-8">
+          <h2 id="result-title" class="font-display text-2xl md:text-3xl font-semibold text-primary mb-4"></h2>
+          <p id="result-message" class="text-text-secondary leading-relaxed mb-4"></p>
+          <p id="result-recommendation" class="text-text-primary font-medium leading-relaxed"></p>
+        </div>
+
+        <!-- Lead capture form -->
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border mb-8">
+          <h3 class="font-sans text-xl font-semibold text-primary mb-3">Vrei raportul complet cu recomandări detaliate?</h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Îți trimit pe email un raport personalizat cu pașii concreți pe care îi poți face, adaptat scorului tău.
+          </p>
+          <form id="audit-result-form" class="space-y-3">
+            <input type="hidden" name="score" id="hidden-score" value="" />
+            <input type="hidden" name="level" id="hidden-level" value="" />
+            <input type="hidden" name="tag_audit" value="mini-audit" />
+            <input
+              type="text"
+              name="prenume"
+              placeholder="Prenumele tău"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors bg-white"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresa de email"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors bg-white"
+            />
+            <input
+              type="text"
+              name="companie"
+              placeholder="Numele companiei"
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors bg-white"
+            />
+            <button
+              type="submit"
+              class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-md"
+            >
+              Trimite-mi raportul →
+            </button>
+          </form>
+          <div id="audit-success" class="hidden mt-4 p-4 bg-success/10 text-success rounded-lg text-sm font-medium text-center">
+            ✓ Mulțumesc! Raportul vine în inbox în câteva minute.
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="border-t border-border pt-8 text-center">
+          <p class="text-text-secondary mb-4">Sau, dacă vrei să discutăm direct:</p>
+          <a href="/servicii#formular" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-lg transition-all inline-block">
+            Programează o discuție →
+          </a>
+        </div>
+
+      </div><!-- /results-section -->
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const totalQuestions = 8;
+  let currentQuestion = 0;
+  const scores: number[] = [];
+
+  const questions = document.querySelectorAll<HTMLElement>('.question-slide');
+  const progressBar = document.getElementById('progress-bar');
+  const progressLabel = document.getElementById('progress-label');
+  const progressPct = document.getElementById('progress-pct');
+  const progressSection = document.getElementById('progress-section');
+  const resultsSection = document.getElementById('results-section');
+
+  function updateProgress(q: number) {
+    const pct = Math.round((q / totalQuestions) * 100);
+    if (progressBar) progressBar.style.width = `${pct}%`;
+    if (progressLabel) progressLabel.textContent = `Întrebarea ${q + 1} din ${totalQuestions}`;
+    if (progressPct) progressPct.textContent = `${pct}%`;
+  }
+
+  function showQuestion(index: number) {
+    questions.forEach((q, i) => {
+      q.classList.toggle('hidden', i !== index);
+    });
+    updateProgress(index);
+  }
+
+  function getLevelData(total: number) {
+    if (total <= 5) {
+      return {
+        title: 'Fundația lipsește.',
+        message: 'Procesele tale de marketing și vânzări funcționează predominant manual. Pierzi lead-uri și oportunități din cauza lipsei de structură și automatizare. Vestea bună: potențialul de îmbunătățire e enorm — chiar și câteva automatizări de bază pot schimba radical rata de conversie.',
+        recommendation: 'Prioritatea #1: un audit complet al fluxurilor existente și un plan strategic de automatizare.',
+        color: '#E8593C',
+        level: 'audit-beginner',
+        cardBorder: 'border-red-400',
+        barColor: 'bg-red-500',
+      };
+    } else if (total <= 10) {
+      return {
+        title: 'Ai fundația, dar sistemul are gap-uri.',
+        message: 'Ai un CRM și câteva procese în loc, dar automatizările nu lucrează ca un sistem integrat. Sunt puncte de pierdere între etapele parcursului clientului — lead-uri care se răcesc, follow-up-uri care nu se fac, date fragmentate. Cu optimizări targetate, poți crește semnificativ rata de conversie.',
+        recommendation: 'Prioritatea #1: identificarea și automatizarea punctelor de pierdere din parcursul lead-ului.',
+        color: '#BA7517',
+        level: 'audit-intermediate',
+        cardBorder: 'border-warning',
+        barColor: 'bg-warning',
+      };
+    } else {
+      return {
+        title: 'Sistemul funcționează. E momentul să-l optimizezi.',
+        message: 'Ai un sistem de automatizare funcțional și integrat. Provocarea ta acum nu mai e implementarea de bază, ci optimizarea continuă: A/B testing pe secvențe, îmbunătățirea segmentării, raportare avansată, și scalarea a ceea ce funcționează deja.',
+        recommendation: 'Prioritatea #1: un program de optimizare continuă cu analiză lunară și ajustări pe baza datelor.',
+        color: '#1D9E75',
+        level: 'audit-advanced',
+        cardBorder: 'border-success',
+        barColor: 'bg-success',
+      };
+    }
+  }
+
+  function showResults() {
+    const total = scores.reduce((a, b) => a + b, 0);
+    const level = getLevelData(total);
+    const pct = Math.round((total / 16) * 100);
+
+    // Hide questions, show results
+    questions.forEach(q => q.classList.add('hidden'));
+    if (progressSection) progressSection.classList.add('hidden');
+    const resultsEl = document.getElementById('results-section');
+    resultsEl?.classList.remove('hidden');
+
+    // Animate score
+    const scoreNumber = document.getElementById('score-number');
+    const scoreCircle = document.getElementById('score-circle');
+    const scoreBar = document.getElementById('score-bar');
+    const resultCard = document.getElementById('result-card');
+
+    if (scoreNumber) scoreNumber.textContent = String(total);
+    if (scoreCircle) {
+      scoreCircle.setAttribute('stroke', level.color);
+      // circumference = 2 * pi * 50 = 314.16
+      const offset = 314 - (314 * pct / 100);
+      setTimeout(() => {
+        scoreCircle.style.strokeDashoffset = String(offset);
+      }, 100);
+    }
+    if (scoreBar) {
+      scoreBar.className = `h-3 rounded-full transition-all duration-1000 ${level.barColor}`;
+      setTimeout(() => {
+        scoreBar.style.width = `${pct}%`;
+      }, 100);
+    }
+
+    const titleEl = document.getElementById('result-title');
+    const messageEl = document.getElementById('result-message');
+    const recEl = document.getElementById('result-recommendation');
+    if (titleEl) titleEl.textContent = level.title;
+    if (messageEl) messageEl.textContent = level.message;
+    if (recEl) recEl.textContent = level.recommendation;
+
+    if (resultCard) {
+      resultCard.className = `rounded-xl p-8 border-2 mb-8 ${level.cardBorder}`;
+    }
+
+    // Set hidden form fields
+    const hiddenScore = document.getElementById('hidden-score') as HTMLInputElement | null;
+    const hiddenLevel = document.getElementById('hidden-level') as HTMLInputElement | null;
+    if (hiddenScore) hiddenScore.value = String(total);
+    if (hiddenLevel) hiddenLevel.value = level.level;
+
+    // Scroll to results
+    resultsEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Initialize
+  showQuestion(0);
+
+  // Answer click handlers
+  document.querySelectorAll<HTMLButtonElement>('.answer-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const score = parseInt(btn.getAttribute('data-score') || '0', 10);
+      scores.push(score);
+
+      if (currentQuestion < totalQuestions - 1) {
+        currentQuestion++;
+        // Animate transition
+        const current = questions[currentQuestion - 1];
+        const next = questions[currentQuestion];
+        current?.classList.add('hidden');
+        next?.classList.remove('hidden');
+        updateProgress(currentQuestion);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        showResults();
+      }
+    });
+  });
+
+  // Result form submit
+  const auditForm = document.getElementById('audit-result-form') as HTMLFormElement | null;
+  const auditSuccess = document.getElementById('audit-success');
+  auditForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(auditForm!);
+    try {
+      await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(data)),
+        headers: { 'Content-Type': 'application/json' },
+      });
+    } catch {
+      // silent
+    }
+    auditForm!.classList.add('hidden');
+    auditSuccess?.classList.remove('hidden');
+  });
+</script>

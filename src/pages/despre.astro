@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Despre — Ana Dobre | 14+ ani de marketing digital, ultimii 3 dedicați automatizărilor"
+  description="Am ajutat companii din retail, B2B, servicii și home & deco să-și transforme procesele manuale în sisteme care funcționează consecvent."
+>
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            Despre mine
+          </div>
+          <h1 class="font-display text-4xl md:text-5xl font-bold text-primary leading-tight mb-6">
+            14+ ani de marketing digital.<br />
+            <span class="text-accent">Ultimii 3, dedicați exclusiv automatizărilor.</span>
+          </h1>
+          <p class="text-lg text-text-secondary leading-relaxed">
+            Am ajutat companii din retail, B2B, servicii și home &amp; deco să-și transforme procesele manuale în sisteme care funcționează consecvent.
+          </p>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <!-- REPLACE: Professional headshot photo of Ana Dobre, similar to current site P72B1673-3-scaled.jpg -->
+          <div class="w-72 h-80 md:w-80 md:h-96 bg-bg-tertiary rounded-2xl border border-border flex items-center justify-center text-text-tertiary text-sm text-center p-6">
+            <!-- REPLACE: Professional headshot photo of Ana Dobre -->
+            <span class="text-xs leading-relaxed">Fotografie profesională Ana Dobre</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCURS PROFESIONAL -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary mb-10">
+        Cum am ajuns aici
+      </h2>
+      <div class="space-y-6 text-text-secondary leading-relaxed text-lg">
+        <p>
+          Am început în SEO și Google Ads — domenii care mi-au format gândirea analitică și obsesia pentru rezultate măsurabile. Am gestionat campanii complexe pe Google, Facebook, Instagram, LinkedIn și YouTube, în industrii diverse: retail, home &amp; deco, servicii, B2B.
+        </p>
+        <p>
+          De-a lungul anilor am observat un lucru constant: chiar și strategiile bine gândite eșuează fără procese eficiente de execuție. Așa am ajuns la automatizări — nu ca o schimbare de direcție, ci ca un nivel următor al strategiei. Rezultatele au fost imediate: mai puține erori, mai mult timp câștigat, și campanii care funcționează constant.
+        </p>
+        <p>
+          Astăzi construiesc sisteme automatizate de marketing și vânzări: audit procesele existente, identific punctele de pierdere, implementez automatizări integrate, și optimizez continuu pe baza datelor. Combin experiența strategică cu implementarea tehnică — o combinație care face diferența între "avem automatizări" și "avem un sistem care produce clienți".
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE MA DIFERENTIAZA -->
+  <section class="py-20 md:py-24 bg-bg-secondary">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
+        Ce aduc diferit
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Strategie + implementare, nu doar una dintre ele',
+            body: 'Nu sunt doar strategist care dă un PDF și pleacă. Și nu sunt doar un technician care setează fără să înțeleagă de ce. Fac ambele — și asta înseamnă că sistemul pe care îl construiesc e aliniat cu obiectivele tale de business.',
+          },
+          {
+            title: 'Sisteme integrate, nu automatizări izolate',
+            body: 'Fiecare automatizare pe care o construiesc se conectează cu restul. CRM-ul, emailul, formularele, raportarea — totul lucrează împreună ca un mecanism unic, nu ca piese separate.',
+          },
+          {
+            title: 'Optimizare continuă, nu proiecte cu deadline',
+            body: 'Un sistem de automatizare nu e un livrabil pe care îl predai și pleci. E un proces viu care trebuie monitorizat, testat și îmbunătățit constant. De aceea ofer retainer de optimizare continuă, nu doar implementare.',
+          },
+        ].map(card => (
+          <div class="bg-white rounded-xl p-8 border border-border hover:shadow-lg transition-shadow">
+            <h3 class="font-sans text-lg font-semibold text-primary mb-4 leading-snug">{card.title}</h3>
+            <p class="text-text-secondary leading-relaxed">{card.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL-URI -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
+        Platforme și tool-uri cu care lucrez
+      </h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <!-- REPLACE: Logo images for each tool — use official logos, grayscale or muted, with hover color transition -->
+        {[
+          'ActiveCampaign',
+          'Mailchimp',
+          'n8n',
+          'Zapier',
+          'Google Analytics',
+          'Tally',
+          'Calendly',
+        ].map(tool => (
+          <div class="flex flex-col items-center gap-2 group">
+            <!-- REPLACE: {tool} logo image -->
+            <div class="w-16 h-16 bg-bg-tertiary rounded-xl border border-border flex items-center justify-center group-hover:border-primary-light transition-colors">
+              <span class="text-xs font-bold text-text-tertiary group-hover:text-primary-light transition-colors">{tool.slice(0,2)}</span>
+            </div>
+            <span class="text-xs text-text-tertiary font-medium">{tool}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICARI -->
+  <section class="py-20 md:py-24 bg-bg-secondary">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
+        Certificări
+      </h2>
+      <div class="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
+        <!-- REPLACE: Badge images from current site -->
+        {[
+          {
+            title: 'Certified Digital Marketing Specialist – Strategy & Planning',
+            issuer: 'Digital Marketing Institute',
+          },
+          {
+            title: 'Email Marketing Automations Specialist',
+            issuer: 'Mailchimp Academy',
+          },
+          {
+            title: 'Certificări Google Ads & Analytics',
+            issuer: 'Google',
+          },
+        ].map(cert => (
+          <div class="bg-white rounded-xl border border-border p-6 flex items-start gap-4 max-w-xs w-full">
+            <!-- REPLACE: Certification badge image -->
+            <div class="w-12 h-12 bg-bg-tertiary rounded-lg border border-border flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-semibold text-sm text-primary leading-snug mb-1">{cert.title}</div>
+              <div class="text-xs text-text-tertiary">{cert.issuer}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary mb-6">
+        Vrei să discutăm despre procesele tale de marketing?
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/servicii#formular" class="bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-lg text-base">
+          Programează o discuție →
+        </a>
+        <a href="/mini-audit" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-lg transition-all text-base">
+          Sau evaluează-ți sistemul gratuit →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

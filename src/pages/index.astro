@@ -1,0 +1,412 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const blogPosts = [
+  {
+    slug: 'plan-lunar-continut-automatizare-ai',
+    title: 'Cum poți construi un plan lunar de conținut cu ajutorul automatizării și agenților AI, fără să pierzi controlul',
+    excerpt: 'Agenții AI pot genera structuri de conținut în secunde. Dar fără un sistem clar, ajungi cu mult conținut și puțin control.',
+    category: 'Automatizări',
+    date: '2026-01-15',
+  },
+  {
+    slug: 'automatizari-whatsapp-business',
+    title: 'Automatizări în WhatsApp Business: ce poți face concret ca antreprenor, direct din aplicație',
+    excerpt: 'WhatsApp Business oferă mai mult decât mesaje automate de bun venit. Iată ce poți automatiza fără tool-uri externe.',
+    category: 'WhatsApp Business',
+    date: '2025-12-10',
+  },
+  {
+    slug: 'nu-mai-pierde-lead-urile',
+    title: 'Cum să nu mai pierzi lead-urile pe care le plătești deja',
+    excerpt: 'Cele mai multe companii plătesc pentru lead-uri pe care nu le convertesc niciodată. Nu din lipsă de interes, ci din lipsă de proces.',
+    category: 'Lead Management',
+    date: '2025-11-20',
+  },
+];
+---
+<Layout
+  title="Ana Dobre — Automatizări Marketing & Vânzări pentru Companii în Creștere"
+  description="Construiesc și optimizez sisteme automatizate de marketing și vânzări. Audit, implementare și optimizare continuă pentru companii cu CRM și 50+ lead-uri lunar."
+>
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="relative py-20 md:py-28 bg-white overflow-hidden">
+
+    <!-- Background dot grid -->
+    <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <pattern id="hero-dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1.2" fill="#021B3D" opacity="0.06" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hero-dots)" />
+    </svg>
+
+    <!-- Left node cluster — automation flow diagram -->
+    <svg class="absolute left-0 top-0 h-full w-80 hidden lg:block" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+      <g stroke="#021B3D" stroke-width="1.5" opacity="0.08" fill="none">
+        <line x1="40" y1="100" x2="130" y2="160" />
+        <line x1="130" y1="160" x2="210" y2="120" />
+        <line x1="210" y1="120" x2="290" y2="190" />
+        <line x1="80" y1="260" x2="170" y2="310" />
+        <line x1="170" y1="310" x2="260" y2="270" />
+        <line x1="130" y1="160" x2="80" y2="260" />
+        <line x1="210" y1="120" x2="170" y2="310" />
+      </g>
+      <g fill="#021B3D" opacity="0.1">
+        <circle cx="40" cy="100" r="5" />
+        <circle cx="130" cy="160" r="7" />
+        <circle cx="210" cy="120" r="5" />
+        <circle cx="290" cy="190" r="4" />
+        <circle cx="80" cy="260" r="5" />
+        <circle cx="170" cy="310" r="7" />
+        <circle cx="260" cy="270" r="4" />
+      </g>
+      <g fill="#0249A5" opacity="0.12">
+        <circle cx="130" cy="160" r="4" />
+        <circle cx="170" cy="310" r="4" />
+      </g>
+    </svg>
+
+    <!-- Right node cluster -->
+    <svg class="absolute right-0 top-0 h-full w-80 hidden lg:block" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+      <g stroke="#021B3D" stroke-width="1.5" opacity="0.08" fill="none">
+        <line x1="280" y1="90" x2="190" y2="150" />
+        <line x1="190" y1="150" x2="110" y2="110" />
+        <line x1="110" y1="110" x2="40" y2="180" />
+        <line x1="240" y1="260" x2="150" y2="300" />
+        <line x1="150" y1="300" x2="70" y2="255" />
+        <line x1="190" y1="150" x2="240" y2="260" />
+        <line x1="110" y1="110" x2="150" y2="300" />
+      </g>
+      <g fill="#021B3D" opacity="0.1">
+        <circle cx="280" cy="90" r="5" />
+        <circle cx="190" cy="150" r="7" />
+        <circle cx="110" cy="110" r="5" />
+        <circle cx="40" cy="180" r="4" />
+        <circle cx="240" cy="260" r="5" />
+        <circle cx="150" cy="300" r="7" />
+        <circle cx="70" cy="255" r="4" />
+      </g>
+      <g fill="#0249A5" opacity="0.12">
+        <circle cx="190" cy="150" r="4" />
+        <circle cx="150" cy="300" r="4" />
+      </g>
+    </svg>
+
+    <!-- Center fade — keeps text readable -->
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/90 to-transparent pointer-events-none"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+      <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+        Automatizări marketing &amp; vânzări
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+        Sistemul tău de marketing generează lead-uri.<br />
+        <span class="text-accent">Dar câte devin clienți?</span>
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto">
+        Construiesc și optimizez sisteme automatizate de marketing și vânzări pentru companii care au CRM, generează 50+ lead-uri lunar, și vor ca procesele lor să producă mai mulți clienți din același efort.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/mini-audit" class="bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-lg text-base">
+          Evaluează-ți sistemul →
+        </a>
+        <a href="/servicii#formular" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-lg transition-all text-base">
+          Programează o discuție
+        </a>
+      </div>
+      <!-- Tool logos -->
+      <div class="mt-12">
+        <p class="text-xs text-text-tertiary uppercase tracking-widest mb-4">Sisteme construite cu:</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <!-- REPLACE: Tool logos — ActiveCampaign, n8n, Zapier, Mailchimp -->
+          {['ActiveCampaign', 'n8n', 'Zapier', 'Mailchimp'].map(tool => (
+            <span class="text-sm font-medium px-4 py-1.5 bg-bg-tertiary rounded-md text-text-secondary border border-border">{tool}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+
+  <section class="py-20 md:py-24 bg-bg-secondary">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
+        Recunoști situația?
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Lead-urile vin, dar conversiile nu cresc proporțional.',
+            body: 'Investești constant în marketing și generezi lead-uri, dar rata de conversie lead–client rămâne sub potențial. Echipa intervine manual mai mult decât ar trebui, iar unele oportunități se pierd pe drum.',
+          },
+          {
+            title: 'Automatizările există, dar nu lucrează împreună.',
+            body: 'Ai fluxuri active, dar fiecare funcționează izolat. CRM-ul nu e integrat cu formularele, emailurile nu se adaptează la stadiul lead-ului, iar datele sunt fragmentate în mai multe platforme.',
+          },
+          {
+            title: 'Optimizezi pe intuiție, nu pe date.',
+            body: 'Nu ai vizibilitate clară pe ce funcționează și ce nu. Deciziile de marketing se iau pe baza sentimentului, nu pe baza unui sistem care îți arată exact unde pierzi și unde câștigi.',
+          },
+        ].map(card => (
+          <div class="bg-white border border-border rounded-xl p-8 hover:shadow-lg transition-shadow">
+            <h3 class="font-sans text-lg font-semibold text-primary mb-4 leading-snug">{card.title}</h3>
+            <p class="text-text-secondary leading-relaxed text-base">{card.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CE OBTII -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Ce se schimbă când lucrăm împreună</p>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary max-w-2xl mx-auto leading-tight">
+          Transform procesele de marketing și vânzări într-un sistem care produce rezultate măsurabile.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            num: '01',
+            title: 'Conversie mai mare din același volum de lead-uri',
+            body: 'Optimizez parcursul complet al lead-ului — de la prima interacțiune până la contract — eliminând punctele unde se pierd oportunități.',
+          },
+          {
+            num: '02',
+            title: 'Procese care funcționează fără intervenție manuală constantă',
+            body: 'Construiesc automatizări integrate care preiau, califică, urmăresc și convertesc lead-uri sistematic.',
+          },
+          {
+            num: '03',
+            title: 'Decizii bazate pe date, nu pe presupuneri',
+            body: 'Implementez raportare și KPI-uri care arată exact unde merge bine și unde trebuie intervenit.',
+          },
+          {
+            num: '04',
+            title: 'Un partener strategic, nu un executor de task-uri',
+            body: 'Lucrez ca extensie a echipei tale: audit, strategie, implementare, optimizare continuă.',
+          },
+        ].map(item => (
+          <div class="flex gap-6 p-6 rounded-xl hover:bg-bg-secondary transition-colors">
+            <span class="font-display text-4xl font-bold text-bg-tertiary flex-shrink-0 leading-none mt-1 select-none">{item.num}</span>
+            <div>
+              <h3 class="font-sans text-lg font-semibold text-primary mb-2">{item.title}</h3>
+              <p class="text-text-secondary leading-relaxed">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CUM FUNCTIONEAZA -->
+  <section class="py-20 md:py-24 bg-bg-secondary">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
+        Cum funcționează o colaborare
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        {[
+          {
+            num: '01',
+            title: 'Audit & strategie',
+            body: 'Analizez procesele existente, identific punctele de pierdere, și construiesc un plan de automatizare prioritizat pe baza impactului. Primești un document complet cu harta fluxurilor, recomandări concrete, și un roadmap clar.',
+          },
+          {
+            num: '02',
+            title: 'Implementare',
+            body: 'Construiesc și conectez automatizările etapizat: CRM, emailuri, formulare, integrări. Fiecare flux este testat înainte de a trece la următorul. Durata: 4–8 săptămâni.',
+          },
+          {
+            num: '03',
+            title: 'Optimizare continuă',
+            body: 'Lunar, analizăm rezultatele și ajustăm. La fiecare trimestru, evaluare strategică completă. Sistemul evoluează odată cu business-ul tău.',
+          },
+        ].map(step => (
+          <div class="bg-white rounded-xl p-8 border border-border">
+            <div class="font-display text-5xl font-bold text-accent-warm/30 mb-4 leading-none select-none">{step.num}</div>
+            <h3 class="font-sans text-xl font-semibold text-primary mb-3">{step.title}</h3>
+            <p class="text-text-secondary leading-relaxed">{step.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center">
+        <a href="/servicii" class="bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-lg inline-block">
+          Vezi detalii și prețuri →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALE -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
+        Ce spun companiile cu care am lucrat
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            quote: 'Lucrăm împreună cu Ana de peste 4 ani, timp în care am abordat cam toate modalitățile de promovare online. Profesionalismul abordării și competențele mereu actualizate ne-au adus poziționare și vizibilitate online traduse în creșterea vânzărilor.',
+            name: 'Iulian Dinică',
+            role: 'Managing Partner',
+            company: 'Document Imaging Systems',
+          },
+          {
+            quote: 'Am admirat la Ana capacitatea de a înțelege și pune în practică nu doar aspectele tehnice ale comunicării în mediul online, dar și nevoile strategice ale unui brand. O recomand oricărui business care are nevoie de suport profesionist în creșterea brandurilor.',
+            name: 'Mona Ursu',
+            role: 'Founder & CEO',
+            company: 'Brandfusion',
+          },
+          {
+            quote: 'Am apreciat profesionalismul ei și abordarea pragmatică. Lucrurile s-au întâmplat repede și cu rezultate foarte bune. O recomand antreprenorilor care doresc vizibilitate în manieră eficientă, într-un spațiu de colaborare sigur și profesionist.',
+            name: 'Manuela Ciugudean',
+            role: 'Coach & Personal Brand Strategist',
+            company: '',
+          },
+        ].map(t => (
+          <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+            <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+              "{t.quote}"
+            </blockquote>
+            <div class="flex items-center gap-3">
+              <!-- REPLACE: Testimonial photo — use actual photo from WordPress site -->
+              <div class="w-10 h-10 rounded-full bg-bg-tertiary flex items-center justify-center text-sm text-text-tertiary font-semibold flex-shrink-0 border border-border">
+                {t.name.charAt(0)}
+              </div>
+              <div>
+                <div class="font-semibold text-sm text-primary">{t.name}</div>
+                <div class="text-xs text-text-tertiary">{t.role}{t.company ? `, ${t.company}` : ''}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET + NEWSLETTER -->
+  <section class="py-20 md:py-24 bg-bg-secondary">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Mini-audit -->
+        <div class="bg-white rounded-xl p-8 border border-border">
+          <h3 class="font-sans text-xl font-semibold text-primary mb-4">Vrei să știi unde pierzi lead-uri?</h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Răspunde la 8 întrebări despre procesele tale de marketing și vânzări. Primești un raport cu scorul tău de maturitate și recomandări concrete — gratuit, fără obligații.
+          </p>
+          <a href="/mini-audit" class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px hover:shadow-md inline-block">
+            Începe evaluarea →
+          </a>
+        </div>
+        <!-- Newsletter -->
+        <div class="bg-white rounded-xl p-8 border border-border">
+          <h3 class="font-sans text-xl font-semibold text-primary mb-4">Strategii de automatizare, direct în inbox.</h3>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            O dată la 2 săptămâni: studii de caz, greșeli frecvente, recomandări testate în piață. Conținut pentru profesioniști care vor sisteme mai bune, nu doar mai multe tool-uri.
+          </p>
+          <form id="newsletter-form" class="space-y-3">
+            <input
+              type="text"
+              name="prenume"
+              placeholder="Prenumele tău"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresa de email"
+              required
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+            />
+            <button
+              type="submit"
+              class="w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 rounded-lg transition-colors"
+            >
+              Abonează-te
+            </button>
+            <p class="text-xs text-text-tertiary text-center">Zero spam. Te poți dezabona oricând.</p>
+          </form>
+          <div id="newsletter-success" class="hidden mt-4 p-4 bg-success/10 text-success rounded-lg text-sm font-medium text-center">
+            ✓ Mulțumesc! Te-ai abonat cu succes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary">De pe blog</h2>
+        <a href="/blog" class="text-sm font-medium text-primary-light hover:text-primary transition-colors hidden sm:flex items-center gap-1">
+          Toate articolele →
+        </a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {blogPosts.map(post => (
+          <a href={`/blog/${post.slug}`} class="group block bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <!-- REPLACE: Featured image for blog post -->
+            <div class="aspect-video bg-bg-tertiary flex items-center justify-center text-text-tertiary text-xs p-4 text-center">
+              Imagine articol
+            </div>
+            <div class="p-6">
+              <span class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full mb-3">
+                {post.category}
+              </span>
+              <h3 class="font-sans text-base font-semibold text-primary mb-2 leading-snug group-hover:text-primary-light transition-colors">
+                {post.title}
+              </h3>
+              <p class="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
+              <time class="text-xs text-text-tertiary">
+                {new Date(post.date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
+              </time>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-10 sm:hidden">
+        <a href="/blog" class="text-sm font-medium text-primary-light hover:text-primary transition-colors">
+          Toate articolele →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const successMsg = document.getElementById('newsletter-success');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form!);
+    try {
+      const res = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(data)),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (res.ok) {
+        form!.classList.add('hidden');
+        successMsg?.classList.remove('hidden');
+      }
+    } catch {
+      // Show success anyway for static build
+      form!.classList.add('hidden');
+      successMsg?.classList.remove('hidden');
+    }
+  });
+</script>
