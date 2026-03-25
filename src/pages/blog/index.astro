@@ -1,34 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
-const posts = [
-  {
-    slug: 'plan-lunar-continut-automatizare-ai',
-    title: 'Cum poți construi un plan lunar de conținut cu ajutorul automatizării și agenților AI, fără să pierzi controlul',
-    excerpt: 'Agenții AI pot genera structuri de conținut în secunde. Dar fără un sistem clar, ajungi cu mult conținut și puțin control. Iată cum construiești un proces care funcționează.',
-    category: 'Automatizări',
-    date: '2026-01-15',
-    readTime: '8 min',
-  },
-  {
-    slug: 'automatizari-whatsapp-business',
-    title: 'Automatizări în WhatsApp Business: ce poți face concret ca antreprenor, direct din aplicație',
-    excerpt: 'WhatsApp Business oferă mai mult decât mesaje automate de bun venit. Iată ce poți automatiza fără tool-uri externe și cum să configurezi totul corect.',
-    category: 'WhatsApp Business',
-    date: '2025-12-10',
-    readTime: '6 min',
-  },
-  {
-    slug: 'nu-mai-pierde-lead-urile',
-    title: 'Cum să nu mai pierzi lead-urile pe care le plătești deja',
-    excerpt: 'Cele mai multe companii plătesc pentru lead-uri pe care nu le convertesc niciodată. Nu din lipsă de interes, ci din lipsă de proces. Iată ce să schimbi.',
-    category: 'Lead Management',
-    date: '2025-11-20',
-    readTime: '7 min',
-  },
-];
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 <Layout
   title="Blog — Ana Dobre | Automatizări Marketing & Vânzări"
@@ -55,24 +32,33 @@ const posts = [
             href={`/blog/${post.slug}`}
             class={`group block bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow ${idx === 0 ? 'md:col-span-2' : ''}`}
           >
-            <!-- REPLACE: Featured image for blog post -->
-            <div class={`bg-bg-tertiary flex items-center justify-center text-text-tertiary text-xs p-6 text-center ${idx === 0 ? 'h-56' : 'aspect-video'}`}>
-              Imagine articol — {post.title.slice(0, 40)}...
-            </div>
+            {post.data.image ? (
+              <div class={`overflow-hidden ${idx === 0 ? 'h-56' : 'aspect-video'}`}>
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ) : (
+              <div class={`bg-bg-tertiary flex items-center justify-center text-text-tertiary text-xs p-6 text-center ${idx === 0 ? 'h-56' : 'aspect-video'}`}>
+                {post.data.title.slice(0, 40)}...
+              </div>
+            )}
             <div class="p-6">
               <div class="flex items-center gap-3 mb-3">
                 <span class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full">
-                  {post.category}
+                  {post.data.category}
                 </span>
-                <span class="text-xs text-text-tertiary">{post.readTime} citire</span>
               </div>
               <h2 class={`font-sans font-semibold text-primary mb-3 leading-snug group-hover:text-primary-light transition-colors ${idx === 0 ? 'text-xl md:text-2xl' : 'text-base'}`}>
-                {post.title}
+                {post.data.title}
               </h2>
-              <p class="text-text-secondary text-sm leading-relaxed mb-4">{post.excerpt}</p>
+              <p class="text-text-secondary text-sm leading-relaxed mb-4">{post.data.excerpt}</p>
               <div class="flex items-center justify-between">
                 <time class="text-xs text-text-tertiary">
-                  {new Date(post.date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  {new Date(post.data.date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </time>
                 <span class="text-sm font-medium text-primary-light group-hover:text-primary transition-colors">Citește →</span>
               </div>
