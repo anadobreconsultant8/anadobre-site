@@ -1,17 +1,16 @@
 export const prerender = false;
 
 import type { APIRoute } from 'astro';
-import { generatePDF } from '../../lib/generate-pdf';
 import { createACContact } from '../../lib/activecampaign';
 import { sendEmailWithPDF } from '../../lib/send-email';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();
-    const { prenume, email, companie, scor, nivel, raspunsuri } = body;
+    const { prenume, email, companie, scor, nivel, raspunsuri, pdfBase64 } = body;
 
     // Validare
-    if (!prenume || !email || !companie || scor === undefined || !nivel || !raspunsuri) {
+    if (!prenume || !email || !companie || scor === undefined || !nivel || !raspunsuri || !pdfBase64) {
       return new Response(JSON.stringify({ error: 'C\u00e2mpuri lips\u0103' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
@@ -25,8 +24,7 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    // 1. Generează PDF
-    const pdfBase64 = await generatePDF({ prenume, email, companie, scor, nivel, raspunsuri });
+    // PDF-ul vine gata generat din browser (client-side)
 
     // 2. Creează contact în ActiveCampaign (non-blocking)
     try {

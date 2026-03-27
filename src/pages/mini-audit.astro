@@ -284,6 +284,8 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
+  import { generatePDF } from '../lib/generate-pdf';
+
   const totalQuestions = 8;
   let currentQuestion = 0;
   const scores: number[] = [];
@@ -450,11 +452,19 @@ import Footer from '../components/Footer.astro';
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Se trimite raportul...';
+      submitBtn.textContent = 'Se generează raportul...';
     }
     formMessage.textContent = '';
 
     try {
+      const scor = (window as any).auditScor;
+      const nivel = (window as any).auditNivel;
+      const raspunsuri = (window as any).auditRaspunsuri;
+
+      // Generează PDF în browser (unde jsPDF funcționează corect)
+      if (submitBtn) submitBtn.textContent = 'Se trimite raportul...';
+      const pdfBase64 = await generatePDF({ prenume, email, companie, scor, nivel, raspunsuri });
+
       const res = await fetch('/api/mini-audit-submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -462,9 +472,10 @@ import Footer from '../components/Footer.astro';
           prenume,
           email,
           companie,
-          scor:       (window as any).auditScor,
-          nivel:      (window as any).auditNivel,
-          raspunsuri: (window as any).auditRaspunsuri,
+          scor,
+          nivel,
+          raspunsuri,
+          pdfBase64,
         }),
       });
 
