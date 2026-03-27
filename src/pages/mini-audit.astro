@@ -284,8 +284,6 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  import { generatePDF } from '../lib/generate-pdf';
-
   const totalQuestions = 8;
   let currentQuestion = 0;
   const scores: number[] = [];
@@ -456,41 +454,18 @@ import Footer from '../components/Footer.astro';
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Se analizează răspunsurile...';
+      submitBtn.textContent = 'Se generează raportul...';
     }
     formMessage.textContent = '';
 
     try {
-      // Step 1: Get Claude analysis
-      const analysisRes = await fetch('/api/get-analysis', {
+      const res = await fetch('/api/mini-audit-submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ raspunsuri, scor, nivel }),
+        body: JSON.stringify({ prenume, email, companie, scor, nivel, raspunsuri }),
       });
-      const analysisData = await analysisRes.json();
-      if (!analysisData.success) throw new Error(analysisData.error || 'Eroare analiză');
-      const analysis = analysisData.analysis;
-
-      // Step 2: Generate PDF client-side
-      if (submitBtn) submitBtn.textContent = 'Se generează raportul PDF...';
-      const pdfBase64 = await generatePDF({ prenume, companie, scor, nivel, raspunsuri, analysis });
-
-      // Step 3: Send email
-      if (submitBtn) submitBtn.textContent = 'Se trimite raportul...';
-      const sendRes = await fetch('/api/send-report', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prenume, email, companie, scor, nivel, pdfBase64 }),
-      });
-      const sendData = await sendRes.json();
-      if (!sendData.success) throw new Error(sendData.error || 'Eroare trimitere email');
-
-      // Step 4: Sync to ActiveCampaign (fire and forget)
-      fetch('/api/mini-audit-submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prenume, email, companie, scor, nivel }),
-      }).catch(() => {});
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || 'Eroare server');
 
       auditForm!.classList.add('hidden');
       formMessage.textContent = '';
