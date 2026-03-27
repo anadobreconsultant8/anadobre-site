@@ -461,10 +461,18 @@ import Footer from '../components/Footer.astro';
       const nivel = (window as any).auditNivel;
       const raspunsuri = (window as any).auditRaspunsuri;
 
-      // Generează PDF în browser (unde jsPDF funcționează corect)
-      if (submitBtn) submitBtn.textContent = 'Se trimite raportul...';
-      const pdfBase64 = await generatePDF({ prenume, email, companie, scor, nivel, raspunsuri });
+      // Generează PDF în browser
+      let pdfBase64: string;
+      try {
+        if (submitBtn) submitBtn.textContent = 'Se generează PDF-ul...';
+        pdfBase64 = await generatePDF({ prenume, email, companie, scor, nivel, raspunsuri });
+        console.log('PDF generat, dimensiune base64:', pdfBase64?.length);
+      } catch (pdfErr) {
+        console.error('Eroare generare PDF:', pdfErr);
+        throw new Error('Eroare la generarea PDF-ului: ' + String(pdfErr));
+      }
 
+      if (submitBtn) submitBtn.textContent = 'Se trimite raportul...';
       const res = await fetch('/api/mini-audit-submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -480,16 +488,19 @@ import Footer from '../components/Footer.astro';
       });
 
       const result = await res.json();
+      console.log('Răspuns API:', res.status, result);
 
       if (result.success) {
         auditForm!.classList.add('hidden');
         formMessage.textContent = '';
         auditSuccess?.classList.remove('hidden');
       } else {
-        throw new Error(result.error || 'Eroare');
+        throw new Error(result.error || `Eroare server (${res.status})`);
       }
-    } catch {
-      formMessage.textContent = 'Ceva nu a mers. Încearcă din nou sau scrie-mi la hello@anadobre.com';
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Eroare necunoscută';
+      console.error('Submit error:', msg);
+      formMessage.textContent = msg;
       formMessage.style.color = '#DC3535';
       if (submitBtn) {
         submitBtn.disabled = false;

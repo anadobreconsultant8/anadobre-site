@@ -43,9 +43,10 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
   } catch (error) {
-    console.error('Mini-audit submit error:', error);
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error('Mini-audit submit error:', msg);
     return new Response(
-      JSON.stringify({ error: 'A ap\u0103rut o eroare. Te rog \u00eencearc\u0103 din nou.' }),
+      JSON.stringify({ error: msg }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
