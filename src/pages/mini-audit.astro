@@ -454,7 +454,7 @@ import Footer from '../components/Footer.astro';
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Se generează raportul...';
+      submitBtn.textContent = 'Se trimit răspunsurile (durează 1-2 minute)...';
     }
     formMessage.textContent = '';
 
@@ -464,6 +464,10 @@ import Footer from '../components/Footer.astro';
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prenume, email, companie, scor, nivel, raspunsuri }),
       });
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error(`Server error (${res.status}) — încearcă din nou`);
+      }
       const data = await res.json();
       if (!data.success) throw new Error(data.error || 'Eroare server');
 
@@ -480,6 +484,7 @@ import Footer from '../components/Footer.astro';
         submitBtn.disabled = false;
         submitBtn.textContent = 'Trimite-mi raportul →';
       }
+
     }
   });
 </script>
