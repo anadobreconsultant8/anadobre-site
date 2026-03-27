@@ -462,8 +462,16 @@ import Footer from '../components/Footer.astro';
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prenume, email, companie, scor, nivel, raspunsuri }),
+    }).then(async (res) => {
+      const ct = res.headers.get('content-type') || '';
+      const body = ct.includes('application/json') ? await res.json() : await res.text();
+      if (!res.ok || (typeof body === 'object' && body.error)) {
+        console.error('[mini-audit] Server error:', body);
+      } else {
+        console.log('[mini-audit] Email trimis cu succes');
+      }
     }).catch((err: unknown) => {
-      console.error('Submit error (background):', err);
+      console.error('[mini-audit] Fetch error:', err);
     });
   });
 </script>

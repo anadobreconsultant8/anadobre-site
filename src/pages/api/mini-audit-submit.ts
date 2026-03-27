@@ -38,6 +38,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const AC_API_KEY        = cfEnv.AC_API_KEY        || import.meta.env.AC_API_KEY;
     const ANTHROPIC_API_KEY = cfEnv.ANTHROPIC_API_KEY || import.meta.env.ANTHROPIC_API_KEY;
 
+    console.log('[mini-audit] env check — RESEND:', !!RESEND_API_KEY, '| ANTHROPIC:', !!ANTHROPIC_API_KEY, '| runtime keys:', Object.keys(cfEnv));
+
     if (!RESEND_API_KEY)    throw new Error('Resend API key not configured');
     if (!ANTHROPIC_API_KEY) throw new Error('Anthropic API key not configured');
 
