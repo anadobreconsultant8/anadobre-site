@@ -4,11 +4,13 @@ interface ACContactData {
   companie: string;
   scor: number;
   nivel: string;
+  apiUrl: string;
+  apiKey: string;
 }
 
 export async function createACContact(data: ACContactData) {
-  const AC_API_URL = import.meta.env.AC_API_URL;
-  const AC_API_KEY = import.meta.env.AC_API_KEY;
+  const AC_API_URL = data.apiUrl;
+  const AC_API_KEY = data.apiKey;
 
   if (!AC_API_URL || !AC_API_KEY) {
     console.error('AC credentials missing');

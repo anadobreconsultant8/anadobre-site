@@ -5,10 +5,11 @@ interface EmailData {
   scor: number;
   nivel: string;
   pdfBase64: string;
+  apiKey: string;
 }
 
 export async function sendEmailWithPDF(data: EmailData) {
-  const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
+  const RESEND_API_KEY = data.apiKey;
 
   if (!RESEND_API_KEY) {
     console.error('Resend API key missing');
