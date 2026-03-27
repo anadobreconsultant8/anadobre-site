@@ -429,7 +429,7 @@ import Footer from '../components/Footer.astro';
     });
   });
 
-  // Result form submit → /api/mini-audit-submit
+  // Result form submit — 3-step flow: Claude analysis → PDF → email → AC sync
   const auditForm = document.getElementById('audit-result-form') as HTMLFormElement | null;
   const auditSuccess = document.getElementById('audit-success');
   const submitBtn = auditForm?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
@@ -442,65 +442,64 @@ import Footer from '../components/Footer.astro';
     const formData = new FormData(auditForm!);
     const prenume = (formData.get('prenume') as string)?.trim();
     const email   = (formData.get('email')   as string)?.trim();
-    const companie = (formData.get('companie') as string)?.trim();
+    const companie = (formData.get('companie') as string)?.trim() || 'Compania mea';
 
-    if (!prenume || !email || !companie) {
-      formMessage.textContent = 'Te rog completează toate câmpurile.';
+    if (!prenume || !email) {
+      formMessage.textContent = 'Te rog completează prenumele și emailul.';
       formMessage.style.color = '#DC3535';
       return;
     }
 
+    const scor = (window as any).auditScor;
+    const nivel = (window as any).auditNivel;
+    const raspunsuri = (window as any).auditRaspunsuri;
+
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Se generează raportul...';
+      submitBtn.textContent = 'Se analizează răspunsurile...';
     }
     formMessage.textContent = '';
 
     try {
-      const scor = (window as any).auditScor;
-      const nivel = (window as any).auditNivel;
-      const raspunsuri = (window as any).auditRaspunsuri;
-
-      // Generează PDF în browser
-      let pdfBase64: string;
-      try {
-        if (submitBtn) submitBtn.textContent = 'Se generează PDF-ul...';
-        pdfBase64 = await generatePDF({ prenume, email, companie, scor, nivel, raspunsuri });
-        console.log('PDF generat, dimensiune base64:', pdfBase64?.length);
-      } catch (pdfErr) {
-        console.error('Eroare generare PDF:', pdfErr);
-        throw new Error('Eroare la generarea PDF-ului: ' + String(pdfErr));
-      }
-
-      if (submitBtn) submitBtn.textContent = 'Se trimite raportul...';
-      const res = await fetch('/api/mini-audit-submit', {
+      // Step 1: Get Claude analysis
+      const analysisRes = await fetch('/api/get-analysis', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          prenume,
-          email,
-          companie,
-          scor,
-          nivel,
-          raspunsuri,
-          pdfBase64,
-        }),
+        body: JSON.stringify({ raspunsuri, scor, nivel }),
       });
+      const analysisData = await analysisRes.json();
+      if (!analysisData.success) throw new Error(analysisData.error || 'Eroare analiză');
+      const analysis = analysisData.analysis;
 
-      const result = await res.json();
-      console.log('Răspuns API:', res.status, result);
+      // Step 2: Generate PDF client-side
+      if (submitBtn) submitBtn.textContent = 'Se generează raportul PDF...';
+      const pdfBase64 = await generatePDF({ prenume, companie, scor, nivel, raspunsuri, analysis });
 
-      if (result.success) {
-        auditForm!.classList.add('hidden');
-        formMessage.textContent = '';
-        auditSuccess?.classList.remove('hidden');
-      } else {
-        throw new Error(result.error || `Eroare server (${res.status})`);
-      }
+      // Step 3: Send email
+      if (submitBtn) submitBtn.textContent = 'Se trimite raportul...';
+      const sendRes = await fetch('/api/send-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prenume, email, companie, scor, nivel, pdfBase64 }),
+      });
+      const sendData = await sendRes.json();
+      if (!sendData.success) throw new Error(sendData.error || 'Eroare trimitere email');
+
+      // Step 4: Sync to ActiveCampaign (fire and forget)
+      fetch('/api/mini-audit-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prenume, email, companie, scor, nivel }),
+      }).catch(() => {});
+
+      auditForm!.classList.add('hidden');
+      formMessage.textContent = '';
+      auditSuccess?.classList.remove('hidden');
+
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Eroare necunoscută';
       console.error('Submit error:', msg);
-      formMessage.textContent = msg;
+      formMessage.textContent = `A apărut o eroare: ${msg}. Încearcă din nou sau scrie-mi la hello@anadobre.com`;
       formMessage.style.color = '#DC3535';
       if (submitBtn) {
         submitBtn.disabled = false;

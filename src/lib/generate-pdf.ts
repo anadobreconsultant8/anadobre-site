@@ -1,239 +1,244 @@
 import { jsPDF } from 'jspdf';
 
+interface Analysis {
+  'puncteFortă': string[];
+  'zoneCritice': string[];
+  'recomandări': { titlu: string; descriere: string; prioritate: string }[];
+  'concluzie': string;
+}
+
 interface PDFData {
   prenume: string;
-  email: string;
   companie: string;
   scor: number;
   nivel: string;
   raspunsuri: number[];
+  analysis: Analysis;
 }
 
 export async function generatePDF(data: PDFData): Promise<string> {
-  const { prenume, companie, scor, nivel, raspunsuri } = data;
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
-  const pageWidth = 210;
-  const margin = 20;
-  const contentWidth = pageWidth - 2 * margin;
-  let y = 20;
+  const W = 210;
+  const mL = 18; // left margin
+  const mR = 18; // right margin
+  const cW = W - mL - mR; // content width = 174mm
+  let y = 0;
 
-  // ── Culori ──
-  const navy: [number, number, number]    = [3, 48, 110];
-  const blue: [number, number, number]    = [2, 73, 165];
-  const amber: [number, number, number]   = [201, 136, 12];
-  const textDark: [number, number, number]  = [26, 26, 46];
-  const textMuted: [number, number, number] = [74, 85, 104];
-  const bgLight: [number, number, number]   = [238, 244, 250];
-  const red: [number, number, number]     = [220, 53, 53];
-  const amberBg: [number, number, number] = [250, 238, 218];
-  const green: [number, number, number]   = [29, 158, 117];
+  // Colors
+  const navy: [number,number,number]  = [3, 48, 110];
+  const blue: [number,number,number]  = [2, 73, 165];
+  const amber: [number,number,number] = [201, 136, 12];
+  const gray: [number,number,number]  = [74, 85, 104];
+  const light: [number,number,number] = [238, 244, 250];
+  const green: [number,number,number] = [29, 158, 117];
+  const red: [number,number,number]   = [180, 40, 40];
+  const white: [number,number,number] = [255, 255, 255];
 
-  function addText(text: string, x: number, yPos: number, size: number, color: [number, number, number], style = 'normal') {
+  const scorColor: [number,number,number] = data.scor <= 5 ? red : data.scor <= 10 ? amber : green;
+
+  function txt(
+    text: string,
+    x: number,
+    yy: number,
+    size: number,
+    color: [number,number,number],
+    bold = false,
+    maxW?: number,
+  ): number {
     doc.setFontSize(size);
-    doc.setTextColor(color[0], color[1], color[2]);
-    doc.setFont('helvetica', style === 'bold' ? 'bold' : 'normal');
-    doc.text(text, x, yPos);
-    return yPos;
-  }
-
-  function addWrappedText(text: string, x: number, yPos: number, size: number, color: [number, number, number], maxWidth: number, style = 'normal'): number {
-    doc.setFontSize(size);
-    doc.setTextColor(color[0], color[1], color[2]);
-    doc.setFont('helvetica', style === 'bold' ? 'bold' : 'normal');
-    const lines = doc.splitTextToSize(text, maxWidth);
-    doc.text(lines, x, yPos);
-    return yPos + (lines.length * size * 0.45);
-  }
-
-  function checkPageBreak(currentY: number, needed: number): number {
-    if (currentY + needed > 270) {
-      doc.addPage();
-      return 20;
+    doc.setTextColor(...color);
+    doc.setFont('helvetica', bold ? 'bold' : 'normal');
+    if (maxW) {
+      const lines = doc.splitTextToSize(text, maxW) as string[];
+      doc.text(lines, x, yy);
+      return yy + lines.length * size * 0.4 + 1;
     }
-    return currentY;
+    doc.text(text, x, yy);
+    return yy + size * 0.4 + 1;
   }
 
-  // ══════════════════════════════════════
-  // HEADER
-  // ══════════════════════════════════════
-  addText('Ana Dobre', margin, y, 18, navy, 'bold');
-  y += 5;
-  doc.setFontSize(8);
-  doc.setTextColor(blue[0], blue[1], blue[2]);
-  doc.setFont('helvetica', 'normal');
-  doc.text('STRATEGY  \u2192  AUTOMATION  \u2192  RESULTS', margin, y);
+  function pageBreak(yy: number, need: number): number {
+    if (yy + need > 278) {
+      doc.addPage();
+      return 18;
+    }
+    return yy;
+  }
 
+  function hLine(yy: number, color: [number,number,number] = [214, 230, 245]) {
+    doc.setDrawColor(...color);
+    doc.setLineWidth(0.3);
+    doc.line(mL, yy, W - mR, yy);
+  }
+
+  function fillRect(x: number, yy: number, w: number, h: number, color: [number,number,number], radius = 2) {
+    doc.setFillColor(...color);
+    doc.roundedRect(x, yy, w, h, radius, radius, 'F');
+  }
+
+  // ── HEADER ──────────────────────────────────────
+  fillRect(0, 0, W, 28, navy, 0);
+  y = 10;
+  txt('Ana Dobre', mL, y, 16, white, true);
   y += 6;
-  doc.setDrawColor(214, 230, 245);
-  doc.setLineWidth(0.5);
-  doc.line(margin, y, pageWidth - margin, y);
-  y += 10;
+  doc.setFontSize(7.5);
+  doc.setTextColor(150, 190, 230);
+  doc.setFont('helvetica', 'normal');
+  doc.text('STRATEGY  \u2192  AUTOMATION  \u2192  RESULTS', mL, y);
 
-  y = addWrappedText('Raport Mini-Audit: Maturitate Automatiz\u0103ri Marketing & V\u00E2nz\u0103ri', margin, y, 16, navy, contentWidth, 'bold');
-  y += 4;
-  addText(`Preg\u0103tit pentru ${prenume} \u2014 ${companie}`, margin, y, 10, textMuted);
-  y += 5;
+  // Right side: score badge in header
+  const badgeX = W - mR - 28;
+  fillRect(badgeX, 4, 28, 20, [10, 65, 130], 2);
+  doc.setFontSize(16);
+  doc.setTextColor(...scorColor);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`${data.scor}/16`, badgeX + 14, 16, { align: 'center' });
+  doc.setFontSize(7);
+  doc.setTextColor(180, 210, 240);
+  doc.setFont('helvetica', 'normal');
+  doc.text('SCOR', badgeX + 14, 21, { align: 'center' });
 
+  y = 36;
+
+  // ── TITLE ───────────────────────────────────────
+  txt('Raport de Maturitate \u00een Automatiz\u0103ri', mL, y, 14, navy, true, cW);
+  y += 7;
   const today = new Date().toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
-  addText(`Data: ${today}`, margin, y, 9, textMuted);
+  txt(`Preg\u0103tit pentru ${data.prenume} \u2014 ${data.companie}  \u00b7  ${today}`, mL, y, 9, gray, false, cW);
+  y += 5;
+  hLine(y); y += 6;
+
+  // ── SCORE SECTION ───────────────────────────────
+  fillRect(mL, y, cW, 22, light, 3);
+
+  doc.setFontSize(11);
+  doc.setTextColor(...scorColor);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`Nivel: ${data.nivel}`, mL + 5, y + 8);
+
+  // Score bar
+  const barX = mL + 5;
+  const barW = cW - 10;
+  const barY = y + 14;
+  fillRect(barX, barY, barW, 4, [210, 220, 235], 2);
+  fillRect(barX, barY, barW * (data.scor / 16), 4, scorColor, 2);
+
+  doc.setFontSize(9);
+  doc.setTextColor(...gray);
+  doc.setFont('helvetica', 'normal');
+  doc.text(`Scor: ${data.scor} din 16 puncte`, W - mR - 5, y + 8, { align: 'right' });
+
+  y += 28;
+
+  // ── CONCLUZIE ───────────────────────────────────
+  y = pageBreak(y, 30);
+  txt('Concluzie', mL, y, 12, navy, true);
+  y += 5;
+  y = txt(data.analysis.concluzie, mL, y, 9.5, gray, false, cW);
+  y += 6;
+  hLine(y); y += 8;
+
+  // ── PUNCTE FORTE & ZONE CRITICE ─────────────────
+  y = pageBreak(y, 50);
+
+  // Extract analysis fields via bracket notation to handle Romanian diacritics in keys
+  const puncteForta: string[] = (data.analysis as any)['puncteFort\u0103'] ?? [];
+  const recomandari: { titlu: string; descriere: string; prioritate: string }[] =
+    (data.analysis as any)['recomand\u0103ri'] ?? [];
+
+  // Two columns
+  const colW = (cW - 6) / 2;
+  const col2X = mL + colW + 6;
+  const colStartY = y;
+
+  // Left: Puncte forte
+  txt('\u2713 Puncte forte', mL, y, 11, green, true);
+  y += 5;
+  let yLeft = y;
+  for (const pf of puncteForta) {
+    fillRect(mL, yLeft, colW, 1, green);
+    yLeft += 3;
+    yLeft = txt(`\u2022 ${pf}`, mL, yLeft, 9, gray, false, colW);
+    yLeft += 3;
+  }
+
+  // Right: Zone critice
+  let yRight = colStartY;
+  txt('\u26a0 Zone critice', col2X, yRight, 11, amber, true);
+  yRight += 5;
+  for (const zc of data.analysis.zoneCritice) {
+    fillRect(col2X, yRight, colW, 1, amber);
+    yRight += 3;
+    yRight = txt(`\u2022 ${zc}`, col2X, yRight, 9, gray, false, colW);
+    yRight += 3;
+  }
+
+  y = Math.max(yLeft, yRight) + 6;
+  hLine(y); y += 8;
+
+  // ── RECOMANDARI ─────────────────────────────────
+  y = pageBreak(y, 20);
+  txt('Recomand\u0103ri prioritare', mL, y, 12, navy, true);
+  y += 8;
+
+  const priorityColor: Record<string, [number,number,number]> = {
+    '\u00cEnalt\u0103': red,
+    'Medie': amber,
+    'Sc\u0103zut\u0103': green,
+  };
+
+  for (let i = 0; i < recomandari.length; i++) {
+    const rec = recomandari[i];
+    y = pageBreak(y, 35);
+
+    // Number badge
+    fillRect(mL, y - 4, 7, 7, navy, 1);
+    doc.setFontSize(9);
+    doc.setTextColor(...white);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`${i + 1}`, mL + 3.5, y + 0.5, { align: 'center' });
+
+    // Priority badge
+    const pColor = priorityColor[rec.prioritate] ?? gray;
+    const pLabel = `\u25cf ${rec.prioritate}`;
+    doc.setFontSize(8);
+    doc.setTextColor(...pColor);
+    doc.setFont('helvetica', 'normal');
+    doc.text(pLabel, W - mR, y - 1, { align: 'right' });
+
+    // Title
+    const titleY = y;
+    y = txt(rec.titlu, mL + 9, titleY, 10.5, navy, true, cW - 9 - 30);
+    y += 2;
+
+    // Description — always wrap
+    y = txt(rec.descriere, mL + 9, y, 9, gray, false, cW - 9);
+    y += 8;
+  }
+
+  hLine(y); y += 8;
+
+  // ── CTA BOX ─────────────────────────────────────
+  y = pageBreak(y, 32);
+  fillRect(mL, y, cW, 30, light, 3);
+  y += 8;
+  txt('Vrei un plan personalizat de implementare?', mL + 6, y, 10.5, navy, true, cW - 12);
+  y += 7;
+  txt('Programeaz\u0103 o consulta\u021bie gratuit\u0103 de 30 de minute:', mL + 6, y, 9, gray, false, cW - 12);
+  y += 6;
+  doc.setFontSize(9);
+  doc.setTextColor(...blue);
+  doc.setFont('helvetica', 'normal');
+  doc.textWithLink('anadobre.com/servicii#formular', mL + 6, y, { url: 'https://anadobre.com/servicii#formular' });
   y += 12;
 
-  // ══════════════════════════════════════
-  // SCORUL
-  // ══════════════════════════════════════
-  const scorColor: [number, number, number] = scor <= 5 ? red : scor <= 10 ? amber : green;
-  const scorBgColor: [number, number, number] = scor <= 5 ? [252, 235, 235] : scor <= 10 ? amberBg : [225, 245, 238];
+  // ── FOOTER ──────────────────────────────────────
+  const fY = 289;
+  hLine(fY - 4);
+  doc.setFontSize(7.5);
+  doc.setTextColor(...gray);
+  doc.text('\u00a9 2026 Ana Dobre  \u00b7  anadobre.com  \u00b7  hello@anadobre.com', W / 2, fY, { align: 'center' });
 
-  doc.setFillColor(scorBgColor[0], scorBgColor[1], scorBgColor[2]);
-  doc.roundedRect(margin, y, contentWidth, 30, 3, 3, 'F');
-
-  addText(`Scorul t\u0103u: ${scor} din 16`, margin + 10, y + 12, 18, scorColor, 'bold');
-  addText(`Nivel: ${nivel}`, margin + 10, y + 22, 12, scorColor);
-
-  const barY = y + 26;
-  const barWidth = contentWidth - 20;
-  doc.setFillColor(230, 230, 230);
-  doc.roundedRect(margin + 10, barY - 6, barWidth, 4, 2, 2, 'F');
-  const fillWidth = (scor / 16) * barWidth;
-  doc.setFillColor(scorColor[0], scorColor[1], scorColor[2]);
-  doc.roundedRect(margin + 10, barY - 6, fillWidth, 4, 2, 2, 'F');
-
-  y += 38;
-
-  const nivelDescriptions: Record<string, string> = {
-    '\u00CEncep\u0103tor': 'Procesele tale de marketing \u0219i v\u00E2nz\u0103ri func\u021Bioneaz\u0103 predominant manual. Pierzi lead-uri \u0219i oportunit\u0103\u021Bi din cauza lipsei de structur\u0103 \u0219i automatizare. Vestea bun\u0103: poten\u021Bialul de \u00EEmbun\u0103t\u0103\u021Bire e enorm \u2014 chiar \u0219i c\u00E2teva automatiz\u0103ri de baz\u0103 pot schimba radical rata de conversie.',
-    'Intermediar': 'Ai un CRM \u0219i c\u00E2teva procese \u00EEn loc, dar automatiz\u0103rile nu lucreaz\u0103 ca un sistem integrat. Sunt puncte de pierdere \u00EEntre etapele parcursului clientului \u2014 lead-uri care se r\u0103cesc, follow-up-uri care nu se fac, date fragmentate. Cu optimiz\u0103ri targetate, po\u021Bi cre\u0219te semnificativ rata de conversie.',
-    'Avansat': 'Ai un sistem de automatizare func\u021Bional \u0219i integrat. Provocarea ta acum nu mai e implementarea de baz\u0103, ci optimizarea continu\u0103: A/B testing pe secven\u021Be, \u00EEmbun\u0103t\u0103\u021Birea segment\u0103rii, raportare avansat\u0103, \u0219i scalarea a ceea ce func\u021Bioneaz\u0103 deja.'
-  };
-
-  y = addWrappedText(nivelDescriptions[nivel] || '', margin, y, 10, textDark, contentWidth);
-  y += 10;
-
-  // ══════════════════════════════════════
-  // ANALIZA PE CATEGORII
-  // ══════════════════════════════════════
-  y = checkPageBreak(y, 40);
-  y = addWrappedText('Analiz\u0103 pe categorii', margin, y, 14, navy, contentWidth, 'bold');
-  y += 6;
-
-  const categories = [
-    {
-      name: 'Funda\u021Bie CRM & Timp de r\u0103spuns',
-      indices: [0, 1],
-      low: 'Ave\u021Bi oportunit\u0103\u021Bi semnificative de \u00EEmbun\u0103t\u0103\u021Bire \u00EEn configurarea CRM-ului \u0219i viteza de r\u0103spuns. Un CRM bine configurat \u0219i un timp de r\u0103spuns sub 2 ore pot cre\u0219te rata de conversie cu 15-25%.',
-      high: 'Funda\u021Bia CRM \u0219i procesul de r\u0103spuns sunt la un nivel bun. Urm\u0103torul pas: automatizarea complet\u0103 a primului r\u0103spuns pentru sub 5 minute.'
-    },
-    {
-      name: 'Nurturing & Follow-up',
-      indices: [2, 3],
-      low: 'Lead-urile care nu cump\u0103r\u0103 imediat sunt cel mai mare poten\u021Bial neexploatat. F\u0103r\u0103 secven\u021Be automate de nurturing, pierde\u021Bi \u00EEntre 30-50% din lead-urile care ar fi cump\u0103rat cu un follow-up structurat.',
-      high: 'Ave\u021Bi secven\u021Be de nurturing active \u2014 excelent. Urm\u0103torul pas: segmentarea secven\u021Belor pe baza comportamentului lead-ului.'
-    },
-    {
-      name: 'M\u0103surare & Raportare',
-      indices: [4, 5],
-      low: 'F\u0103r\u0103 vizibilitate pe rata de conversie \u0219i pe integrarea platformelor, optimizarea se face pe intui\u021Bie. Implementarea unui dashboard de monitorizare poate debloca decizii cu impact imediat.',
-      high: 'M\u0103sura\u021Bi \u0219i ave\u021Bi platforme integrate \u2014 sunte\u021Bi \u00EEntr-o pozi\u021Bie excelent\u0103 pentru optimizare bazat\u0103 pe date.'
-    },
-    {
-      name: 'Segmentare & Optimizare',
-      indices: [6, 7],
-      low: 'Segmentarea lead-urilor pe surse \u0219i optimizarea periodic\u0103 a automatiz\u0103rilor sunt ce diferen\u021Biaz\u0103 un sistem func\u021Bional de un sistem performant.',
-      high: 'Segmentarea \u0219i optimizarea sunt la un nivel matur. Urm\u0103torul pas: A/B testing sistematic pe secven\u021Be \u0219i raportare avansat\u0103 pe ROI per canal.'
-    }
-  ];
-
-  for (let i = 0; i < categories.length; i++) {
-    const cat = categories[i];
-    const catScore = cat.indices.reduce((sum, idx) => sum + (raspunsuri[idx] || 0), 0);
-
-    y = checkPageBreak(y, 35);
-
-    doc.setFontSize(11);
-    doc.setTextColor(amber[0], amber[1], amber[2]);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`0${i + 1}`, margin, y);
-
-    doc.setTextColor(navy[0], navy[1], navy[2]);
-    doc.text(`${cat.name}`, margin + 10, y);
-
-    doc.setTextColor(blue[0], blue[1], blue[2]);
-    doc.setFontSize(10);
-    doc.text(`${catScore} / 4`, pageWidth - margin - 15, y);
-
-    y += 5;
-    const description = catScore < 3 ? cat.low : cat.high;
-    y = addWrappedText(description, margin, y, 9, textMuted, contentWidth);
-    y += 6;
-  }
-
-  // ══════════════════════════════════════
-  // RECOMANDĂRI
-  // ══════════════════════════════════════
-  y = checkPageBreak(y, 50);
-  y += 4;
-  y = addWrappedText('Recomand\u0103ri concrete \u2014 urm\u0103torii pa\u0219i', margin, y, 14, navy, contentWidth, 'bold');
-  y += 6;
-
-  const recommendations: Record<string, string[]> = {
-    '\u00CEncep\u0103tor': [
-      'Configureaz\u0103 corect CRM-ul: pipeline de v\u00E2nz\u0103ri, c\u00E2mpuri custom pentru tipul de lead, sursa \u0219i stadiul.',
-      'Implementeaz\u0103 un email automat de r\u0103spuns la fiecare lead nou \u2014 sub 5 minute de la completarea formularului.',
-      'Creeaz\u0103 o secven\u021B\u0103 de 3-5 emailuri de nurturing pentru lead-urile care nu cump\u0103r\u0103 imediat.'
-    ],
-    'Intermediar': [
-      'Conecteaz\u0103 toate platformele (CRM, email, formulare, ads) \u00EEntr-un sistem integrat \u2014 n8n sau Zapier.',
-      'Implementeaz\u0103 follow-up automat pe ofertele trimise: la 48h, la 7 zile, la 14 zile.',
-      'Creeaz\u0103 un dashboard lunar cu KPI-uri: rata de conversie per etap\u0103, cost per lead, timp mediu de conversie.'
-    ],
-    'Avansat': [
-      'Implementeaz\u0103 A/B testing pe subiectele emailurilor \u0219i pe secven\u021Bele de nurturing.',
-      'Creeaz\u0103 raportare avansat\u0103 pe ROI per canal de achizi\u021Bie.',
-      'Automatizeaz\u0103 segmentarea dinamic\u0103 pe baza comportamentului (lead scoring).'
-    ]
-  };
-
-  const recs = recommendations[nivel] || recommendations['Intermediar'];
-  for (let i = 0; i < recs.length; i++) {
-    y = checkPageBreak(y, 20);
-    doc.setFontSize(11);
-    doc.setTextColor(amber[0], amber[1], amber[2]);
-    doc.setFont('helvetica', 'bold');
-    doc.text(`${i + 1}.`, margin, y);
-    y = addWrappedText(recs[i], margin + 8, y, 10, textDark, contentWidth - 8);
-    y += 4;
-  }
-
-  // ══════════════════════════════════════
-  // CTA BOX
-  // ══════════════════════════════════════
-  y = checkPageBreak(y, 40);
-  y += 6;
-
-  doc.setFillColor(bgLight[0], bgLight[1], bgLight[2]);
-  doc.roundedRect(margin, y, contentWidth, 35, 3, 3, 'F');
-
-  y += 10;
-  addText('Vrei s\u0103 discut\u0103m cum ar ar\u0103ta un plan personalizat?', margin + 10, y, 12, navy, 'bold');
-  y += 8;
-  addText('Programeaz\u0103 o consulta\u021Bie gratuit\u0103 de 30 de minute:', margin + 10, y, 10, textMuted);
-  y += 6;
-  doc.setFontSize(10);
-  doc.setTextColor(blue[0], blue[1], blue[2]);
-  doc.textWithLink('https://anadobre.com/servicii#formular', margin + 10, y, { url: 'https://anadobre.com/servicii#formular' });
-  y += 6;
-  addText('Email: hello@anadobre.com', margin + 10, y, 10, textMuted);
-
-  // ══════════════════════════════════════
-  // FOOTER
-  // ══════════════════════════════════════
-  const footerY = 285;
-  doc.setDrawColor(214, 230, 245);
-  doc.setLineWidth(0.3);
-  doc.line(margin, footerY - 5, pageWidth - margin, footerY - 5);
-  addText('\u00A9 2026 Ana Dobre  |  anadobre.com  |  Automatiz\u0103ri Marketing & V\u00E2nz\u0103ri', margin, footerY, 8, textMuted);
-
-  const pdfOutput = doc.output('datauristring');
-  return pdfOutput.split(',')[1];
+  return doc.output('datauristring').split(',')[1];
 }
