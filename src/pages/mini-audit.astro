@@ -263,7 +263,7 @@ import Footer from '../components/Footer.astro';
             </button>
           </form>
           <div id="audit-success" class="hidden mt-4 p-4 bg-success/10 text-success rounded-lg text-sm font-medium text-center">
-            ✓ Mulțumesc! Raportul vine în inbox în câteva minute.
+            ✓ Mulțumesc! Raportul personalizat îl vei primi pe email în 1-2 minute.
           </div>
         </div>
 
@@ -452,39 +452,18 @@ import Footer from '../components/Footer.astro';
     const nivel = (window as any).auditNivel;
     const raspunsuri = (window as any).auditRaspunsuri;
 
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Se trimit răspunsurile (durează 1-2 minute)...';
-    }
+    // Arată success imediat
+    auditForm!.classList.add('hidden');
     formMessage.textContent = '';
+    auditSuccess?.classList.remove('hidden');
 
-    try {
-      const res = await fetch('/api/mini-audit-submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prenume, email, companie, scor, nivel, raspunsuri }),
-      });
-      const contentType = res.headers.get('content-type') || '';
-      if (!contentType.includes('application/json')) {
-        throw new Error(`Server error (${res.status}) — încearcă din nou`);
-      }
-      const data = await res.json();
-      if (!data.success) throw new Error(data.error || 'Eroare server');
-
-      auditForm!.classList.add('hidden');
-      formMessage.textContent = '';
-      auditSuccess?.classList.remove('hidden');
-
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Eroare necunoscută';
-      console.error('Submit error:', msg);
-      formMessage.textContent = `A apărut o eroare: ${msg}. Încearcă din nou sau scrie-mi la hello@anadobre.com`;
-      formMessage.style.color = '#DC3535';
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Trimite-mi raportul →';
-      }
-
-    }
+    // Trimite request în fundal
+    fetch('/api/mini-audit-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prenume, email, companie, scor, nivel, raspunsuri }),
+    }).catch((err: unknown) => {
+      console.error('Submit error (background):', err);
+    });
   });
 </script>

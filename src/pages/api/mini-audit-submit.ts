@@ -115,7 +115,10 @@ Structura JSON cerută (DOAR JSON, fără alt text):
         model: 'claude-sonnet-4-6',
         max_tokens: 2048,
         system: SYSTEM_PROMPT,
-        messages: [{ role: 'user', content: userPrompt }],
+        messages: [
+          { role: 'user', content: userPrompt },
+          { role: 'assistant', content: '{' },
+        ],
       }),
     });
 
@@ -125,10 +128,16 @@ Structura JSON cerută (DOAR JSON, fără alt text):
     }
 
     const claudeData = await claudeRes.json() as { content: { type: string; text: string }[] };
-    const rawText = claudeData.content[0]?.text ?? '';
-    const jsonMatch = rawText.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) throw new Error('Format răspuns Claude invalid');
-    const analysis = JSON.parse(jsonMatch[0]);
+    const rawText = '{' + (claudeData.content[0]?.text ?? '');
+    let analysis;
+    try {
+      analysis = JSON.parse(rawText);
+    } catch {
+      // Fallback: extract largest JSON object
+      const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) throw new Error('Format răspuns Claude invalid');
+      analysis = JSON.parse(jsonMatch[0]);
+    }
 
     // ── 2. Trimite emailul cu analiza ───────────────
     await sendReport({ prenume, email, companie, scor, nivel, analysis, apiKey: RESEND_API_KEY });
