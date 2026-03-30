@@ -255,6 +255,69 @@ import Footer from '../components/Footer.astro';
               placeholder="Numele companiei"
               class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors bg-white"
             />
+            <input
+              type="text"
+              name="industrie"
+              placeholder="Industria (ex: IT, consultanță, producție...)"
+              class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors bg-white"
+            />
+
+            <!-- Tip business -->
+            <div>
+              <p class="text-sm font-medium text-text-primary mb-2">Tipul businessului</p>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="radio" name="tip_business" value="B2B" class="accent-accent" />
+                  B2B
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="radio" name="tip_business" value="B2C" class="accent-accent" />
+                  B2C
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="radio" name="tip_business" value="B2B2C" class="accent-accent" />
+                  B2B2C
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="radio" name="tip_business" value="Marketplace" class="accent-accent" />
+                  Marketplace
+                </label>
+              </div>
+            </div>
+
+            <!-- Tool-uri automatizare -->
+            <div>
+              <p class="text-sm font-medium text-text-primary mb-2">Tool-uri de automatizare folosite</p>
+              <div class="grid grid-cols-2 gap-2 mb-2">
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="checkbox" name="tooluri" value="ActiveCampaign" class="accent-accent" />
+                  ActiveCampaign
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="checkbox" name="tooluri" value="HubSpot" class="accent-accent" />
+                  HubSpot
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="checkbox" name="tooluri" value="Zapier" class="accent-accent" />
+                  Zapier
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="checkbox" name="tooluri" value="Brevo" class="accent-accent" />
+                  Brevo
+                </label>
+                <label class="flex items-center gap-2 px-4 py-3 border border-border rounded-lg bg-white cursor-pointer hover:border-primary-light transition-colors text-sm">
+                  <input type="checkbox" name="tooluri" value="Mailchimp" class="accent-accent" />
+                  Mailchimp
+                </label>
+              </div>
+              <input
+                type="text"
+                name="tooluri_altele"
+                placeholder="Altele (ex: Make, n8n, Pipedrive...)"
+                class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors bg-white"
+              />
+            </div>
+
             <button
               type="submit"
               class="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-md"
@@ -441,6 +504,13 @@ import Footer from '../components/Footer.astro';
     const prenume = (formData.get('prenume') as string)?.trim();
     const email   = (formData.get('email')   as string)?.trim();
     const companie = (formData.get('companie') as string)?.trim() || 'Compania mea';
+    const industrie = (formData.get('industrie') as string)?.trim() || '';
+    const tip_business = (formData.get('tip_business') as string) || '';
+    const tooluri_selectate = formData.getAll('tooluri') as string[];
+    const tooluri_altele = (formData.get('tooluri_altele') as string)?.trim() || '';
+    const tooluri = tooluri_altele
+      ? [...tooluri_selectate, tooluri_altele]
+      : tooluri_selectate;
 
     if (!prenume || !email) {
       formMessage.textContent = 'Te rog completează prenumele și emailul.';
@@ -461,7 +531,7 @@ import Footer from '../components/Footer.astro';
     fetch('https://n8n.altia.work/webhook-test/c78cc78c-c5b9-4469-bf39-6bab3b130c1e', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prenume, email, companie, scor, nivel, raspunsuri }),
+      body: JSON.stringify({ prenume, email, companie, industrie, tip_business, tooluri, scor, nivel, raspunsuri }),
     }).then(async (res) => {
       const ct = res.headers.get('content-type') || '';
       const body = ct.includes('application/json') ? await res.json() : await res.text();
