@@ -12,8 +12,9 @@ export default {
         'primary-hover':   '#023D8A',   // alias hover
 
         // CTA / interactive
-        'accent':          '#0249A5',   // butoane CTA principale
-        'accent-hover':    '#023D8A',   // hover pe butoane CTA
+        'accent':          '#E8593C',   // butoane CTA principale (coral)
+        'accent-hover':    '#D04A2E',   // hover pe butoane CTA
+        'accent-blue':     '#0249A5',   // albastru accent secundar
 
         // Backgrounds
         'bg-secondary':    '#EEF4FA',   // fundal secțiuni alternate

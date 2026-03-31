@@ -60,7 +60,7 @@ const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date
                 <time class="text-xs text-text-tertiary">
                   {new Date(post.data.date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </time>
-                <span class="text-sm font-medium text-primary-light group-hover:text-primary transition-colors">Citește →</span>
+                <span class="text-sm font-medium text-accent group-hover:text-accent-hover transition-colors">Citește →</span>
               </div>
             </div>
           </a>
@@ -88,7 +88,7 @@ const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date
         />
         <button
           type="submit"
-          class="bg-primary hover:bg-primary-light text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap"
+          class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px whitespace-nowrap"
         >
           Abonează-te
         </button>
