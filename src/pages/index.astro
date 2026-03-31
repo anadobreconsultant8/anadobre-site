@@ -333,7 +333,13 @@ const blogPosts = [
             <div class="flex items-start gap-2">
               <input type="checkbox" id="newsletter-gdpr" name="gdpr" required class="mt-0.5 h-4 w-4 rounded border-border text-primary flex-shrink-0" />
               <label for="newsletter-gdpr" class="text-xs text-text-secondary leading-relaxed">
-                Sunt de acord cu prelucrarea datelor personale conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. *
+                Sunt de acord cu prelucrarea datelor personale conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. <span class="text-text-tertiary">*</span>
+              </label>
+            </div>
+            <div class="flex items-start gap-2">
+              <input type="checkbox" id="newsletter-marketing" name="marketing" class="mt-0.5 h-4 w-4 rounded border-border text-primary flex-shrink-0" />
+              <label for="newsletter-marketing" class="text-xs text-text-secondary leading-relaxed">
+                Sunt de acord să primesc emailuri de la Ana Dobre cu resurse, studii de caz, insights despre marketing automation și informații despre servicii și oferte disponibile. Mă pot dezabona oricând.
               </label>
             </div>
             <button
@@ -474,10 +480,16 @@ const blogPosts = [
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form!);
+    const payload: Record<string, string> = {};
+    data.forEach((value, key) => {
+      if (key !== 'gdpr' && key !== 'marketing') payload[key] = value as string;
+    });
+    payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
+    payload['marketing'] = data.has('marketing') ? 'on' : 'off';
     try {
       const res = await fetch('/api/newsletter-subscribe', {
         method: 'POST',
-        body: JSON.stringify(Object.fromEntries(data)),
+        body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' },
       });
       if (res.ok) {

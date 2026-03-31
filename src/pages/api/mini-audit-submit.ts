@@ -43,7 +43,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     if (!RESEND_API_KEY)    throw new Error('Resend API key not configured');
     if (!ANTHROPIC_API_KEY) throw new Error('Anthropic API key not configured');
 
-    const { prenume, email, companie, scor, nivel, raspunsuri } = await request.json();
+    const { prenume, email, companie, scor, nivel, raspunsuri, marketing } = await request.json();
 
     if (!prenume || !email || scor === undefined || !nivel || !raspunsuri) {
       return new Response(JSON.stringify({ error: 'Câmpuri lipsă' }), {
@@ -146,7 +146,7 @@ Structura JSON cerută (DOAR JSON, fără alt text):
 
     // ── 3. Sync ActiveCampaign (non-blocking) ───────
     if (AC_API_URL && AC_API_KEY) {
-      createACContact({ prenume, email, companie, scor, nivel, apiUrl: AC_API_URL, apiKey: AC_API_KEY })
+      createACContact({ prenume, email, companie, scor, nivel, marketing, apiUrl: AC_API_URL, apiKey: AC_API_KEY })
         .catch((e: unknown) => console.error('AC sync error (non-fatal):', e));
     }
 

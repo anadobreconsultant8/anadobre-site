@@ -77,7 +77,13 @@ import Footer from '../components/Footer.astro';
             <div class="flex items-start gap-2.5">
               <input type="checkbox" id="ebook-gdpr" name="gdpr" required class="mt-0.5 h-4 w-4 rounded border-border text-accent focus:ring-accent flex-shrink-0" />
               <label for="ebook-gdpr" class="text-xs text-text-secondary leading-relaxed">
-                Sunt de acord să primesc emailuri de la Ana Dobre cu resurse, studii de caz, insights despre marketing automation și informații despre servicii și oferte disponibile. Mă pot dezabona oricând. <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politica de Confidențialitate</a> *
+                Sunt de acord cu prelucrarea datelor personale conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. <span class="text-text-tertiary">*</span>
+              </label>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <input type="checkbox" id="ebook-marketing" name="marketing" class="mt-0.5 h-4 w-4 rounded border-border text-accent focus:ring-accent flex-shrink-0" />
+              <label for="ebook-marketing" class="text-xs text-text-secondary leading-relaxed">
+                Sunt de acord să primesc emailuri de la Ana Dobre cu resurse, studii de caz, insights despre marketing automation și informații despre servicii și oferte disponibile. Mă pot dezabona oricând.
               </label>
             </div>
             <button
@@ -124,7 +130,13 @@ import Footer from '../components/Footer.astro';
             <div class="flex items-start gap-2.5">
               <input type="checkbox" id="checklist-gdpr" name="gdpr" required class="mt-0.5 h-4 w-4 rounded border-border text-accent focus:ring-accent flex-shrink-0" />
               <label for="checklist-gdpr" class="text-xs text-text-secondary leading-relaxed">
-                Sunt de acord să primesc emailuri de la Ana Dobre cu resurse, studii de caz, insights despre marketing automation și informații despre servicii și oferte disponibile. Mă pot dezabona oricând. <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politica de Confidențialitate</a> *
+                Sunt de acord cu prelucrarea datelor personale conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. <span class="text-text-tertiary">*</span>
+              </label>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <input type="checkbox" id="checklist-marketing" name="marketing" class="mt-0.5 h-4 w-4 rounded border-border text-accent focus:ring-accent flex-shrink-0" />
+              <label for="checklist-marketing" class="text-xs text-text-secondary leading-relaxed">
+                Sunt de acord să primesc emailuri de la Ana Dobre cu resurse, studii de caz, insights despre marketing automation și informații despre servicii și oferte disponibile. Mă pot dezabona oricând.
               </label>
             </div>
             <button
@@ -170,9 +182,10 @@ import Footer from '../components/Footer.astro';
       const data = new FormData(form!);
       const payload: Record<string, string> = {};
       data.forEach((value, key) => {
-        if (key !== 'gdpr') payload[key] = value as string;
+        if (key !== 'gdpr' && key !== 'marketing') payload[key] = value as string;
       });
       payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
+      payload['marketing'] = data.has('marketing') ? 'on' : 'off';
       try {
         await fetch(endpoint, {
           method: 'POST',

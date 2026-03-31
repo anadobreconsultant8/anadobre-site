@@ -6,6 +6,7 @@ interface ACContactData {
   nivel: string;
   apiUrl: string;
   apiKey: string;
+  marketing?: string;
 }
 
 export async function createACContact(data: ACContactData) {
@@ -77,8 +78,22 @@ export async function createACContact(data: ACContactData) {
     }),
   });
 
-  // 4. Aplică tag-uri: mini-audit + tag nivel
+  // 3b. Setează câmpul Consimțământ Marketing (field 25) dacă există
+  if (data.marketing === 'on' || data.marketing === 'true') {
+    await fetch(`${AC_API_URL}/api/3/fieldValues`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        fieldValue: { contact: contactId, field: '25', value: 'da' },
+      }),
+    });
+  }
+
+  // 4. Aplică tag-uri: mini-audit + tag nivel + acord-marketing
   const tagNames = ['mini-audit'];
+  if (data.marketing === 'on' || data.marketing === 'true') {
+    tagNames.push('acord-marketing');
+  }
   if (data.nivel === '\u00CEncep\u0103tor') {
     tagNames.push('audit-beginner');
   } else if (data.nivel === 'Intermediar') {

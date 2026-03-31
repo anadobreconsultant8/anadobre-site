@@ -11,7 +11,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
       throw new Error('ActiveCampaign credentials not configured');
     }
 
-    const { prenume, email, gdpr } = await request.json();
+    const { prenume, email, marketing } = await request.json();
 
     if (!prenume || !email) {
       return new Response(JSON.stringify({ error: 'Câmpuri lipsă' }), {
@@ -47,7 +47,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
 
     // 3. Setează câmpul Consimțământ Marketing (field 25) dacă există bifa
-    if (gdpr === 'on' || gdpr === true || gdpr === 'true') {
+    if (marketing === 'on' || marketing === true || marketing === 'true') {
       await fetch(`${AC_API_URL}/api/3/fieldValues`, {
         method: 'POST',
         headers,
@@ -66,33 +66,39 @@ export const POST: APIRoute = async ({ request, locals }) => {
       }),
     });
 
-    // 5. Aplică tag lead-magnet-checklist-pierdere-leaduri
-    const tagName = 'lead-magnet-checklist-pierdere-leaduri';
-    const searchRes = await fetch(
-      `${AC_API_URL}/api/3/tags?search=${encodeURIComponent(tagName)}`,
-      { headers }
-    );
-    const searchJson = await searchRes.json() as { tags?: { id: string }[] };
-
-    let tagId: string = '';
-    if (searchJson.tags && searchJson.tags.length > 0) {
-      tagId = searchJson.tags[0].id;
-    } else {
-      const createTagRes = await fetch(`${AC_API_URL}/api/3/tags`, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ tag: { tag: tagName, tagType: 'contact' } }),
-      });
-      const createTagJson = await createTagRes.json() as { tag?: { id: string } };
-      tagId = createTagJson.tag?.id ?? '';
+    // 5. Aplică tag-uri
+    const tagNames = ['lead-magnet-checklist-pierdere-leaduri'];
+    if (marketing === 'on' || marketing === true || marketing === 'true') {
+      tagNames.push('acord-marketing');
     }
 
-    if (tagId) {
-      await fetch(`${AC_API_URL}/api/3/contactTags`, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ contactTag: { contact: contactId, tag: tagId } }),
-      });
+    for (const tagName of tagNames) {
+      const searchRes = await fetch(
+        `${AC_API_URL}/api/3/tags?search=${encodeURIComponent(tagName)}`,
+        { headers }
+      );
+      const searchJson = await searchRes.json() as { tags?: { id: string }[] };
+
+      let tagId: string = '';
+      if (searchJson.tags && searchJson.tags.length > 0) {
+        tagId = searchJson.tags[0].id;
+      } else {
+        const createTagRes = await fetch(`${AC_API_URL}/api/3/tags`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ tag: { tag: tagName, tagType: 'contact' } }),
+        });
+        const createTagJson = await createTagRes.json() as { tag?: { id: string } };
+        tagId = createTagJson.tag?.id ?? '';
+      }
+
+      if (tagId) {
+        await fetch(`${AC_API_URL}/api/3/contactTags`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ contactTag: { contact: contactId, tag: tagId } }),
+        });
+      }
     }
 
     return new Response(JSON.stringify({ success: true }), {

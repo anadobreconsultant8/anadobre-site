@@ -78,17 +78,23 @@ const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date
       <p class="text-text-secondary mb-6">
         O dată la 2 săptămâni: strategii de automatizare, studii de caz, recomandări testate. Zero spam.
       </p>
-      <form id="blog-newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <form id="blog-newsletter-form" class="flex flex-col gap-3 max-w-md mx-auto">
         <input
           type="email"
           name="email"
           placeholder="Adresa ta de email"
           required
-          class="flex-1 px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
+          class="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:border-primary-light focus:ring-1 focus:ring-primary-light transition-colors"
         />
+        <div class="flex items-start gap-2 text-left">
+          <input type="checkbox" id="blog-gdpr" name="gdpr" required class="mt-0.5 h-4 w-4 rounded border-border text-accent focus:ring-accent flex-shrink-0" />
+          <label for="blog-gdpr" class="text-xs text-text-secondary leading-relaxed">
+            Sunt de acord cu prelucrarea datelor personale conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. <span class="text-text-tertiary">*</span>
+          </label>
+        </div>
         <button
           type="submit"
-          class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px whitespace-nowrap"
+          class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px"
         >
           Abonează-te
         </button>
@@ -108,10 +114,16 @@ const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form!);
+    const payload: Record<string, string> = {};
+    data.forEach((value, key) => {
+      if (key !== 'gdpr' && key !== 'marketing') payload[key] = value as string;
+    });
+    payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
+    payload['marketing'] = data.has('marketing') ? 'on' : 'off';
     try {
       await fetch('/api/newsletter-subscribe', {
         method: 'POST',
-        body: JSON.stringify(Object.fromEntries(data)),
+        body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' },
       });
     } catch { /* silent */ }
