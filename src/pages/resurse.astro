@@ -146,8 +146,9 @@ import Footer from '../components/Footer.astro';
               Descarcă checklist-ul
             </button>
           </form>
-          <div id="checklist-success" class="hidden mt-3 p-3 bg-success/10 text-success rounded-lg text-sm font-medium text-center">
-            ✓ Verifică-ți inbox-ul!
+          <div id="checklist-success" class="hidden mt-3 p-4 bg-success/10 text-success rounded-lg text-sm font-medium text-center space-y-1">
+            <div class="text-base font-bold">Felicitări! Checklistul e pe drum 🎉</div>
+            <div class="text-success/80">Verifică-ți inbox-ul — ar trebui să primești un email în câteva minute.</div>
           </div>
         </div>
 
@@ -177,15 +178,37 @@ import Footer from '../components/Footer.astro';
   function setupLeadForm(formId: string, successId: string, endpoint: string) {
     const form = document.getElementById(formId) as HTMLFormElement | null;
     const success = document.getElementById(successId);
-    form?.addEventListener('submit', async (e) => {
+    if (!form || !success) return;
+
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const originalBtnText = btn?.textContent ?? '';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const data = new FormData(form!);
+
+      // Validare manuală GDPR
+      const gdprCheckbox = form.querySelector('[name="gdpr"]') as HTMLInputElement | null;
+      if (gdprCheckbox && !gdprCheckbox.checked) {
+        gdprCheckbox.setCustomValidity('Bifează acordul pentru prelucrarea datelor.');
+        gdprCheckbox.reportValidity();
+        return;
+      }
+      if (gdprCheckbox) gdprCheckbox.setCustomValidity('');
+
+      // Loading state
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Se trimite...';
+      }
+
+      const data = new FormData(form);
       const payload: Record<string, string> = {};
       data.forEach((value, key) => {
         if (key !== 'gdpr' && key !== 'marketing') payload[key] = value as string;
       });
       payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
       payload['marketing'] = data.has('marketing') ? 'on' : 'off';
+
       try {
         await fetch(endpoint, {
           method: 'POST',
@@ -193,12 +216,14 @@ import Footer from '../components/Footer.astro';
           headers: { 'Content-Type': 'application/json' },
         });
       } catch {
-        // silent — arată success oricum
+        // continuă spre success oricum
       }
-      form!.classList.add('hidden');
-      success?.classList.remove('hidden');
+
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
     });
   }
+
   setupLeadForm('ebook-form', 'ebook-success', '/api/newsletter-subscribe');
   setupLeadForm('checklist-form', 'checklist-success', '/api/checklist-subscribe');
 </script>
