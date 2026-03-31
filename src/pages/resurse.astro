@@ -162,25 +162,30 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <script>
-  function setupLeadForm(formId: string, successId: string) {
+  function setupLeadForm(formId: string, successId: string, endpoint: string) {
     const form = document.getElementById(formId) as HTMLFormElement | null;
     const success = document.getElementById(successId);
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form!);
+      const payload: Record<string, string> = {};
+      data.forEach((value, key) => {
+        if (key !== 'gdpr') payload[key] = value as string;
+      });
+      payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
       try {
-        await fetch('/api/newsletter-subscribe', {
+        await fetch(endpoint, {
           method: 'POST',
-          body: JSON.stringify(Object.fromEntries(data)),
+          body: JSON.stringify(payload),
           headers: { 'Content-Type': 'application/json' },
         });
       } catch {
-        // silent
+        // silent — arată success oricum
       }
       form!.classList.add('hidden');
       success?.classList.remove('hidden');
     });
   }
-  setupLeadForm('ebook-form', 'ebook-success');
-  setupLeadForm('checklist-form', 'checklist-success');
+  setupLeadForm('ebook-form', 'ebook-success', '/api/newsletter-subscribe');
+  setupLeadForm('checklist-form', 'checklist-success', '/api/checklist-subscribe');
 </script>
