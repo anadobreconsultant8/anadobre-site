@@ -4,8 +4,9 @@ interface Props {
   description: string;
   ogImage?: string;
   canonical?: string;
+  noindex?: boolean;
 }
-const { title, description, ogImage = '/og-default.jpg', canonical } = Astro.props;
+const { title, description, ogImage = '/og-default.jpg', canonical, noindex = false } = Astro.props;
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || 'https://anadobre.com').toString();
 ---
 <!DOCTYPE html>
@@ -16,6 +17,7 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || 'htt
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Confirmare abonare — Ana Dobre"
+  description="Confirmare abonare newsletter Ana Dobre"
+  noindex={true}
+>
+  <Navbar />
+
+  <section class="py-24 md:py-32 bg-white min-h-[70vh] flex items-center">
+    <div class="max-w-xl mx-auto px-6 text-center">
+
+      <div class="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-primary mb-4">
+        Ești abonat!
+      </h1>
+      <p class="text-lg text-text-secondary leading-relaxed mb-8">
+        De acum vei primi resurse, studii de caz și insights despre marketing automation direct în inbox. O dată la 2 săptămâni — fără spam.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/blog" class="bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-md">
+          Citește articolele →
+        </a>
+        <a href="/" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-lg transition-all">
+          Înapoi acasă
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
