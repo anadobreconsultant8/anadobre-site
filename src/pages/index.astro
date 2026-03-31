@@ -91,7 +91,7 @@ const blogPosts = [
             body: 'Ai fluxuri active, dar fiecare funcționează izolat. CRM-ul nu e integrat cu formularele, emailurile nu se adaptează la stadiul lead-ului, iar datele sunt fragmentate în mai multe platforme.',
           },
           {
-            title: 'Optimizezi pe intuiție, nu pe date.',
+            title: 'Optimizezi pe intuiție, mai puțin pe date.',
             body: 'Nu ai vizibilitate clară pe ce funcționează și ce nu. Deciziile de marketing se iau pe baza sentimentului, nu pe baza unui sistem care îți arată exact unde pierzi și unde câștigi.',
           },
         ].map(card => (
@@ -127,7 +127,7 @@ const blogPosts = [
           },
           {
             num: '03',
-            title: 'Decizii bazate pe date, nu pe presupuneri',
+            title: 'Decizii bazate pe date',
             body: 'Implementez raportare și KPI-uri care arată exact unde merge bine și unde trebuie intervenit.',
           },
           {
@@ -136,7 +136,7 @@ const blogPosts = [
             body: 'Lucrez ca extensie a echipei tale: audit, strategie, implementare, optimizare continuă.',
           },
         ].map(item => (
-          <div class="flex gap-6 p-6 rounded-xl hover:bg-bg-secondary transition-colors">
+          <div class="flex gap-6 p-6 rounded-xl hover:bg-bg-secondary transition-colors border-l-2 border-transparent hover:border-accent">
             <span class="font-display text-4xl font-bold text-bg-tertiary flex-shrink-0 leading-none mt-1 select-none">{item.num}</span>
             <div>
               <h3 class="font-sans text-lg font-semibold text-primary mb-2">{item.title}</h3>
@@ -172,8 +172,8 @@ const blogPosts = [
             body: 'Lunar, analizăm rezultatele și ajustăm. La fiecare trimestru, evaluare strategică completă. Sistemul evoluează odată cu business-ul tău.',
           },
         ].map(step => (
-          <div class="bg-white rounded-xl p-8 border border-border">
-            <div class="font-display text-5xl font-bold text-accent-warm/30 mb-4 leading-none select-none">{step.num}</div>
+          <div class="bg-white rounded-xl p-8 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div class="font-display text-5xl font-bold text-accent/20 mb-4 leading-none select-none">{step.num}</div>
             <h3 class="font-sans text-xl font-semibold text-primary mb-3">{step.title}</h3>
             <p class="text-text-secondary leading-relaxed">{step.body}</p>
           </div>
@@ -193,86 +193,104 @@ const blogPosts = [
       <h2 class="font-display text-3xl md:text-4xl font-semibold text-primary text-center mb-12">
         Ce spun companiile cu care am lucrat
       </h2>
-      <div class="grid md:grid-cols-3 gap-8">
 
-        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-            "Lucrăm împreună cu Ana de peste 4 ani, timp în care am abordat cam toate modalitățile de promovare online. Profesionalismul abordării și competențele mereu actualizate ne-au adus poziționare și vizibilitate online traduse în creșterea vânzărilor."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <img src="/iulian-dinica-docsys.jpeg" alt="Iulian Dinică" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
-            <div>
-              <div class="font-semibold text-sm text-primary">Iulian Dinică</div>
-              <div class="text-xs text-text-tertiary">Managing Partner, Document Imaging Systems</div>
+      <!-- Carousel wrapper -->
+      <div class="relative">
+        <div id="testimonials-track" class="overflow-hidden">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide grid md:grid-cols-3 gap-8">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+              <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+                "Lucrăm împreună cu Ana de peste 4 ani, timp în care am abordat cam toate modalitățile de promovare online. Profesionalismul abordării și competențele mereu actualizate ne-au adus poziționare și vizibilitate online traduse în creșterea vânzărilor."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <img src="/iulian-dinica-docsys.jpeg" alt="Iulian Dinică" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+                <div>
+                  <div class="font-semibold text-sm text-primary">Iulian Dinică</div>
+                  <div class="text-xs text-text-tertiary">Managing Partner, Document Imaging Systems</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+              <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+                "Am admirat la Ana capacitatea de a înțelege și pune în practică nu doar aspectele tehnice ale comunicării în mediul online, dar și nevoile strategice ale unui brand. O recomand oricărui business care are nevoie de suport profesionist în creșterea brandurilor."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <img src="/mona-ursu-bf.jpeg" alt="Mona Ursu" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+                <div>
+                  <div class="font-semibold text-sm text-primary">Mona Ursu</div>
+                  <div class="text-xs text-text-tertiary">Founder & CEO, Brandfusion</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+              <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+                "Am apreciat profesionalismul ei și abordarea pragmatică. Lucrurile s-au întâmplat repede și cu rezultate foarte bune. O recomand antreprenorilor care doresc vizibilitate în manieră eficientă, într-un spațiu de colaborare sigur și profesionist."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <img src="/manuela-ciugudean.jpeg" alt="Manuela Ciugudean" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+                <div>
+                  <div class="font-semibold text-sm text-primary">Manuela Ciugudean</div>
+                  <div class="text-xs text-text-tertiary">Coach & Personal Brand Strategist</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide grid md:grid-cols-3 gap-8 hidden">
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+              <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+                "Când am cunoscut-o pe Ana știam că ne dorim să creștem vizibilitatea brandului nostru de angajator în mediul online, însă nu știam cum să facem acest lucru cât mai eficient. Ana a venit cu un portofoliu de opțiuni, ne-a ajutat să le adaptăm brandului nostru și ne-a fost alături în crearea unei strategii sustenabile pentru digital marketing. O recomand din toată inima, nu doar pentru abilitățile și cunoștințele pe care le are, ci și pentru atitudinea ei orientată spre rezultate și răbdarea de care a dat dovadă."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <img src="/monica-moldovean.jpeg" alt="Monica Moldovean" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+                <div>
+                  <div class="font-semibold text-sm text-primary">Monica Moldovean</div>
+                  <div class="text-xs text-text-tertiary">ex Program Manager Communication, Employer Branding & Employee Engagement, Genpact</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+              <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+                "Cât timp am colaborat, m-am bucurat de profesionalismul și promptitudinea pe care o căutăm cu toții zi de zi, de idei de creare a strategiei companiei pe care o reprezint chiar și în ziua de azi. Cu ajutorul Anei, am reușit să găsim canalul de promovare potrivit și adaptat profilului companiei. Am primit și simțit empatie, dedicare și profesionalism din partea ta."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <img src="/sorina-netu.jpeg" alt="Sorina Nețu" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+                <div>
+                  <div class="font-semibold text-sm text-primary">Sorina Nețu</div>
+                  <div class="text-xs text-text-tertiary">Marketing Director, Briaris IND SA</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+              <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+                "Am apelat la Ana mulțumită unei recomandări și a reușit în ședințele pe care le-am făcut să învețe întreaga echipă să înțeleagă bazele și să lucreze pe partea de SEO. Ana ne-a învățat „să pescuim" — am făcut un training, ne-a răspuns la toate întrebările, am lucrat exemple practice împreună și am făcut un plan de acțiune. Atitudinea ei pozitivă și pragmatismul ajută foarte mult, așa că aș recomanda-o oricând."
+              </blockquote>
+              <div class="flex items-center gap-3">
+                <img src="/anda-stan.jpeg" alt="Anda Stan" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+                <div>
+                  <div class="font-semibold text-sm text-primary">Anda Stan</div>
+                  <div class="text-xs text-text-tertiary">Owner, TravelShip.ro</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-            "Am admirat la Ana capacitatea de a înțelege și pune în practică nu doar aspectele tehnice ale comunicării în mediul online, dar și nevoile strategice ale unui brand. O recomand oricărui business care are nevoie de suport profesionist în creșterea brandurilor."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <img src="/mona-ursu-bf.jpeg" alt="Mona Ursu" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
-            <div>
-              <div class="font-semibold text-sm text-primary">Mona Ursu</div>
-              <div class="text-xs text-text-tertiary">Founder & CEO, Brandfusion</div>
-            </div>
+        <!-- Navigation -->
+        <div class="flex items-center justify-center gap-6 mt-10">
+          <button id="t-prev" class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-text-tertiary hover:border-primary hover:text-primary transition-colors disabled:opacity-30 disabled:cursor-not-allowed" aria-label="Anterior" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="flex gap-2">
+            <button class="t-dot w-2.5 h-2.5 rounded-full bg-primary transition-colors" data-index="0" aria-label="Slide 1"></button>
+            <button class="t-dot w-2.5 h-2.5 rounded-full bg-border transition-colors" data-index="1" aria-label="Slide 2"></button>
           </div>
+          <button id="t-next" class="w-10 h-10 rounded-full border border-border flex items-center justify-center text-text-tertiary hover:border-primary hover:text-primary transition-colors" aria-label="Următor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
         </div>
-
-        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-            "Am apreciat profesionalismul ei și abordarea pragmatică. Lucrurile s-au întâmplat repede și cu rezultate foarte bune. O recomand antreprenorilor care doresc vizibilitate în manieră eficientă, într-un spațiu de colaborare sigur și profesionist."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <img src="/manuela-ciugudean.jpeg" alt="Manuela Ciugudean" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
-            <div>
-              <div class="font-semibold text-sm text-primary">Manuela Ciugudean</div>
-              <div class="text-xs text-text-tertiary">Coach & Personal Brand Strategist</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-            "Când am cunoscut-o pe Ana știam că ne dorim să creștem vizibilitatea brandului nostru de angajator în mediul online, însă nu știam cum să facem acest lucru cât mai eficient. Ana a venit cu un portofoliu de opțiuni, ne-a ajutat să le adaptăm brandului nostru și ne-a fost alături în crearea unei strategii sustenabile pentru digital marketing. O recomand din toată inima, nu doar pentru abilitățile și cunoștințele pe care le are, ci și pentru atitudinea ei orientată spre rezultate și răbdarea de care a dat dovadă."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <img src="/monica-moldovean.jpeg" alt="Monica Moldovean" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
-            <div>
-              <div class="font-semibold text-sm text-primary">Monica Moldovean</div>
-              <div class="text-xs text-text-tertiary">ex Program Manager Communication, Employer Branding & Employee Engagement, Genpact</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-            "Cât timp am colaborat, m-am bucurat de profesionalismul și promptitudinea pe care o căutăm cu toții zi de zi, de idei de creare a strategiei companiei pe care o reprezint chiar și în ziua de azi. Cu ajutorul Anei, am reușit să găsim canalul de promovare potrivit și adaptat profilului companiei. Am primit și simțit empatie, dedicare și profesionalism din partea ta."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <img src="/sorina-netu.jpeg" alt="Sorina Nețu" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
-            <div>
-              <div class="font-semibold text-sm text-primary">Sorina Nețu</div>
-              <div class="text-xs text-text-tertiary">Marketing Director, Briaris IND SA</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-            "Am apelat la Ana mulțumită unei recomandări și a reușit în ședințele pe care le-am făcut să învețe întreaga echipă să înțeleagă bazele și să lucreze pe partea de SEO. Ana ne-a învățat „să pescuim" — am făcut un training, ne-a răspuns la toate întrebările, am lucrat exemple practice împreună și am făcut un plan de acțiune. Atitudinea ei pozitivă și pragmatismul ajută foarte mult, așa că aș recomanda-o oricând."
-          </blockquote>
-          <div class="flex items-center gap-3">
-            <img src="/anda-stan.jpeg" alt="Anda Stan" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
-            <div>
-              <div class="font-semibold text-sm text-primary">Anda Stan</div>
-              <div class="text-xs text-text-tertiary">Owner, TravelShip.ro</div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -295,7 +313,7 @@ const blogPosts = [
         <div class="bg-white rounded-xl p-8 border border-border">
           <h3 class="font-sans text-xl font-semibold text-primary mb-4">Strategii de automatizare, direct în inbox.</h3>
           <p class="text-text-secondary leading-relaxed mb-6">
-            O dată la 2 săptămâni: studii de caz, greșeli frecvente, recomandări testate în piață. Conținut pentru cei care vor sisteme mai bune.
+            O dată la 2 săptămâni: studii de caz, greșeli frecvente, recomandări testate în piață. Conținut pentru cei care vor sisteme mai bune de marketing și vânzări.
           </p>
           <form id="newsletter-form" class="space-y-3">
             <input
@@ -428,6 +446,29 @@ const blogPosts = [
 </script>
 
 <script>
+  // Testimonials carousel
+  const slides = document.querySelectorAll<HTMLElement>('.testimonial-slide');
+  const dots = document.querySelectorAll<HTMLButtonElement>('.t-dot');
+  const prevBtn = document.getElementById('t-prev') as HTMLButtonElement | null;
+  const nextBtn = document.getElementById('t-next') as HTMLButtonElement | null;
+  let current = 0;
+
+  function goTo(index: number) {
+    slides[current].classList.add('hidden');
+    dots[current].classList.remove('bg-primary');
+    dots[current].classList.add('bg-border');
+    current = index;
+    slides[current].classList.remove('hidden');
+    dots[current].classList.add('bg-primary');
+    dots[current].classList.remove('bg-border');
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+  }
+
+  prevBtn?.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+  nextBtn?.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+  dots.forEach(dot => dot.addEventListener('click', () => goTo(Number(dot.dataset.index))));
+
   const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
   const successMsg = document.getElementById('newsletter-success');
   form?.addEventListener('submit', async (e) => {
