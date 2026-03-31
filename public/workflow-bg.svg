@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#CBD5E1"/>
+    </marker>
+  </defs>
+
+  <!-- Row 1 connections -->
+  <line x1="161" y1="130" x2="199" y2="130" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="341" y1="130" x2="379" y2="130" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="521" y1="130" x2="559" y2="130" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="701" y1="130" x2="739" y2="130" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="881" y1="130" x2="919" y2="130" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Branch vertical (dashed) from node 2 down -->
+  <path d="M270,154 C270,200 270,240 270,265" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr)" fill="none"/>
+
+  <!-- Row 2 connections -->
+  <line x1="341" y1="290" x2="379" y2="290" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="521" y1="290" x2="559" y2="290" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="701" y1="290" x2="739" y2="290" stroke="#CBD5E1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- NODE 1: Formular Lead (trigger – orange) -->
+  <rect x="20" y="106" width="140" height="48" rx="10" fill="#FFF5F0" stroke="#FB923C" stroke-width="1.5"/>
+  <rect x="20" y="106" width="5" height="48" rx="2" fill="#FB923C"/>
+  <text x="90" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#9A3412">WEBHOOK</text>
+  <text x="90" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#431407">Formular Lead</text>
+
+  <!-- NODE 2: Verifică CRM (logic – green) -->
+  <rect x="200" y="106" width="140" height="48" rx="10" fill="#F0FDF4" stroke="#4ADE80" stroke-width="1.5"/>
+  <rect x="200" y="106" width="5" height="48" rx="2" fill="#4ADE80"/>
+  <text x="270" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#166534">IF / LOGIC</text>
+  <text x="270" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#14532D">Verifică CRM</text>
+
+  <!-- NODE 3: Email Bun Venit (email – blue) -->
+  <rect x="380" y="106" width="140" height="48" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+  <rect x="380" y="106" width="5" height="48" rx="2" fill="#60A5FA"/>
+  <text x="450" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#1D4ED8">EMAIL</text>
+  <text x="450" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1E3A8A">Email Bun Venit</text>
+
+  <!-- NODE 4: Delay 2 zile (wait – purple) -->
+  <rect x="560" y="106" width="140" height="48" rx="10" fill="#F5F3FF" stroke="#A78BFA" stroke-width="1.5"/>
+  <rect x="560" y="106" width="5" height="48" rx="2" fill="#A78BFA"/>
+  <text x="630" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#6D28D9">WAIT</text>
+  <text x="630" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#4C1D95">Delay 2 zile</text>
+
+  <!-- NODE 5: Follow-up Email (email – blue) -->
+  <rect x="740" y="106" width="140" height="48" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+  <rect x="740" y="106" width="5" height="48" rx="2" fill="#60A5FA"/>
+  <text x="810" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#1D4ED8">EMAIL</text>
+  <text x="810" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1E3A8A">Follow-up Email</text>
+
+  <!-- NODE 6: Update CRM (crm – teal) -->
+  <rect x="920" y="106" width="140" height="48" rx="10" fill="#F0FDFA" stroke="#34D399" stroke-width="1.5"/>
+  <rect x="920" y="106" width="5" height="48" rx="2" fill="#34D399"/>
+  <text x="990" y="127" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#065F46">CRM</text>
+  <text x="990" y="143" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#064E3B">Update Contact</text>
+
+  <!-- NODE 7: Segmentare (segment – pink/purple) -->
+  <rect x="200" y="266" width="140" height="48" rx="10" fill="#FDF4FF" stroke="#C084FC" stroke-width="1.5"/>
+  <rect x="200" y="266" width="5" height="48" rx="2" fill="#C084FC"/>
+  <text x="270" y="287" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#7E22CE">SEGMENT</text>
+  <text x="270" y="303" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#581C87">Segmentare Lead</text>
+
+  <!-- NODE 8: Nurturing #1 (email – blue) -->
+  <rect x="380" y="266" width="140" height="48" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+  <rect x="380" y="266" width="5" height="48" rx="2" fill="#60A5FA"/>
+  <text x="450" y="287" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#1D4ED8">EMAIL</text>
+  <text x="450" y="303" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1E3A8A">Nurturing #1</text>
+
+  <!-- NODE 9: Nurturing #2 (email – blue) -->
+  <rect x="560" y="266" width="140" height="48" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+  <rect x="560" y="266" width="5" height="48" rx="2" fill="#60A5FA"/>
+  <text x="630" y="287" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#1D4ED8">EMAIL</text>
+  <text x="630" y="303" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1E3A8A">Nurturing #2</text>
+
+  <!-- NODE 10: Rezervă Call (trigger/cta – orange) -->
+  <rect x="740" y="266" width="140" height="48" rx="10" fill="#FFF5F0" stroke="#FB923C" stroke-width="1.5"/>
+  <rect x="740" y="266" width="5" height="48" rx="2" fill="#FB923C"/>
+  <text x="810" y="287" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" letter-spacing="0.06em" fill="#9A3412">CALENDLY</text>
+  <text x="810" y="303" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#431407">Rezervă Call</text>
+</svg>
