@@ -10,6 +10,7 @@ const blogPosts = [
     excerpt: 'Agenții AI pot genera structuri de conținut în secunde. Dar fără un sistem clar, ajungi cu mult conținut și puțin control.',
     category: 'Automatizări',
     date: '2026-01-15',
+    image: '/blog/automatizare-orchestrare-agenti-ai-n8n-planificare-continut.png',
   },
   {
     slug: 'automatizari-whatsapp-business',
@@ -17,6 +18,7 @@ const blogPosts = [
     excerpt: 'WhatsApp Business oferă mai mult decât mesaje automate de bun venit. Iată ce poți automatiza fără tool-uri externe.',
     category: 'WhatsApp Business',
     date: '2025-12-10',
+    image: '/blog/automatizari-simple-whatsapp-business-scaled.jpeg',
   },
   {
     slug: 'nu-mai-pierde-lead-urile',
@@ -24,6 +26,7 @@ const blogPosts = [
     excerpt: 'Cele mai multe companii plătesc pentru lead-uri pe care nu le convertesc niciodată. Nu din lipsă de interes, ci din lipsă de proces.',
     category: 'Lead Management',
     date: '2025-11-20',
+    image: '/blog/automatizari-marketing-lead-management.jpg',
   },
 ];
 ---
@@ -34,99 +37,36 @@ const blogPosts = [
   <Navbar />
 
   <!-- HERO -->
-  <section class="relative py-20 md:py-28 bg-white overflow-hidden">
+  <section class="relative py-20 md:py-28 overflow-hidden" style="background-color:#0d1b35;">
 
-    <!-- Background dot grid -->
-    <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <pattern id="hero-dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="1.2" fill="#021B3D" opacity="0.06" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#hero-dots)" />
-    </svg>
+    <!-- Animated network canvas -->
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"></canvas>
 
-    <!-- Left node cluster — automation flow diagram -->
-    <svg class="absolute left-0 top-0 h-full w-80 hidden lg:block" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
-      <g stroke="#021B3D" stroke-width="1.5" opacity="0.08" fill="none">
-        <line x1="40" y1="100" x2="130" y2="160" />
-        <line x1="130" y1="160" x2="210" y2="120" />
-        <line x1="210" y1="120" x2="290" y2="190" />
-        <line x1="80" y1="260" x2="170" y2="310" />
-        <line x1="170" y1="310" x2="260" y2="270" />
-        <line x1="130" y1="160" x2="80" y2="260" />
-        <line x1="210" y1="120" x2="170" y2="310" />
-      </g>
-      <g fill="#021B3D" opacity="0.1">
-        <circle cx="40" cy="100" r="5" />
-        <circle cx="130" cy="160" r="7" />
-        <circle cx="210" cy="120" r="5" />
-        <circle cx="290" cy="190" r="4" />
-        <circle cx="80" cy="260" r="5" />
-        <circle cx="170" cy="310" r="7" />
-        <circle cx="260" cy="270" r="4" />
-      </g>
-      <g fill="#0249A5" opacity="0.12">
-        <circle cx="130" cy="160" r="4" />
-        <circle cx="170" cy="310" r="4" />
-      </g>
-    </svg>
-
-    <!-- Right node cluster -->
-    <svg class="absolute right-0 top-0 h-full w-80 hidden lg:block" viewBox="0 0 320 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
-      <g stroke="#021B3D" stroke-width="1.5" opacity="0.08" fill="none">
-        <line x1="280" y1="90" x2="190" y2="150" />
-        <line x1="190" y1="150" x2="110" y2="110" />
-        <line x1="110" y1="110" x2="40" y2="180" />
-        <line x1="240" y1="260" x2="150" y2="300" />
-        <line x1="150" y1="300" x2="70" y2="255" />
-        <line x1="190" y1="150" x2="240" y2="260" />
-        <line x1="110" y1="110" x2="150" y2="300" />
-      </g>
-      <g fill="#021B3D" opacity="0.1">
-        <circle cx="280" cy="90" r="5" />
-        <circle cx="190" cy="150" r="7" />
-        <circle cx="110" cy="110" r="5" />
-        <circle cx="40" cy="180" r="4" />
-        <circle cx="240" cy="260" r="5" />
-        <circle cx="150" cy="300" r="7" />
-        <circle cx="70" cy="255" r="4" />
-      </g>
-      <g fill="#0249A5" opacity="0.12">
-        <circle cx="190" cy="150" r="4" />
-        <circle cx="150" cy="300" r="4" />
-      </g>
-    </svg>
-
-    <!-- Center fade — keeps text readable -->
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/90 to-transparent pointer-events-none"></div>
-
-    <div class="relative max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+    <div class="relative max-w-4xl mx-auto px-6 text-center" style="position:relative;z-index:1;">
+      <div class="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style="color:#7eb8f7;border:1px solid rgba(126,184,247,0.3);background:transparent;">
         Automatizări marketing &amp; vânzări
       </div>
-      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6" style="color:white;">
         Sistemul tău de marketing generează lead-uri.<br />
-        <span class="text-accent">Dar câte devin clienți?</span>
+        <span style="color:#4d9ef7;">Dar câte devin clienți?</span>
       </h1>
-      <p class="text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto">
+      <p class="text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style="color:rgba(255,255,255,0.65);">
         Construiesc și optimizez sisteme automatizate de marketing și vânzări pentru companii care au CRM, generează 50+ lead-uri lunar, și vor ca procesele lor să producă mai mulți clienți din același efort.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/mini-audit" class="bg-accent hover:bg-accent-hover text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-lg text-base">
+        <a href="/mini-audit" class="font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-px hover:shadow-lg text-base" style="background:#1a5fc8;color:white;" onmouseover="this.style.background='#1550a8'" onmouseout="this.style.background='#1a5fc8'">
           Evaluează-ți sistemul →
         </a>
-        <a href="/servicii#formular" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-4 rounded-lg transition-all text-base">
+        <a href="/servicii#formular" class="font-semibold px-8 py-4 rounded-lg transition-all text-base" style="background:transparent;color:white;border:1px solid rgba(255,255,255,0.35);" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'">
           Programează o discuție
         </a>
       </div>
-      <!-- Tool logos -->
+      <!-- Tool badges -->
       <div class="mt-12">
-        <p class="text-xs text-text-tertiary uppercase tracking-widest mb-4">Sisteme construite cu:</p>
+        <p class="text-xs uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.4);">Sisteme construite cu:</p>
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <!-- REPLACE: Tool logos — ActiveCampaign, n8n, Zapier, Mailchimp -->
           {['ActiveCampaign', 'n8n', 'Zapier', 'Mailchimp'].map(tool => (
-            <span class="text-sm font-medium px-4 py-1.5 bg-bg-tertiary rounded-md text-text-secondary border border-border">{tool}</span>
+            <span class="text-sm font-semibold px-4 py-2 rounded-lg" style="color:#7eb8f7;border:1px solid rgba(126,184,247,0.25);background:rgba(126,184,247,0.06);">{tool}</span>
           ))}
         </div>
       </div>
@@ -254,42 +194,85 @@ const blogPosts = [
         Ce spun companiile cu care am lucrat
       </h2>
       <div class="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            quote: 'Lucrăm împreună cu Ana de peste 4 ani, timp în care am abordat cam toate modalitățile de promovare online. Profesionalismul abordării și competențele mereu actualizate ne-au adus poziționare și vizibilitate online traduse în creșterea vânzărilor.',
-            name: 'Iulian Dinică',
-            role: 'Managing Partner',
-            company: 'Document Imaging Systems',
-          },
-          {
-            quote: 'Am admirat la Ana capacitatea de a înțelege și pune în practică nu doar aspectele tehnice ale comunicării în mediul online, dar și nevoile strategice ale unui brand. O recomand oricărui business care are nevoie de suport profesionist în creșterea brandurilor.',
-            name: 'Mona Ursu',
-            role: 'Founder & CEO',
-            company: 'Brandfusion',
-          },
-          {
-            quote: 'Am apreciat profesionalismul ei și abordarea pragmatică. Lucrurile s-au întâmplat repede și cu rezultate foarte bune. O recomand antreprenorilor care doresc vizibilitate în manieră eficientă, într-un spațiu de colaborare sigur și profesionist.',
-            name: 'Manuela Ciugudean',
-            role: 'Coach & Personal Brand Strategist',
-            company: '',
-          },
-        ].map(t => (
-          <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
-            <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
-              "{t.quote}"
-            </blockquote>
-            <div class="flex items-center gap-3">
-              <!-- REPLACE: Testimonial photo — use actual photo from WordPress site -->
-              <div class="w-10 h-10 rounded-full bg-bg-tertiary flex items-center justify-center text-sm text-text-tertiary font-semibold flex-shrink-0 border border-border">
-                {t.name.charAt(0)}
-              </div>
-              <div>
-                <div class="font-semibold text-sm text-primary">{t.name}</div>
-                <div class="text-xs text-text-tertiary">{t.role}{t.company ? `, ${t.company}` : ''}</div>
-              </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+            "Lucrăm împreună cu Ana de peste 4 ani, timp în care am abordat cam toate modalitățile de promovare online. Profesionalismul abordării și competențele mereu actualizate ne-au adus poziționare și vizibilitate online traduse în creșterea vânzărilor."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <img src="/iulian-dinica-docsys.jpeg" alt="Iulian Dinică" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+            <div>
+              <div class="font-semibold text-sm text-primary">Iulian Dinică</div>
+              <div class="text-xs text-text-tertiary">Managing Partner, Document Imaging Systems</div>
             </div>
           </div>
-        ))}
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+            "Am admirat la Ana capacitatea de a înțelege și pune în practică nu doar aspectele tehnice ale comunicării în mediul online, dar și nevoile strategice ale unui brand. O recomand oricărui business care are nevoie de suport profesionist în creșterea brandurilor."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <img src="/mona-ursu-bf.jpeg" alt="Mona Ursu" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+            <div>
+              <div class="font-semibold text-sm text-primary">Mona Ursu</div>
+              <div class="text-xs text-text-tertiary">Founder & CEO, Brandfusion</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+            "Am apreciat profesionalismul ei și abordarea pragmatică. Lucrurile s-au întâmplat repede și cu rezultate foarte bune. O recomand antreprenorilor care doresc vizibilitate în manieră eficientă, într-un spațiu de colaborare sigur și profesionist."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <img src="/manuela-ciugudean.jpeg" alt="Manuela Ciugudean" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+            <div>
+              <div class="font-semibold text-sm text-primary">Manuela Ciugudean</div>
+              <div class="text-xs text-text-tertiary">Coach & Personal Brand Strategist</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+            "Când am cunoscut-o pe Ana știam că ne dorim să creștem vizibilitatea brandului nostru de angajator în mediul online, însă nu știam cum să facem acest lucru cât mai eficient. Ana a venit cu un portofoliu de opțiuni, ne-a ajutat să le adaptăm brandului nostru și ne-a fost alături în crearea unei strategii sustenabile pentru digital marketing. O recomand din toată inima, nu doar pentru abilitățile și cunoștințele pe care le are, ci și pentru atitudinea ei orientată spre rezultate și răbdarea de care a dat dovadă."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <img src="/monica-moldovean.jpeg" alt="Monica Moldovean" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+            <div>
+              <div class="font-semibold text-sm text-primary">Monica Moldovean</div>
+              <div class="text-xs text-text-tertiary">ex Program Manager Communication, Employer Branding & Employee Engagement, Genpact</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+            "Cât timp am colaborat, m-am bucurat de profesionalismul și promptitudinea pe care o căutăm cu toții zi de zi, de idei de creare a strategiei companiei pe care o reprezint chiar și în ziua de azi. Cu ajutorul Anei, am reușit să găsim canalul de promovare potrivit și adaptat profilului companiei. Am primit și simțit empatie, dedicare și profesionalism din partea ta."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <img src="/sorina-netu.jpeg" alt="Sorina Nețu" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+            <div>
+              <div class="font-semibold text-sm text-primary">Sorina Nețu</div>
+              <div class="text-xs text-text-tertiary">Marketing Director, Briaris IND SA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-bg-secondary rounded-xl p-8 border border-border flex flex-col">
+          <blockquote class="text-text-secondary leading-relaxed italic flex-1 mb-6 text-base">
+            "Am apelat la Ana mulțumită unei recomandări și a reușit în ședințele pe care le-am făcut să învețe întreaga echipă să înțeleagă bazele și să lucreze pe partea de SEO. Ana ne-a învățat „să pescuim" — am făcut un training, ne-a răspuns la toate întrebările, am lucrat exemple practice împreună și am făcut un plan de acțiune. Atitudinea ei pozitivă și pragmatismul ajută foarte mult, așa că aș recomanda-o oricând."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <img src="/anda-stan.jpeg" alt="Anda Stan" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-border" />
+            <div>
+              <div class="font-semibold text-sm text-primary">Anda Stan</div>
+              <div class="text-xs text-text-tertiary">Owner, TravelShip.ro</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -312,7 +295,7 @@ const blogPosts = [
         <div class="bg-white rounded-xl p-8 border border-border">
           <h3 class="font-sans text-xl font-semibold text-primary mb-4">Strategii de automatizare, direct în inbox.</h3>
           <p class="text-text-secondary leading-relaxed mb-6">
-            O dată la 2 săptămâni: studii de caz, greșeli frecvente, recomandări testate în piață. Conținut pentru cei care vor sisteme mai bune, nu doar mai multe tool-uri.
+            O dată la 2 săptămâni: studii de caz, greșeli frecvente, recomandări testate în piață. Conținut pentru cei care vor sisteme mai bune.
           </p>
           <form id="newsletter-form" class="space-y-3">
             <input
@@ -363,10 +346,7 @@ const blogPosts = [
       <div class="grid md:grid-cols-3 gap-8">
         {blogPosts.map(post => (
           <a href={`/blog/${post.slug}`} class="group block bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
-            <!-- REPLACE: Featured image for blog post -->
-            <div class="aspect-video bg-bg-tertiary flex items-center justify-center text-text-tertiary text-xs p-4 text-center">
-              Imagine articol
-            </div>
+            <img src={post.image} alt={post.title} class="aspect-video w-full object-cover" loading="lazy" />
             <div class="p-6">
               <span class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full mb-3">
                 {post.category}
@@ -392,6 +372,60 @@ const blogPosts = [
 
   <Footer />
 </Layout>
+
+<script>
+  // Hero canvas — animated network graph
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+  if (canvas) {
+    const ctx = canvas.getContext('2d')!;
+
+    function resize() {
+      canvas!.width = canvas!.offsetWidth;
+      canvas!.height = canvas!.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const nodes = Array.from({ length: 60 }, () => ({
+      x: Math.random() * canvas!.width,
+      y: Math.random() * canvas!.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 1,
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas!.width, canvas!.height);
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 140) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(126,184,247,${(1 - dist / 140) * 0.25})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      nodes.forEach(n => {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(180,210,255,0.6)';
+        ctx.fill();
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > canvas!.width) n.vx *= -1;
+        if (n.y < 0 || n.y > canvas!.height) n.vy *= -1;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+</script>
 
 <script>
   const form = document.getElementById('newsletter-form') as HTMLFormElement | null;
