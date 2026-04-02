@@ -1,0 +1,177 @@
+---
+---
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden">
+
+  <!-- Panel principal -->
+  <div id="cookie-main" class="bg-primary border-t-2 border-accent shadow-2xl">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex-1 min-w-0">
+        <p class="text-sm text-white leading-relaxed">
+          Folosim cookies pentru a analiza traficul și a îmbunătăți experiența de navigare. Poți accepta toate cookies, sau poți alege ce categorii accepți.
+          <a href="/politica-cookies" class="text-blue-300 hover:text-white underline underline-offset-2 ml-1">Politica cookies</a>
+        </p>
+      </div>
+      <div class="flex items-center gap-3 flex-shrink-0 flex-wrap">
+        <button
+          id="cookie-customize-btn"
+          class="text-sm text-blue-200 hover:text-white underline underline-offset-2 transition-colors"
+        >
+          Personalizează
+        </button>
+        <button
+          id="cookie-reject-btn"
+          class="text-sm border border-white/30 text-white hover:bg-white/10 font-medium px-4 py-2 rounded-lg transition-all"
+        >
+          Doar necesare
+        </button>
+        <button
+          id="cookie-accept-btn"
+          class="text-sm bg-accent hover:bg-accent-hover text-white font-semibold px-5 py-2 rounded-lg transition-all hover:-translate-y-px"
+        >
+          Accept toate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel personalizare (ascuns implicit) -->
+  <div id="cookie-customize-panel" class="hidden bg-primary border-t-2 border-accent shadow-2xl">
+    <div class="max-w-6xl mx-auto px-6 py-5">
+      <h3 class="text-white font-semibold text-sm mb-4">Personalizează preferințele de cookies</h3>
+      <div class="grid sm:grid-cols-3 gap-4 mb-5">
+
+        <div class="bg-white/5 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-white text-sm font-medium">Cookies necesare</span>
+            <span class="text-xs text-blue-300 bg-white/10 px-2 py-0.5 rounded-full">Întotdeauna active</span>
+          </div>
+          <p class="text-blue-200 text-xs leading-relaxed">Necesare pentru funcționarea site-ului. Nu pot fi dezactivate.</p>
+        </div>
+
+        <div class="bg-white/5 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <label for="consent-analytics" class="text-white text-sm font-medium cursor-pointer">Analytics (GA4)</label>
+            <input
+              type="checkbox"
+              id="consent-analytics"
+              class="h-4 w-4 rounded accent-[#E8593C] cursor-pointer"
+            />
+          </div>
+          <p class="text-blue-200 text-xs leading-relaxed">Ne ajută să înțelegem cum este utilizat site-ul (pagini vizitate, timp petrecut). Datele sunt anonimizate.</p>
+        </div>
+
+        <div class="bg-white/5 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <label for="consent-marketing" class="text-white text-sm font-medium cursor-pointer">Marketing</label>
+            <input
+              type="checkbox"
+              id="consent-marketing"
+              class="h-4 w-4 rounded accent-[#E8593C] cursor-pointer"
+            />
+          </div>
+          <p class="text-blue-200 text-xs leading-relaxed">Facebook Pixel și Google Ads — pentru remarketing și măsurarea campaniilor publicitare.</p>
+        </div>
+
+      </div>
+      <div class="flex flex-wrap gap-3 justify-end">
+        <button
+          id="cookie-save-btn"
+          class="text-sm border border-white/30 text-white hover:bg-white/10 font-medium px-5 py-2 rounded-lg transition-all"
+        >
+          Salvează preferințele
+        </button>
+        <button
+          id="cookie-accept-all-btn"
+          class="text-sm bg-accent hover:bg-accent-hover text-white font-semibold px-5 py-2 rounded-lg transition-all hover:-translate-y-px"
+        >
+          Accept toate
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script is:inline>
+  (function () {
+    var STORAGE_KEY = 'cookie_consent';
+    var banner = document.getElementById('cookie-banner');
+    var mainPanel = document.getElementById('cookie-main');
+    var customizePanel = document.getElementById('cookie-customize-panel');
+
+    function getConsent() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { return null; }
+    }
+
+    function applyConsent(analytics, marketing) {
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': analytics ? 'granted' : 'denied',
+          'ad_storage': marketing ? 'granted' : 'denied',
+          'ad_user_data': marketing ? 'granted' : 'denied',
+          'ad_personalization': marketing ? 'granted' : 'denied',
+        });
+      }
+      // Injectează FB Pixel dacă marketing acceptat
+      if (marketing && !window._fbPixelLoaded) {
+        window._fbPixelLoaded = true;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+        (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'XXXXXXXXXXXXXXXXXX'); // ← înlocuiește cu FB Pixel ID
+        fbq('track', 'PageView');
+      }
+    }
+
+    function saveConsent(analytics, marketing) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        necessary: true,
+        analytics: analytics,
+        marketing: marketing,
+        timestamp: new Date().toISOString()
+      }));
+      applyConsent(analytics, marketing);
+      banner.classList.add('hidden');
+    }
+
+    // La încărcare — dacă există consimțământ salvat, aplică și ascunde banner-ul
+    var saved = getConsent();
+    if (saved && saved.timestamp) {
+      applyConsent(saved.analytics, saved.marketing);
+      return; // banner rămâne hidden
+    }
+
+    // Altfel, afișează banner-ul
+    banner.classList.remove('hidden');
+
+    // Butoane panel principal
+    document.getElementById('cookie-accept-btn').addEventListener('click', function () {
+      saveConsent(true, true);
+    });
+
+    document.getElementById('cookie-reject-btn').addEventListener('click', function () {
+      saveConsent(false, false);
+    });
+
+    document.getElementById('cookie-customize-btn').addEventListener('click', function () {
+      mainPanel.classList.add('hidden');
+      customizePanel.classList.remove('hidden');
+    });
+
+    // Butoane panel personalizare
+    document.getElementById('cookie-accept-all-btn').addEventListener('click', function () {
+      document.getElementById('consent-analytics').checked = true;
+      document.getElementById('consent-marketing').checked = true;
+      saveConsent(true, true);
+    });
+
+    document.getElementById('cookie-save-btn').addEventListener('click', function () {
+      var analytics = document.getElementById('consent-analytics').checked;
+      var marketing = document.getElementById('consent-marketing').checked;
+      saveConsent(analytics, marketing);
+    });
+  })();
+</script>
