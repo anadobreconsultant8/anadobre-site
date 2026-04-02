@@ -489,11 +489,13 @@ const blogPosts = [
       if (res.ok) {
         form!.classList.add('hidden');
         successMsg?.classList.remove('hidden');
+        (window as any).gtag?.('event', 'sign_up', { method: 'newsletter-homepage' });
       }
     } catch {
       // Show success anyway for static build
       form!.classList.add('hidden');
       successMsg?.classList.remove('hidden');
+      (window as any).gtag?.('event', 'sign_up', { method: 'newsletter-homepage' });
     }
   });
 </script>

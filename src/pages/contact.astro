@@ -148,5 +148,6 @@ import Footer from '../components/Footer.astro';
     } catch { /* silent */ }
     form!.classList.add('hidden');
     success?.classList.remove('hidden');
+    (window as any).gtag?.('event', 'generate_lead', { form_name: 'contact' });
   });
 </script>

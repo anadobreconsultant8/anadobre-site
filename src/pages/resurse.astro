@@ -221,6 +221,8 @@ import Footer from '../components/Footer.astro';
 
       form.classList.add('hidden');
       success.classList.remove('hidden');
+      const eventName = formId === 'checklist-form' ? 'checklist' : 'ebook';
+      (window as any).gtag?.('event', 'generate_lead', { form_name: eventName });
     });
   }
 
