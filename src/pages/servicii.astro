@@ -377,7 +377,7 @@ import Footer from '../components/Footer.astro';
     }
     const data = new FormData(form!);
     try {
-      await fetch('https://n8n.altia.work/webhook/e0be7221-eac8-4a96-91b5-eab5e259b09b', {
+      await fetch('https://n8n.altia.work/webhook-test/e0be7221-eac8-4a96-91b5-eab5e259b09b', {
         method: 'POST',
         body: JSON.stringify({ source: 'formular-servicii', ...Object.fromEntries(data) }),
         headers: { 'Content-Type': 'application/json' },
