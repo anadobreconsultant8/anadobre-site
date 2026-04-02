@@ -377,17 +377,13 @@ import Footer from '../components/Footer.astro';
     }
     const data = new FormData(form!);
     try {
-      const res = await fetch('/api/form-submit', {
+      await fetch('https://n8n.altia.work/webhook/e0be7221-eac8-4a96-91b5-eab5e259b09b', {
         method: 'POST',
-        body: JSON.stringify(Object.fromEntries(data)),
+        body: JSON.stringify({ source: 'formular-servicii', ...Object.fromEntries(data) }),
         headers: { 'Content-Type': 'application/json' },
       });
-      if (res.ok) {
-        form!.classList.add('hidden');
-        successMsg?.classList.remove('hidden');
-      } else {
-        throw new Error('Response not ok');
-      }
+      form!.classList.add('hidden');
+      successMsg?.classList.remove('hidden');
     } catch {
       // Show success anyway
       form!.classList.add('hidden');
