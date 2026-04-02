@@ -149,5 +149,6 @@ import Footer from '../components/Footer.astro';
     form!.classList.add('hidden');
     success?.classList.remove('hidden');
     (window as any).gtag?.('event', 'generate_lead', { form_name: 'contact' });
+    (window as any).fbq?.('track', 'Lead', { content_name: 'contact' });
   });
 </script>

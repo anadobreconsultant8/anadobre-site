@@ -385,11 +385,13 @@ import Footer from '../components/Footer.astro';
       form!.classList.add('hidden');
       successMsg?.classList.remove('hidden');
       (window as any).gtag?.('event', 'generate_lead', { form_name: 'servicii' });
+      (window as any).fbq?.('track', 'Lead', { content_name: 'servicii' });
     } catch {
       // Show success anyway
       form!.classList.add('hidden');
       successMsg?.classList.remove('hidden');
       (window as any).gtag?.('event', 'generate_lead', { form_name: 'servicii' });
+      (window as any).fbq?.('track', 'Lead', { content_name: 'servicii' });
     }
   });
 </script>
