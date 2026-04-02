@@ -40,3 +40,23 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
+
+<script is:inline>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+    const prenume = params.get('prenume') || '';
+    if (!email) return;
+
+    fetch('https://n8n.altia.work/webhook/65a47fc6-d6ac-4f9b-a432-89dc3480169d', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        source: 'confirmare-abonare',
+        email,
+        prenume,
+        marketing: 'on',
+      }),
+    }).catch(function () {});
+  })();
+</script>
