@@ -12,7 +12,7 @@ const { title, description, ogImage = '/og-default.jpg', canonical, noindex = fa
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || 'https://anadobre.com').toString();
 
 // ⚠️  Înlocuiește cu ID-urile reale când sunt disponibile:
-const GA4_ID = 'G-XXXXXXXXXX';
+const GA4_ID = 'G-0JCZRVSBJV';
 ---
 <!DOCTYPE html>
 <html lang="ro">
@@ -68,8 +68,7 @@ const GA4_ID = 'G-XXXXXXXXXX';
   </script>
 
   <!-- ═══ Google Analytics 4 ═══ -->
-  <!-- ⚠️  Înlocuiește G-XXXXXXXXXX cu Measurement ID-ul real din GA4 -->
-  <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
   <script is:inline define:vars={{ GA4_ID }}>
     gtag('js', new Date());
     gtag('config', GA4_ID, { 'anonymize_ip': true });
