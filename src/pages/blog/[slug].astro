@@ -21,6 +21,8 @@ if (!post) {
 const { Content } = await post.render();
 
 const { title, date, category, image, excerpt } = post.data;
+const canonicalUrl = `https://anadobre.com/blog/${slug}`;
+const dateISO = new Date(date).toISOString();
 
 // Fetch all posts for related articles
 const allPosts = await getCollection('blog');
@@ -32,7 +34,35 @@ const sameCat = otherPosts.filter((p) => p.data.category === category);
 const diffCat = otherPosts.filter((p) => p.data.category !== category);
 const relatedPosts = [...sameCat, ...diffCat].slice(0, 2);
 ---
-<Layout title={`${title} — Ana Dobre`} description={excerpt ?? title}>
+<Layout title={`${title} — Ana Dobre`} description={excerpt ?? title} ogImage={image ?? '/og-default.jpg'} canonical={canonicalUrl}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}#article`,
+        "headline": title,
+        "description": excerpt ?? title,
+        "url": canonicalUrl,
+        "datePublished": dateISO,
+        "dateModified": dateISO,
+        "image": image ? `https://anadobre.com${image}` : "https://anadobre.com/og-default.jpg",
+        "articleSection": category,
+        "inLanguage": "ro",
+        "author": { "@id": "https://anadobre.com/#person" },
+        "publisher": { "@id": "https://anadobre.com/#person" },
+        "mainEntityOfPage": canonicalUrl
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://anadobre.com" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://anadobre.com/blog" },
+          { "@type": "ListItem", "position": 3, "name": title, "item": canonicalUrl }
+        ]
+      }
+    ]
+  })} />
   <Navbar />
 
   <!-- Article -->

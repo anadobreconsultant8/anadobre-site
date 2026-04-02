@@ -33,6 +33,7 @@ const GA4_ID = 'G-0JCZRVSBJV';
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`https://anadobre.com${ogImage}`} />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,6 +75,51 @@ const GA4_ID = 'G-0JCZRVSBJV';
     gtag('config', GA4_ID, { 'anonymize_ip': true });
   </script>
   <!-- ════════════════════════════════════════════════════════════════ -->
+
+  <!-- ═══ Schema.org JSON-LD ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://anadobre.com/#website",
+        "url": "https://anadobre.com",
+        "name": "Ana Dobre",
+        "description": "Construiesc și optimizez sisteme automatizate de marketing și vânzări pentru companii care vor să crească fără să adauge oameni.",
+        "inLanguage": "ro",
+        "publisher": { "@id": "https://anadobre.com/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://anadobre.com/#person",
+        "name": "Ana Dobre",
+        "url": "https://anadobre.com",
+        "image": "https://anadobre.com/ana-dobre-new.jpg",
+        "jobTitle": "Consultant Marketing Automation",
+        "description": "14+ ani de marketing digital, cu focus pe automatizări de marketing și vânzări, CRM, lead management și sisteme integrate.",
+        "sameAs": [
+          "https://www.linkedin.com/in/anadobreconsultant/"
+        ],
+        "knowsAbout": [
+          "Marketing Automation",
+          "CRM Integration",
+          "Lead Management",
+          "ActiveCampaign",
+          "n8n",
+          "Email Marketing",
+          "Digital Marketing Strategy",
+          "Sales Funnels"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "PFA Dobre N. Ana-Daniela",
+          "url": "https://anadobre.com"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="font-sans text-text-primary bg-white antialiased">
   <slot />
