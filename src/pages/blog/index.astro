@@ -128,9 +128,9 @@ const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date
     payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
     payload['marketing'] = data.has('marketing') ? 'on' : 'off';
     try {
-      await fetch('/api/newsletter-subscribe', {
+      await fetch('https://n8n.altia.work/webhook-test/fb7de6b8-ffc7-476d-bbcd-0f57b0f461f5', {
         method: 'POST',
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ source: 'newsletter-blog', ...payload }),
         headers: { 'Content-Type': 'application/json' },
       });
     } catch { /* silent */ }
