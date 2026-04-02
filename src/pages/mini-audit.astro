@@ -541,7 +541,7 @@ import Footer from '../components/Footer.astro';
     auditSuccess?.classList.remove('hidden');
 
     // Trimite request în fundal
-    fetch('https://n8n.altia.work/webhook-test/c78cc78c-c5b9-4469-bf39-6bab3b130c1e', {
+    fetch('https://n8n.altia.work/webhook/c78cc78c-c5b9-4469-bf39-6bab3b130c1e', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prenume, email, companie, industrie, tip_business, tooluri, scor, nivel, raspunsuri, marketing }),
