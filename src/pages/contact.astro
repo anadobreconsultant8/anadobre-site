@@ -140,7 +140,7 @@ import Footer from '../components/Footer.astro';
     e.preventDefault();
     const data = new FormData(form!);
     try {
-      await fetch('https://n8n.altia.work/webhook-test/f74e1ccc-8143-4360-8750-22a1259f5b6a', {
+      await fetch('https://n8n.altia.work/webhook/f74e1ccc-8143-4360-8750-22a1259f5b6a', {
         method: 'POST',
         body: JSON.stringify({ source: 'formular-contact', ...Object.fromEntries(data) }),
         headers: { 'Content-Type': 'application/json' },
