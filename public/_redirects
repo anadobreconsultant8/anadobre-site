@@ -1,15 +1,11 @@
 # ── Pagini reale → pagini noi ──────────────────────────────────────
 /despre-mine/                                          /despre                      301
-/contact/                                              /contact                     301
-/blog/                                                 /blog                        301
 /sisteme-automatizate-marketing-vanzari/               /servicii                    301
 /strategy-automation-system/                           /servicii                    301
 /strategy-automation-pro/                              /servicii                    301
 /materiale-strategie-marketing-online/                 /resurse                     301
 /abonare-newsletter-succes/                            /confirmare-abonare          301
 /politica-de-confidentialitate/                        /politica-confidentialitate  301
-/politica-cookies/                                     /politica-cookies            301
-/termeni-si-conditii/                                  /termeni-si-conditii         301
 
 # ── Articole de blog → /blog ────────────────────────────────────────
 /cum-iti-poti-construi-un-plan-lunar-de-continut-cu-ajutorul-agentilor-ai-fara-sa-pierzi-controlul/   /blog   301
