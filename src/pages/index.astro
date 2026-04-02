@@ -481,7 +481,7 @@ const blogPosts = [
     payload['gdpr'] = data.has('gdpr') ? 'on' : 'off';
     payload['marketing'] = 'on';
     try {
-      const res = await fetch('https://n8n.altia.work/webhook-test/fb7de6b8-ffc7-476d-bbcd-0f57b0f461f5', {
+      const res = await fetch('https://n8n.altia.work/webhook/fb7de6b8-ffc7-476d-bbcd-0f57b0f461f5', {
         method: 'POST',
         body: JSON.stringify({ source: 'newsletter-homepage', ...payload }),
         headers: { 'Content-Type': 'application/json' },
