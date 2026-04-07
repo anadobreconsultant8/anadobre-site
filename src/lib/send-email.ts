@@ -177,7 +177,7 @@ export async function sendReport(data: EmailData) {
         <p style="margin: 0; font-size: 12px; color: #9CA3AF;">Automatizări Marketing & Vânzări · anadobre.com</p>
         <hr style="border: none; border-top: 1px solid #E5E7EB; margin: 16px 0;">
         <p style="margin: 0; font-size: 11px; color: #9CA3AF; line-height: 1.5;">Primești acest email pentru că ai completat mini-auditul pe anadobre.com. Dacă ai întrebări, scrie-mi la hello@anadobre.com.</p>
-        <p style="margin: 8px 0 0; font-size: 11px; color: #9CA3AF;">PFA Dobre N. Ana-Daniela · sat Teiu, jud. Argeș, România · <a href="mailto:hello@anadobre.com?subject=Dezabonare" style="color: #9CA3AF; text-decoration: underline;">Dezabonează-te</a></p>
+        <p style="margin: 8px 0 0; font-size: 11px; color: #9CA3AF;">PFA Dobre N. Ana-Daniela, Argeș · <a href="mailto:hello@anadobre.com?subject=Dezabonare" style="color: #9CA3AF; text-decoration: underline;">Dezabonează-te</a></p>
       </td>
     </tr>
 
