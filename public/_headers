@@ -1,0 +1,11 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog", </sitemap.xml>; rel="sitemap", </despre>; rel="author", </servicii>; rel="service-doc"
+
+/.well-known/api-catalog
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *

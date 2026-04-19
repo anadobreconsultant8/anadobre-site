@@ -1,0 +1,41 @@
+{
+  "title": "Ana Dobre — Resurse disponibile",
+  "description": "Catalog de resurse și servicii disponibile pe anadobre.com — consultanță în marketing automation și strategie digitală.",
+  "publisher": {
+    "name": "Ana Dobre",
+    "url": "https://anadobre.com",
+    "contact": "https://anadobre.com/contact"
+  },
+  "apis": [
+    {
+      "id": "mini-audit",
+      "title": "Mini-audit de maturitate în automatizări",
+      "description": "Evaluează sistemul de marketing și vânzări în 8 întrebări. Returnează scor de maturitate și recomandări personalizate.",
+      "hrefs": ["https://anadobre.com/mini-audit"]
+    },
+    {
+      "id": "servicii",
+      "title": "Servicii de consultanță",
+      "description": "Servicii de strategie și automatizare marketing pentru companii B2B: audit, implementare sisteme, retainer.",
+      "hrefs": ["https://anadobre.com/servicii"]
+    },
+    {
+      "id": "blog",
+      "title": "Blog — Marketing Automation & Strategie Digitală",
+      "description": "Articole despre automatizări de marketing, AI în marketing, CRM, email automation și strategie digitală pentru antreprenori.",
+      "hrefs": ["https://anadobre.com/blog"]
+    },
+    {
+      "id": "resurse",
+      "title": "Resurse gratuite",
+      "description": "Checklist și materiale descărcabile despre strategie de marketing și automatizări.",
+      "hrefs": ["https://anadobre.com/resurse"]
+    },
+    {
+      "id": "sitemap",
+      "title": "Sitemap XML",
+      "description": "Harta completă a site-ului în format XML.",
+      "hrefs": ["https://anadobre.com/sitemap.xml"]
+    }
+  ]
+}
