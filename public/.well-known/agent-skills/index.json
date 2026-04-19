@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mini-audit",
+      "type": "skill-md",
+      "description": "Evaluează maturitatea sistemului de marketing și vânzări al unui business B2B în 8 dimensiuni. Returnează scor și recomandări personalizate.",
+      "url": "https://anadobre.com/.well-known/agent-skills/mini-audit/SKILL.md",
+      "digest": "sha256:808692534f146c2cd032f9cb78e20122d74ad3792fb36ee7fb5987a491e02f41"
+    },
+    {
+      "name": "newsletter",
+      "type": "skill-md",
+      "description": "Abonează utilizatori la newsletter-ul săptămânal despre marketing automation, AI în marketing și strategie digitală pentru business-uri B2B.",
+      "url": "https://anadobre.com/.well-known/agent-skills/newsletter/SKILL.md",
+      "digest": "sha256:37aa695d13a1722661e9ce3d27c3f3c31eca6a2b3e0a83c9f138545a7657cde0"
+    }
+  ]
+}
