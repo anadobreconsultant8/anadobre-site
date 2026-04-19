@@ -1,0 +1,42 @@
+{
+  "serverInfo": {
+    "name": "ro.anadobre/site",
+    "version": "1.0.0",
+    "title": "Ana Dobre — Marketing Automation Consultant",
+    "description": "Resurse și instrumente pentru descoperirea serviciilor de consultanță în marketing automation, strategie digitală și sisteme CRM oferite de Ana Dobre."
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://anadobre.com/mcp"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "mini_audit",
+        "description": "Evaluează maturitatea sistemului de marketing și vânzări al unui business B2B în 8 dimensiuni."
+      },
+      {
+        "name": "newsletter_subscribe",
+        "description": "Abonează un utilizator la newsletter-ul despre marketing automation și strategie digitală."
+      }
+    ],
+    "resources": [
+      {
+        "name": "blog",
+        "description": "Articole despre marketing automation, AI în marketing, CRM și strategie digitală.",
+        "uri": "https://anadobre.com/blog"
+      },
+      {
+        "name": "servicii",
+        "description": "Servicii de consultanță: audit, implementare sisteme automatizate, retainer lunar.",
+        "uri": "https://anadobre.com/servicii"
+      },
+      {
+        "name": "resurse",
+        "description": "Materiale descărcabile gratuite: checklist marketing automation.",
+        "uri": "https://anadobre.com/resurse"
+      }
+    ],
+    "prompts": []
+  }
+}
