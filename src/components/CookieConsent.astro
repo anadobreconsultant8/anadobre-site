@@ -113,14 +113,13 @@
           'ad_personalization': marketing ? 'granted' : 'denied',
         });
       }
-      // Injectează FB Pixel dacă marketing acceptat
+      // Activează FB Pixel dacă marketing acceptat (stub-ul e deja în <head>)
       if (marketing && !window._fbPixelLoaded) {
         window._fbPixelLoaded = true;
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-        (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        document.head.appendChild(s);
         fbq('init', '550648992497208');
         fbq('track', 'PageView');
       }
