@@ -7,7 +7,7 @@
   Link: </.well-known/api-catalog>; rel="api-catalog", </sitemap.xml>; rel="sitemap", </despre>; rel="author", </servicii>; rel="service-doc"
 
 /.well-known/api-catalog
-  Content-Type: application/json
+  Content-Type: application/linkset+json
   Access-Control-Allow-Origin: *
 
 /.well-known/http-message-signatures-directory

@@ -1,0 +1,119 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ana Dobre — API",
+    "description": "Endpoint-uri disponibile pe anadobre.com — site de consultanță în marketing automation și strategie digitală.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Ana Dobre",
+      "url": "https://anadobre.com/contact"
+    }
+  },
+  "servers": [
+    { "url": "https://anadobre.com" }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health check",
+        "description": "Verifică starea serviciului.",
+        "responses": {
+          "200": {
+            "description": "Serviciu funcțional",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" },
+                    "site": { "type": "string", "example": "anadobre.com" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/newsletter-subscribe": {
+      "post": {
+        "summary": "Abonare newsletter",
+        "description": "Abonează un utilizator la newsletter-ul de marketing automation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email"],
+                "properties": {
+                  "prenume": { "type": "string" },
+                  "email": { "type": "string", "format": "email" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Abonat cu succes" },
+          "400": { "description": "Date invalide" }
+        }
+      }
+    },
+    "/api/mini-audit-submit": {
+      "post": {
+        "summary": "Submit mini-audit",
+        "description": "Procesează rezultatele mini-auditului de maturitate în automatizări și trimite analiza personalizată pe email.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["prenume", "email", "scor", "nivel", "raspunsuri"],
+                "properties": {
+                  "prenume": { "type": "string" },
+                  "email": { "type": "string", "format": "email" },
+                  "companie": { "type": "string" },
+                  "scor": { "type": "integer", "minimum": 0, "maximum": 16 },
+                  "nivel": { "type": "string" },
+                  "raspunsuri": { "type": "array", "items": { "type": "integer" } }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Analiză generată și trimisă pe email" },
+          "400": { "description": "Câmpuri lipsă" },
+          "500": { "description": "Eroare internă" }
+        }
+      }
+    },
+    "/api/checklist-subscribe": {
+      "post": {
+        "summary": "Descărcare checklist",
+        "description": "Abonează utilizatorul și trimite checklist-ul de marketing automation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email"],
+                "properties": {
+                  "prenume": { "type": "string" },
+                  "email": { "type": "string", "format": "email" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Checklist trimis" },
+          "400": { "description": "Date invalide" }
+        }
+      }
+    }
+  }
+}
