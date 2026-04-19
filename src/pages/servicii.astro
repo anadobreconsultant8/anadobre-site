@@ -401,3 +401,112 @@ import Footer from '../components/Footer.astro';
     }
   });
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://anadobre.com/servicii#audit",
+      "name": "Audit Strategie & Automatizări Marketing",
+      "description": "Analizez sistemul existent de marketing și vânzări și livrez un plan personalizat de implementare: parcursul clientului, fluxul de lead-uri, utilizarea CRM-ului, automatizările existente și punctele de pierdere.",
+      "provider": { "@id": "https://anadobre.com/#person" },
+      "areaServed": { "@type": "Country", "name": "Romania" },
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "1500",
+          "maxPrice": "2500",
+          "priceCurrency": "EUR"
+        },
+        "eligibleDuration": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "WEE" }
+      },
+      "url": "https://anadobre.com/servicii"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://anadobre.com/servicii#implementare",
+      "name": "Implementare & Consolidare Sisteme Automatizare",
+      "description": "Construiesc și optimizez fluxurile de lead management, secvențe automate de nurturing, integrare CRM, automatizări de retenție și dashboard-uri de monitorizare.",
+      "provider": { "@id": "https://anadobre.com/#person" },
+      "areaServed": { "@type": "Country", "name": "Romania" },
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "3000",
+          "maxPrice": "5000",
+          "priceCurrency": "EUR"
+        },
+        "eligibleDuration": { "@type": "QuantitativeValue", "minValue": 4, "maxValue": 8, "unitCode": "WEE" }
+      },
+      "url": "https://anadobre.com/servicii"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://anadobre.com/servicii#retainer",
+      "name": "Optimizare Continuă & Creștere (Retainer)",
+      "description": "Monitorizare lunară a performanței, A/B testing pe secvențe, ajustări bazate pe date, raportare și scalarea automatizărilor care funcționează.",
+      "provider": { "@id": "https://anadobre.com/#person" },
+      "areaServed": { "@type": "Country", "name": "Romania" },
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "700",
+          "maxPrice": "1000",
+          "priceCurrency": "EUR",
+          "unitText": "MONTH"
+        }
+      },
+      "url": "https://anadobre.com/servicii"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pentru ce tip de business sunt potrivite serviciile tale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lucrez cu companii B2B din România cu cifră de afaceri între 500.000 și 5 milioane EUR, minim 50 lead-uri calificate lunar și echipe de vânzări de 2–10 persoane. Industrii tipice: servicii profesionale, IT, consultanță, producție B2B."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De unde încep — am nevoie de audit înainte de implementare?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auditul este recomandat ca prim pas pentru că îmi permite să înțeleg situația reală înainte să propun soluții. Fără audit există riscul să implementăm automatizări pe o fundație greșită. Există cazuri în care putem sări direct la implementare dacă situația e clară."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cât durează să văd rezultate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Primele automatizări active apar în 2–4 săptămâni de la audit. Rezultate măsurabile (mai puțini lead-uri pierdute, timp de răspuns redus, nurturing activ) apar în 4–8 săptămâni de implementare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce tool-uri folosești?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lucrez cu tool-urile pe care le ai deja sau le recomand pe baza nevoilor tale: ActiveCampaign, Mailchimp, Brevo pentru email automation; HubSpot, Pipedrive, Zoho CRM; n8n, Make, Zapier pentru automatizări workflow; Google Ads, Meta Ads pentru paid."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://anadobre.com" },
+        { "@type": "ListItem", "position": 2, "name": "Servicii", "item": "https://anadobre.com/servicii" }
+      ]
+    }
+  ]
+}
+</script>
