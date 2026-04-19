@@ -13,3 +13,11 @@
 /.well-known/http-message-signatures-directory
   Content-Type: application/json
   Access-Control-Allow-Origin: *
+
+/.well-known/openid-configuration
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+
+/.well-known/jwks.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
