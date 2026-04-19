@@ -137,6 +137,6 @@ const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date
     form!.classList.add('hidden');
     success?.classList.remove('hidden');
     (window as any).gtag?.('event', 'sign_up', { method: 'newsletter-blog' });
-    (window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'newsletter-blog' });
+    (window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'abonare-newsletter' });
   });
 </script>

@@ -490,14 +490,14 @@ const blogPosts = [
         form!.classList.add('hidden');
         successMsg?.classList.remove('hidden');
         (window as any).gtag?.('event', 'sign_up', { method: 'newsletter-homepage' });
-      (window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'newsletter-homepage' });
+      (window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'abonare-newsletter' });
       }
     } catch {
       // Show success anyway for static build
       form!.classList.add('hidden');
       successMsg?.classList.remove('hidden');
       (window as any).gtag?.('event', 'sign_up', { method: 'newsletter-homepage' });
-      (window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'newsletter-homepage' });
+      (window as any).fbq?.('track', 'CompleteRegistration', { content_name: 'abonare-newsletter' });
     }
   });
 </script>
