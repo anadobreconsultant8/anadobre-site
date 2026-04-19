@@ -9,3 +9,7 @@
 /.well-known/api-catalog
   Content-Type: application/json
   Access-Control-Allow-Origin: *
+
+/.well-known/http-message-signatures-directory
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
