@@ -134,5 +134,82 @@ const GA4_ID = 'G-HQ3N36DE0Z';
 <body class="font-sans text-text-primary bg-white antialiased">
   <slot />
   <CookieConsent />
+
+  <!-- ═══ WebMCP — tool-uri pentru agenți AI ═══ -->
+  <script is:inline>
+  if (typeof navigator !== 'undefined' && navigator.modelContext) {
+    const ac = new AbortController();
+
+    navigator.modelContext.registerTool({
+      name: 'get_site_info',
+      title: 'Informații site Ana Dobre',
+      description: 'Returnează informații despre Ana Dobre, serviciile oferite și modalitățile de contact.',
+      annotations: { readOnlyHint: true },
+      inputSchema: { type: 'object', properties: {} },
+      execute: async () => ({
+        name: 'Ana Dobre',
+        role: 'Consultant Marketing Automation & Strategie Digitală',
+        experience: '14+ ani marketing digital',
+        services: ['Audit sisteme automatizare', 'Implementare marketing automation', 'Retainer consultanță'],
+        contact: 'https://anadobre.com/contact',
+        blog: 'https://anadobre.com/blog',
+        mini_audit: 'https://anadobre.com/mini-audit',
+      }),
+    }, { signal: ac.signal });
+
+    navigator.modelContext.registerTool({
+      name: 'subscribe_newsletter',
+      title: 'Abonare newsletter',
+      description: 'Abonează utilizatorul la newsletter-ul despre marketing automation și strategie digitală.',
+      inputSchema: {
+        type: 'object',
+        required: ['email'],
+        properties: {
+          prenume: { type: 'string', description: 'Prenumele utilizatorului' },
+          email: { type: 'string', format: 'email', description: 'Adresa de email' },
+        },
+      },
+      execute: async (input) => {
+        const res = await fetch('/api/newsletter-subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenume: input.prenume || '', email: input.email }),
+        });
+        const data = await res.json();
+        return res.ok ? { success: true, message: 'Abonat cu succes.' } : { success: false, error: data.error };
+      },
+    }, { signal: ac.signal });
+
+    navigator.modelContext.registerTool({
+      name: 'get_blog_posts',
+      title: 'Articole blog',
+      description: 'Returnează lista de articole disponibile pe blog despre marketing automation, AI și strategie digitală.',
+      annotations: { readOnlyHint: true },
+      inputSchema: { type: 'object', properties: {} },
+      execute: async () => {
+        const res = await fetch('/blog', { headers: { 'Accept': 'text/markdown' } });
+        const text = await res.text();
+        return { url: 'https://anadobre.com/blog', content: text.slice(0, 3000) };
+      },
+    }, { signal: ac.signal });
+
+    navigator.modelContext.registerTool({
+      name: 'start_mini_audit',
+      title: 'Pornire mini-audit',
+      description: 'Direcționează utilizatorul către mini-auditul de maturitate în automatizări de marketing și vânzări.',
+      annotations: { readOnlyHint: true },
+      inputSchema: { type: 'object', properties: {} },
+      execute: async (_, client) => {
+        if (client && client.requestUserInteraction) {
+          await client.requestUserInteraction(() => {
+            window.location.href = '/mini-audit';
+          });
+        }
+        return { url: 'https://anadobre.com/mini-audit', description: 'Mini-audit gratuit în 8 întrebări, 3 minute. Scor de maturitate + recomandări personalizate.' };
+      },
+    }, { signal: ac.signal });
+  }
+  </script>
+  <!-- ════════════════════════════════════════════════════════════════ -->
 </body>
 </html>
