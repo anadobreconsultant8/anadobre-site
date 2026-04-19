@@ -3,14 +3,71 @@ Allow: /
 Disallow: /api/
 Disallow: /confirmare-abonare
 
-# AI crawlers
+# ── Anthropic (Claude) ───────────────────────────────────────────────
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /api/
+
+# ── OpenAI (ChatGPT) ─────────────────────────────────────────────────
 User-agent: GPTBot
 Allow: /
+Disallow: /api/
 
-User-agent: Claude-Web
+User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
 
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+# ── Perplexity ───────────────────────────────────────────────────────
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
+
+# ── Google (Gemini / AI Overviews) ──────────────────────────────────
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+# ── Meta AI ──────────────────────────────────────────────────────────
+User-agent: meta-externalagent
+Allow: /
+Disallow: /api/
+
+# ── Apple (Apple Intelligence) ───────────────────────────────────────
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
+# ── Cohere ───────────────────────────────────────────────────────────
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+
+# ── Common Crawl (baza pentru antrenarea multor modele AI) ───────────
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+# ── You.com ──────────────────────────────────────────────────────────
+User-agent: YouBot
+Allow: /
+Disallow: /api/
+
+# ── Diffbot ──────────────────────────────────────────────────────────
+User-agent: Diffbot
+Allow: /
+Disallow: /api/
+
+# ── Amazon ───────────────────────────────────────────────────────────
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
 
 Sitemap: https://anadobre.com/sitemap.xml
