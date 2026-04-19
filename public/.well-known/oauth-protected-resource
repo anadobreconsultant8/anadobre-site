@@ -1,0 +1,9 @@
+{
+  "resource": "https://anadobre.com",
+  "authorization_servers": [
+    "https://anadobre.com"
+  ],
+  "scopes_supported": ["openid", "profile", "email"],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://anadobre.com/openapi.json"
+}
