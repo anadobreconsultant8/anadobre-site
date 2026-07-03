@@ -12,7 +12,7 @@ Unele automatizări de marketing au nevoie de inputul tău, ca să facă în mod
 
 Iată o diagramă, pe care o voi explica mai jos:
 
-> **Cum funcționează fluxul:** Google Drive (folderul 1, cu templateul tău lunar completat) → Orchestrator AI (analizează obiectivele, creează planul, cere aprobarea ta) → tu decizi: OK / Revizuire / Stop → Agent de conținut (idei postări LinkedIn, drafturi articole) + Agent lead management (fluxuri follow-up, welcome emails) → Google Drive (folderul 2, cu outputul final).
+![Diagramă flux automatizare conținut cu orchestrare agenți AI și aprobare umană](/blog/diagrama-orchestrare-agenti-ai-human-in-the-loop.svg)
 
 *Notă: diagrama am creat-o cu ChatGPT, pe baza indicațiilor mele.*
 
