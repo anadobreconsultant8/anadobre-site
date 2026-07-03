@@ -10,7 +10,7 @@ Ai investit timp, cel mai probabil și bani. Ai încercat să fii prezent(ă) on
 
 În acest articol îți arăt **cele mai frecvente 5 greșeli** pe care le-am întâlnit în strategiile de marketing și ce poți face pentru a nu le repeta, chiar dacă lucrezi singur(ă) sau ai deja o echipă.
 
-## **1. Lipsa unei viziuni clare și a obiectivelor SMART**
+## 1. Lipsa unei viziuni clare și a obiectivelor SMART
 
 „Vrem să fim mai vizibili" nu este un obiectiv. Este o intenție vagă. Una dintre cele mai comune capcane este să începi cu „ce trebuie să postez?", înainte de a ști **de ce postezi**. O [strategie de marketing funcțională](https://anadobre.com/cum-creezi-o-strategie-de-marketing-digital-eficienta-pentru-afacerea-ta/) pleacă de la un scop concret (ex: generare de lead-uri, înscrieri la un curs, vânzări directe) și îl traduce în obiective **SMART**: specifice, măsurabile, realizabile, relevante și încadrate în timp.
 
@@ -20,7 +20,7 @@ Ai investit timp, cel mai probabil și bani. Ai încercat să fii prezent(ă) on
 
 - Stabilește KPIs clari: câte lead-uri vrei? câți clienți noi? ce rată de conversie?
 
-## **2. Focusul pe „tendințe", nu pe nevoile reale ale audienței**
+## 2. Focusul pe „tendințe", nu pe nevoile reale ale audienței
 
 Doar pentru că „toată lumea face reels" sau „webinarii" nu înseamnă că și publicul tău răspunde la ele. Multe strategii devin ineficiente pentru că se concentrează pe formă, nu pe fond.
 
@@ -30,7 +30,7 @@ Doar pentru că „toată lumea face reels" sau „webinarii" nu înseamnă că 
 
 - Abia apoi alegi formatul, în funcție de cum preferă să consume conținutul (scris, video, audio etc.)
 
-## **3. Lipsă de consistență în execuție**
+## 3. Lipsă de consistență în execuție
 
 Începi cu entuziasm: o campanie, câteva postări sau articole, poate chiar o strategie, dar după câteva săptămâni ritmul se schimbă. Fie tu sau echipa ta sunteți ocupați cu alte urgențe, fie prioritățile se schimbă, fie apar blocaje de „aprobare" sau „conținut de livrat".
 
@@ -44,7 +44,7 @@ Marketingul nu funcționează în salturi, ci cu consecvență. **Consistența**
 
 - Alocă minim 2-3 ore/săptămână în calendarul echipei doar pentru marketing; nu lăsa promovarea să devină ceva „ce facem când avem timp".
 
-## **4. Comunicare generică, fără diferențiere reală**
+## 4. Comunicare generică, fără diferențiere reală
 
 Afirmații de tipul „Te ajutăm să obții mai mulți clienți" sună bine, dar sunt atât de vagi, încât ar putea veni de la oricine. Mesajele generice sunt ușor de ignorat. **Într-o piață aglomerată, claritatea și specificitatea sunt cele care atrag atenția și inspiră încredere**.
 
@@ -64,7 +64,7 @@ Un mesaj clar, diferențiator, care să apară în comunicarea ta, ar putea fi:
 
 - Întreabă-te: „dacă clientul meu ideal citește asta, înțelege imediat că eu sunt soluția potrivită pentru el?"
 
-## **5. Lipsa unei evaluări reale a rezultatelor**
+## 5. Lipsa unei evaluări reale a rezultatelor
 
 Mulți confundă activitatea cu rezultatul. Doar pentru că ai făcut 10 postări sau ai avut 300 de vizualizări la un video, nu înseamnă că ai avut impact.
 
@@ -74,7 +74,7 @@ Mulți confundă activitatea cu rezultatul. Doar pentru că ai făcut 10 postăr
 
 - Înțelege călătoria clientului: cât durează până cumpără? Ce conținut a influențat decizia?
 
-## **Exemplu** pentru un mic business de consultanță sau coaching
+## Exemplu pentru un mic business de consultanță sau coaching
 
 Să presupunem că ai tu un astfel de business. Ai început să postezi constant pe Instagram și LinkedIn. Creezi conținut valoros, educativ, motivațional. Primești aprecieri, poate chiar comentarii pozitive. Dar după 6 luni nu ai niciun client nou concret generat din acest efort.
 
@@ -92,7 +92,7 @@ Acesta este un scenariu clasic de „strategie fără strategie", în care faci 
 
 Cu câteva ajustări precum claritate în mesaj, introducerea unui funnel simplu, conținut orientat pe problemele reale ale audienței, poți transforma radical rezultatele în doar câteva săptămâni.
 
-## **Checklist: Cum verifici dacă strategia ta este pe drumul bun**
+## Checklist: Cum verifici dacă strategia ta este pe drumul bun
 
 1. Ai obiective concrete pentru următoarele 90 de zile?
 
@@ -110,17 +110,17 @@ Strategia de marketing înseamnă **claritate, disciplină și măsurare**. Îns
 
 Dacă simți că strategia ta pierde energie, timp sau bani fără rezultate clare, [aplică pentru o ședință Strategy boost](https://anadobre.com/produs/strategy-boost/). Ca să te ajut să vezi clar ce merge, ce nu merge și ce ajustări rapide poți face.
 
-## **FAQ**
+## FAQ
 
-### **Ce este o strategie de marketing eficientă?**
+### Ce este o strategie de marketing eficientă?
 
 Un plan clar, realist, care pornește de la obiective concrete și se traduce în acțiuni măsurabile.
 
-### **De ce nu funcționează strategia mea?**
+### De ce nu funcționează strategia mea?
 
 De obicei, din lipsă de obiective clare, execuție inconsecventă sau lipsă de diferențiere.
 
-### **Cum îmi pot îmbunătăți strategia de marketing?**
+### Cum îmi pot îmbunătăți strategia de marketing?
 
 Pornește de la obiectivele de business, înțelege audiența, construiește un plan simplu și testează constant.
 

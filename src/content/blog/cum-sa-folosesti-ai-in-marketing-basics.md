@@ -10,7 +10,7 @@ Inteligența artificială (AI) este acum un instrument accesibil, care poate tra
 
 Dacă ești antreprenor sau marketer la început de drum cu AI, acest articol este pentru tine. Voi detalia mai jos elementele de bază legate de AI în marketing, tool-uri, moduri concrete de utilizare, avantajele și limitele AI-ului în marketing și cum acesta devine o parte tot mai importantă a automatizării activității unui business.
 
-## **Ce înseamnă AI în marketing și cum funcționează?**
+## Ce înseamnă AI în marketing și cum funcționează?
 
 AI în marketing înseamnă utilizarea unor sisteme automate care pot analiza date, învăța din comportamentul utilizatorilor și genera conținut, recomandări sau decizii. Practic, AI-ul te ajută să faci lucrurile mai repede și mai bine, fără să înlocuiască neapărat creativitatea umană, ci completând-o.
 
@@ -22,7 +22,7 @@ De exemplu:
 
 Aceste lucruri se pot face cu tool-uri pe care le poți accesa chiar de azi, fără să ai nevoie de programatori sau bugete mari.
 
-## **De unde să începi, concret**
+## De unde să începi, concret
 
 Primul pas este să te uiți la ce activități de marketing faci acum și unde pierzi cel mai mult timp sau energie. AI-ul este ideal pentru:
 
@@ -34,7 +34,7 @@ Primul pas este să te uiți la ce activități de marketing faci acum și unde 
 
 - personalizarea mesajelor, segmentarea audienței și trimiterea automată a emailurilor.
 
-## **Tool-uri de AI recomandate**, pentru început
+## Tool-uri de AI recomandate, pentru început
 
 - **ChatGPT**: generare de texte (emailuri, articole, postări);
 
@@ -44,7 +44,7 @@ Primul pas este să te uiți la ce activități de marketing faci acum și unde 
 
 - **Tidio**: chatbot conversațional pentru site.
 
-## **Cum te ajută AI în funcție de obiectivele tale de marketing**
+## Cum te ajută AI în funcție de obiectivele tale de marketing
 
 Pentru creșterea vizibilității în online, AI poate genera conținut optimizat pentru motoarele de căutare, titluri atractive și articole optimizate pentru anumite cuvinte cheie relevante.
 
@@ -54,7 +54,7 @@ Pentru engagement în social media, poți genera cu AI un calendar complet de po
 
 Pentru relația cu clienții, chatboții AI răspund 24/7, oferă asistență și livrează automat informații utile.
 
-## **Avantajele utilizării AI în marketing**
+## Avantajele utilizării AI în marketing
 
 - **Eficiență:** marketing mai rapid – [88% dintre marketeri folosesc deja AI în joburile lor](https://www.surveymonkey.com/mp/ai-marketing-statistics/)
 
@@ -64,7 +64,7 @@ Pentru relația cu clienții, chatboții AI răspund 24/7, oferă asistență ș
 
 - **Reducerea costurilor:** [37% dintre companiile care folosesc AI au redus costurile de marketing și vânzări între 10‑19 %.](https://www.amraandelma.com/best-ai-marketing-statistics/)
 
-## **Ce limite are AI-ul și la ce trebuie să fii atent/ă**
+## Ce limite are AI-ul și la ce trebuie să fii atent/ă
 
 - AI-ul are nevoie de prompturi / instrucțiuni clare. Cu cât îi explici mai bine ce vrei, cu atât răspunsul este mai bun.
 
@@ -74,7 +74,7 @@ Pentru relația cu clienții, chatboții AI răspund 24/7, oferă asistență ș
 
 - Nu este recomandat pentru mesaje sensibile sau complexe (negocieri, comunicare internă etc.).
 
-## **AI-ul este sigur pentru afacerea mea?**
+## AI-ul este sigur pentru afacerea mea?
 
 Da, atâta timp cât îl folosești ca pe un instrument complementar. AI-ul se dezvoltă rapid și va deveni o parte integrantă din marketingul și automatizarea afacerilor. A-l ignora înseamnă să pierzi timp, eficiență și oportunități. Majoritatea platformelor digitale îl integrează deja în mod natural în funcționalitățile lor.
 
@@ -88,7 +88,7 @@ Adopția este în creștere:
 
 - [48% dintre oameni folosesc AI zilnic, atât profesional cât și personal.](https://www.activecampaign.com/blog/ai-marketing-statistics)
 
-## **Începe cu un prim pas, dar începe azi**
+## Începe cu un prim pas, dar începe azi
 
 Alege un singur proces din activitatea ta de marketing și experimentează: de exemplu, creează cu AI o campanie de email sau o serie de postări draft pentru social media. Măsoară rezultatele și optimizează. Nu ai nevoie de echipe sau bugete mari, ci de claritate, testare și consecvență.
 

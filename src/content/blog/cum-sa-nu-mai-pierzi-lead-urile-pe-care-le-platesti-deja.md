@@ -32,7 +32,7 @@ Dacă simplificăm un scenariu de călătorie a unui potențial client B2C, non 
 
 Ar fi simplu ca pașii aceștia să se întâmple așa, dar pe parcurs apar de obicei chestiuni de genul: nu face nimeni follow-up sau îl face prea târziu sau incorect/insuficient (de exemplu, dacă lead-ul nu răspunde din prima, se oprește follow-up-ul), nu se trimit remindere lead-ului. Acestea (și multe altele) pot fi rezolvate cu ajutorul automatizărilor de marketing.
 
-## **Deci cum faci să nu mai pierzi lead-urile pe care le plătești deja (fără să crești bugetul de ads)**
+## Deci cum faci să nu mai pierzi lead-urile pe care le plătești deja (fără să crești bugetul de ads)
 
 Pentru scenarii similare cu cel de mai sus, poți rezolva problemele prezentate, prin:
 
@@ -94,13 +94,13 @@ Dacă trimiți ofertă și apoi aștepți să se decidă clientul, pierzi bani. 
 
 - **Tagging în CRM**: să știi care este lead cald/ lead rece/ cine este de reactivat.
 
-## **De ce să implementezi aceste automatizări de marketing?**
+## De ce să implementezi aceste automatizări de marketing?
 
 Ca să optimizezi ceea ce ai deja. Ca să-ți crești afacerea. Ca să ai o baza bună și un sistem automatizat de marketing, pentru o creștere sănătoasă și fără stres suplimentar. Vine 2026 - și te asigur că automatizările despre care vorbesc în acest articol, și care sunt simple - vor fi necesare, nu doar de preferat.
 
 Așa că este un moment tocmai bun să pregătești un plan de automatizări de marketing, să știi ce tools ai nevoie, ce merită/este necesar/imperios necesar să automatizezi. Astfel, intri în 2026 cu un sistem care nu uită de lead-uri, nu lasă programările fără remindere, nu abandonează procesul de follow-up. Iar aceste automatizări, odată implementate, lucrează fără pauză (și de cele mai multe ori, fără erori), 24/7.
 
-## **Până pe 1 decembrie ai 50% reducere la pachetele de automatizări de marketing**
+## Până pe 1 decembrie ai 50% reducere la pachetele de automatizări de marketing
 
 Dacă și tu pierzi lead-uri sau nu știi exact ce se întâmplă cu lead-ul după ce a completat un formular sau a trimis un mesaj, te pot ajuta. Alege de pe site pachetul care consideri că se potrivește cu obiectivele tale pentru anul viitor și tipul tău de business, și beneficiezi de 50% reducere doar până pe 1 decembrie.
 
