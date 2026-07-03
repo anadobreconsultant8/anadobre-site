@@ -14,7 +14,7 @@ Iată o diagramă, pe care o voi explica mai jos:
 
 ![Diagramă flux automatizare conținut cu orchestrare agenți AI și aprobare umană](/blog/diagrama-orchestrare-agenti-ai-human-in-the-loop.svg)
 
-*Notă: diagrama am creat-o cu ChatGPT, pe baza indicațiilor mele.*
+*Notă: diagrama am creat-o cu Claude, pe baza indicațiilor mele.*
 
 După cum vezi în diagramă, pornește de la un folder în Google Drive și **un google doc,** pe care tu îl adaugi în folderul respectiv, lunar. Mai exact, un template pe care îl completezi tu lunar, cu obiectivele pe care le ai în luna respectivă, legate de conținut și alte informații care să-l ajute pe agentul orchestrator (lămuresc imediat "cine" este acesta) să "înțeleagă" ce vrei mai exact.
 
