@@ -2,7 +2,7 @@
 title: "Calificarea lead-urilor, pe înțelesul unui antreprenor"
 date: "2026-07-09"
 category: "Automatizări și AI în marketing"
-image: "/blog/calificarea-lead-urilor-antreprenor.jpg"
+image: "/diagrama-flux-rutare-leads.png"
 excerpt: "Primești zeci de lead-uri pe lună, reclamele merg bine, și totuși o parte dintre clienții care chiar voiau să cumpere ajung la un alt furnizor. Problema nu e lipsa de lead-uri — ci ce se întâmplă cu ele după."
 ---
 
