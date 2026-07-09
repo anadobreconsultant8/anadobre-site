@@ -16,8 +16,6 @@ Ai alocați bani pentru reclame în fiecare lună și telefonul sună, iar formu
 
 Problema nu este de lipsă de trafic sau de lead-uri, ci de ceea ce se întâmplă cu lead-urile după ce sună sau completează formularul de contact.
 
----
-
 Uită-te la cum lucrează echipa ta acum. Cel mai probabil, lead-urile sunt sunate în ordinea în care intră: primul venit, primul sunat. Și pare corect ca abordare.
 
 Numai că printre lead-urile acelea sunt, pe de o parte, oameni care doar se interesează, cer diverse informații, nefiind pregătiți să se decidă curând - iar pe de altă parte, sunt potențiali clienți care vor să mobileze tot apartamentul sau schimbă toate ferestrele acum, cât mai rapid. Toți stau în aceeași coadă de așteptare, să fie contactați.
