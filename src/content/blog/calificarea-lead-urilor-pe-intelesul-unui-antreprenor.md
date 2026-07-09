@@ -77,3 +77,5 @@ Follow-up-ul este o automatizare la fel de simplă, iar pentru un volum mic are 
 Acesta este și motivul pentru care nu recomand niciodată să sari direct la implementarea unor fluxuri de automatizare. Înainte să construiești ceva, ai nevoie să știi **unde pierzi lead-uri acum**: la viteza de preluare sau la follow-up. Ca să automatizezi partea care acum te costă lead-uri și clienți, nu partea care oricum funcționează.
 
 [Acest scurt audit](/mini-audit) te poate ajuta să vezi unde se blochează lead-urile, unde se pierd și ce poți să faci ca să nu se mai întâmple asta, prioritizat.
+
+*Imaginea a fost generată cu Claude.*
