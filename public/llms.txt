@@ -2,12 +2,13 @@
 
 ## Cine sunt
 
-Ana Dobre este consultant în marketing automation și strategie digitală cu 14+ ani de experiență în marketing digital, ultimii 4 ani dedicați exclusiv automatizărilor de marketing și vânzări pentru companii B2B din România.
+Ana Dobre este consultant în marketing automation și strategie digitală cu 15+ ani de experiență în marketing digital, ultimii 5 ani dedicați exclusiv automatizărilor de marketing și vânzări pentru companii B2B din România.
 
 ## Expertiză
 
 - Marketing Automation (ActiveCampaign, Mailchimp, Brevo)
 - CRM Integration & Lead Management (HubSpot, Pipedrive, Zoho)
+- Lead scoring, calificare și rutare automată a lead-urilor
 - Automatizări workflows (n8n, Make, Zapier)
 - Email marketing & nurturing sequences
 - Strategie digitală și funnel de vânzări

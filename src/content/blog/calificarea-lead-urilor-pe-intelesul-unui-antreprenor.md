@@ -78,4 +78,22 @@ Acesta este și motivul pentru care nu recomand niciodată să sari direct la im
 
 [Acest scurt audit](/mini-audit) te poate ajuta să vezi unde se blochează lead-urile, unde se pierd și ce poți să faci ca să nu se mai întâmple asta, prioritizat.
 
+## Întrebări frecvente despre calificarea lead-urilor
+
+### Ce înseamnă calificarea lead-urilor?
+
+Calificarea lead-urilor este procesul prin care separi potențialii clienți pregătiți să cumpere (lead-uri calde) de cei care sunt încă în faza de informare (lead-uri reci), ca să poți aloca corect resursele echipei de vânzări și să contactezi mai întâi pe cei cu intenție reală de cumpărare.
+
+### Cum funcționează lead scoring-ul?
+
+Lead scoring-ul atribuie un punctaj automat fiecărui lead în funcție de semnale de comportament și date declarate: ce produs a cerut, cât de urgent este, dacă a lăsat date de contact complete, sursa din care a venit etc. Lead-urile cu scor mare sunt prioritizate pentru contact imediat; cele cu scor mic intră într-un flux de nurturing.
+
+### Ce instrumente pot folosi pentru calificarea automată a lead-urilor?
+
+Poți construi un flux de calificare automată în n8n, Make sau Zapier, conectat la formularul tău de pe site și la CRM-ul existent (HubSpot, Pipedrive, Zoho etc.). Nu ai nevoie de un sistem complex - un flux simplu cu 3-4 condiții este suficient pentru a face diferența la volumuri de 30-100 lead-uri pe lună.
+
+### Cât durează să implementez un sistem de calificare a lead-urilor?
+
+Un sistem de bază - scoring simplu, notificare automată pe WhatsApp/email pentru agentul de vânzări și email automat către lead - se poate implementa în 1-2 săptămâni, dacă există deja un formular de captare și un CRM activ.
+
 *Imaginea a fost generată cu Claude.*

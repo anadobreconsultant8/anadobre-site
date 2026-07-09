@@ -4,7 +4,7 @@
   <!-- Pagini principale -->
   <url>
     <loc>https://anadobre.com/</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://anadobre.com/blog</loc>
-    <lastmod>2026-04-19</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -151,6 +151,12 @@
   <url>
     <loc>https://anadobre.com/blog/strategie-continut-blog-trafic-organic</loc>
     <lastmod>2025-11-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://anadobre.com/blog/calificarea-lead-urilor-pe-intelesul-unui-antreprenor</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
