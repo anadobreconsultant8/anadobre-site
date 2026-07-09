@@ -6,6 +6,8 @@ image: "/diagrama-flux-rutare-leads.png"
 excerpt: "Primești zeci de lead-uri pe lună, reclamele merg bine, și totuși o parte dintre clienții care chiar voiau să cumpere ajung la un alt furnizor. Problema nu e lipsa de lead-uri - ci ce se întâmplă cu ele după."
 ---
 
+*Notă: imaginea a fost generată cu Claude.*
+
 Ai un business care furnizează produse la comandă sau pe bază de ofertă - de exemplu mobilier la comandă, termopane și tâmplărie PVC, uși și garduri automate, sisteme fotovoltaice, pompe de căldură și climatizare, amenajări interioare sau construcții la cheie.
 
 Adică genul de vânzare unde potențialul client cere o ofertă, compară câțiva furnizori și se decide de obicei după câteva zile sau săptămâni, nu imediat.
@@ -95,5 +97,3 @@ Poți construi un flux de calificare automată în n8n, Make sau Zapier, conecta
 ### Cât durează să implementez un sistem de calificare a lead-urilor?
 
 Un sistem de bază - scoring simplu, notificare automată pe WhatsApp/email pentru agentul de vânzări și email automat către lead - se poate implementa în 1-2 săptămâni, dacă există deja un formular de captare și un CRM activ.
-
-*Imaginea a fost generată cu Claude.*
