@@ -68,4 +68,22 @@ Pro tip: folosește countdown timer în pagina Tripwire, elemente de urgență (
 
 Strategia Tripwire nu este despre a vinde ieftin. Este despre a vinde inteligent, strategic și a crea o relație profitabilă pe termen lung cu publicul tău țintă. Dacă o implementezi corect, poate deveni un accelerator al afacerii tale.
 
+## Întrebări frecvente
+
+### Ce este strategia Tripwire și cum funcționează psihologic?
+
+Tripwire este o ofertă cu preț foarte mic sau simbolic, menită să transforme un vizitator sau lead într-un client plătitor. Funcționează psihologic prin schimbarea relației cu potențialul client: odată ce cineva a scos cardul și a cumpărat ceva de la tine, chiar și pentru o sumă mică, devine client, nu simplu vizitator. Iar un client este mult mai ușor de convins să cumpere din nou, deoarece bariera psihologică a primei tranzacții a fost depășită.
+
+### La ce pret ar trebui să setez produsul Tripwire?
+
+Nu există un preț universal, dar Tripwire-ul trebuie să fie "aproape imposibil de refuzat" - de obicei între 7 și 27 de euro pentru produse digitale. Scopul nu este profitul din această vânzare, ci generarea primei tranzacții și câștigarea încrederii. Testează cu A/B testing diferite prețuri (7, 19, 27 euro) pentru a găsi punctul optim de conversie pentru publicul tău specific.
+
+### Pentru ce tipuri de afaceri este potrivită strategia Tripwire?
+
+Tripwire funcționează în orice tip de business, nu doar pentru produse informaționale: în eCommerce poate fi o mostră sau o variantă mini a unui produs, în servicii poate fi un audit sau o consultație inițială la preț promoțional, în coaching poate fi un mini-curs sau un workbook, iar în SaaS un trial plătit cu funcționalități extra. Cheia este să oferi ceva cu valoare percepută ridicată, la un preț mic, care rezolvă un "pain point" specific al clientului.
+
+### Când ar trebui să apară oferta Tripwire în călătoria clientului?
+
+Tripwire-ul funcționează cel mai bine imediat după lead magnet, în primele 24-48 de ore de la opt-in, când interesul clientului este la maxim. Schema ideală este: lead magnet (valoare gratuită contra date de contact) - Tripwire (ofertă irezistibilă la preț simbolic) - Core Offer (produsul principal) - Upsell/Cross-sell. Un email de tip "one-time offer" sau o pagină cu countdown timer pot dubla sau tripla rata de conversie.
+
 Dacă vrei să discutăm cum poți implementa concret un funnel cu Tripwire pentru afacerea ta, scrie-mi pe hello@anadobre.com.

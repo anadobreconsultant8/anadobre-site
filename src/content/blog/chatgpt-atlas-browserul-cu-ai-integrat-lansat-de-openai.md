@@ -88,4 +88,22 @@ Dacă ești curios/oasă să experimentezi AI-ul direct în browser, Atlas merit
 
 Dacă vrei să afli când public articole noi despre **AI, automatizări și strategii de marketing digital**, [abonează-te la newsletter](https://anadobre.com/)!
 
+## Întrebări frecvente
+
+### Ce este ChatGPT Atlas și cum diferă de un browser obișnuit?
+
+ChatGPT Atlas este un browser dezvoltat de OpenAI, bazat pe Chromium, care integrează direct asistentul ChatGPT în experiența de navigare. Spre deosebire de Chrome sau Safari, unde ChatGPT este un tab separat, în Atlas poți conversa direct cu o pagină web - selectezi text, ceri rezumate, reformulări sau comparații - fără să schimbi contextul.
+
+### Pe ce dispozitive este disponibil ChatGPT Atlas și cine îl poate folosi?
+
+La lansare, Atlas este disponibil doar pe macOS. Versiunile pentru Windows, iOS și Android urmează să apară. Îl poți descărca gratuit de pe chatgpt.com/atlas și autentifica cu orice cont ChatGPT, gratuit sau plătit. Funcțiile avansate, precum Agent Mode, sunt disponibile doar pentru abonații Plus, Pro și Business.
+
+### Este sigur să folosesc ChatGPT Atlas pentru date sensibile sau informații de business?
+
+Cu precauții, da. Atlas poate salva automat fragmente din paginile vizitate dacă funcția de memorii este activată. Recomandările sunt: dezactivează memoria din setări dacă nu vrei ca browserul să rețină date, verifică periodic ce informații sunt stocate (Settings - Browser Memories), folosește modul Incognito pentru date sensibile și monitorizează activ Agent Mode pe conturi importante.
+
+### Ce sarcini concrete poate face ChatGPT Atlas pentru un antreprenor sau marketer?
+
+Poți rezuma rapid articole și rapoarte lungi, rescrie paragrafe direct în pagină pentru emailuri sau postări, compara site-urile competitorilor și cere o analiză a diferențelor, genera idei de conținut pe baza paginilor deschise și, prin Agent Mode, automatiza pași repetitivi precum căutarea de informații sau completarea de formulare.
+
 *Sursă imagine: screenshot [chatgpt.com/atlas](https://chatgpt.com/atlas) (© OpenAI)*

@@ -94,4 +94,22 @@ Alege un singur proces din activitatea ta de marketing și experimentează: de e
 
 Utilizarea AI în marketing este prezentul, dar mai ales viitorul. Cu cât începi mai devreme, cu atât vei fi mai pregătit/ă pentru automatizarea inteligentă a afacerii tale.
 
+## Întrebări frecvente
+
+### De unde încep dacă vreau să folosesc AI în marketingul afacerii mele?
+
+Primul pas este să identifici unde pierzi cel mai mult timp sau energie în activitatea de marketing. AI-ul este ideal pentru generarea de conținut (text, idei, imagini), automatizarea răspunsurilor prin chatboți, analiza de performanță și personalizarea mesajelor. Alege un singur proces - de exemplu, crearea de postări pentru social media - experimentează cu ChatGPT sau Canva AI, măsoară rezultatele și extinde treptat.
+
+### Este AI-ul sigur pentru a fi folosit în marketingul afacerii mele?
+
+Da, atâta timp cât îl folosești ca instrument complementar, nu ca înlocuitor al deciziei umane. Orice conținut generat de AI trebuie verificat și revizuit înainte de publicare. Nu introduce date personale ale clienților în platforme AI publice și nu utiliza AI pentru comunicări sensibile sau negocieri importante. Ca instrument de suport pentru sarcini repetitive și creative, AI-ul este sigur și din ce în ce mai folosit: 72% dintre companii îl folosesc deja în cel puțin o arie de activitate.
+
+### Ce tool-uri AI sunt recomandate pentru un antreprenor care începe?
+
+Pentru început sunt recomandate: ChatGPT pentru generarea de texte (emailuri, articole, postări), Canva AI pentru creații vizuale rapide, ActiveCampaign sau Mailchimp pentru automatizarea emailurilor cu funcții AI și Tidio pentru un chatbot conversațional pe site. Toate au variante gratuite sau cu costuri accesibile, fără a necesita cunoștințe tehnice avansate.
+
+### Poate AI-ul să înlocuiască complet un marketer?
+
+Nu. AI-ul preia sarcinile repetitive și operaționale, dar nu poate înlocui creativitatea strategică, judecata umană sau relațiile cu clienții. Are limitări clare: necesită instrucțiuni clare (prompts bine scrise), poate genera informații greșite sau repetitive și nu este recomandat pentru mesaje sensibile sau decizii complexe. Rolul său este să amplifice eficiența marketerului, nu să îl înlocuiască.
+
 Dacă ți-a plăcut articolul și vrei să primești notificări când apar articole noi similare, pe blog, te invit [să te abonezi la newsletter.](https://anadobre.com/blog/)

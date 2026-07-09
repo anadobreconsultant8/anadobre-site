@@ -78,4 +78,22 @@ După ce ai creat roadmap‑ul, implementarea devine următorul pas critic. Pent
 
 Un roadmap de marketing digital bine structurat transformă eforturile sporadice în campanii coerente care generează rezultate măsurabile. Prin stabilirea de obiective SMART, evaluarea prezenței existente, alegerea canalelor adecvate și definirea KPI‑urilor, vei putea să aliniezi marketingul la strategia generală a afacerii și să maximizezi ROI‑ul. Flexibilitatea și revizuirea continuă îți permit să adaptezi planul la schimbările pieței și la evoluția tehnologiei.
 
+## Întrebări frecvente
+
+### Ce este un roadmap de marketing digital și prin ce diferă de o strategie de marketing?
+
+Un roadmap de marketing este un plan operațional detaliat care traduce strategia în acțiuni concrete, cu termene, responsabili și KPIs. Strategia stabilește direcția și obiectivele mari (ce vrei să obții și de ce), în timp ce roadmap-ul stabilește pașii, resursele și calendarul necesar pentru a ajunge acolo. Fără roadmap, strategia rămâne o intenție; fără strategie, roadmap-ul devine o listă de sarcini fără direcție.
+
+### Cât de des ar trebui să revizuiesc roadmap-ul de marketing?
+
+Articolul recomandă revizuiri lunare sau trimestriale. Piața digitală se schimbă rapid, iar campaniile care funcționau acum 3 luni pot deveni ineficiente. La fiecare revizuire verifici dacă KPIs-urile sunt atinse, dacă bugetul este alocat pe canalele care performează și dacă obiectivele de business s-au modificat. Flexibilitatea și ajustarea continuă sunt esențiale pentru ca roadmap-ul să rămână relevant.
+
+### Ce KPIs ar trebui să includ în roadmap-ul meu de marketing?
+
+Alege KPIs relevanti pentru fiecare etapă a funnelului: pentru awareness urmărești traficul pe site și reach-ul; pentru considerare, numărul de lead-uri generate și rata de conversie a formularelor; pentru conversie, costul per lead, rata de închidere și ROI-ul campaniilor. Important este să definești KPIs înainte de a lansa campania, nu după, pentru a putea compara rezultatele cu obiectivele stabilite.
+
+### Pot crea un roadmap de marketing eficient fără o echipă mare?
+
+Da. Un roadmap eficient nu presupune o echipă mare, ci claritate și priorități bine definite. Dacă lucrezi singur sau cu o echipă mică, concentrează-te pe 2-3 canale relevante pentru publicul tău, automatizează ce poți (programarea postărilor, secvențele de email) și folosește instrumente simple de project management precum Trello sau Asana pentru a urmări progresul. Consistența bate volumul.
+
 Ești pregătit/ă să pui în aplicare un roadmap personalizat pentru afacerea ta? [Programează o discuție](https://anadobre.com/strategy-system/) completând formularul din partea de jos a paginii - sau scrie-mi direct pe hello@anadobre.com - și hai să vedem cum putem construi un plan de marketing online eficient pentru afacerea ta!

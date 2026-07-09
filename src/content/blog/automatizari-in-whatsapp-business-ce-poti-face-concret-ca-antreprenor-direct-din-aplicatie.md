@@ -141,4 +141,22 @@ Acesta este însă un alt nivel de complexitate, potrivit afacerilor aflate în 
 
 Dacă și afacerea ta se încadrează aici și vrei să implementezi astfel de automatizări, scrie-mi pe [**hello@anadobre.com**](mailto:hello@anadobre.com) sau [**trimite-mi mesajul tău**](https://anadobre.com/contact/) și stabilim împreună următorii pași.
 
+## Întrebări frecvente
+
+### Ce diferență există între WhatsApp Messenger și WhatsApp Business?
+
+WhatsApp Business este o aplicație separată, destinată afacerilor mici, care adaugă funcționalități specifice față de WhatsApp Messenger: profil de afacere cu adresă, site și descriere, instrumente de organizare (etichete), mesaje automate de bun venit și de absență, răspunsuri rapide și catalog de produse sau servicii. Nu poți folosi același număr simultan în ambele aplicații.
+
+### Ce automatizări pot seta direct din WhatsApp Business, fără a fi programator?
+
+Din aplicație poți seta mesajul de bun venit (trimis automat la primul contact), mesajul de absență (trimis în afara programului), răspunsuri rapide (mesaje standard accesibile printr-o comandă scurtă) și etichete pentru organizarea conversațiilor. Toate acestea sunt disponibile la Settings - Business Tools, fără nicio integrare tehnică.
+
+### Când are sens să trec la WhatsApp Business API în loc de aplicația standard?
+
+WhatsApp Business API este potrivit atunci când ai nevoie de automatizări declanșate de acțiuni concrete (comenzi, plăți, programări), de integrare cu un CRM sau cu alte sisteme de business, ori de fluxuri de comunicare scalabile. Aplicația standard este suficientă pentru afaceri mici cu volum redus de conversații gestionate manual.
+
+### Poate WhatsApp Business să trimită follow-up automat către clienți?
+
+Nu direct - aplicația standard nu trimite follow-up automat. Îți permite însă să salvezi mesaje de follow-up ca răspunsuri rapide, pe care le poți trimite manual în câteva secunde. Automatizarea completă a follow-up-ului necesită WhatsApp Business API conectat cu o platformă de tip ManyChat, HubSpot sau Zapier.
+
 *Imaginea din articol a fost generată cu Gemini.*

@@ -318,3 +318,21 @@ Postează zilnic, constant și poziționează-te ca expert pe domeniul tău de a
 Utilizează Google Analytics pentru a monitoriza traficul pe site, comportamentul utilizatorilor și conversiile. Folosește instrumentele de analiză oferite de platformele de social media pentru a monitoriza performanța postărilor și campaniilor.
 
 Stabilește indicatorii cheie de performanță care sunt relevanți pentru obiectivele tale de marketing (trafic pe site, rate de conversie, engagement pe social media, etc.). Creează rapoarte periodice care să urmărească evoluția KPI-urilor și să evidențieze zonele care necesită îmbunătățiri. Testează și optimizează constant acțiunile tale online, implicit strategia ta de marketing digital.
+
+## Întrebări frecvente
+
+### De ce am nevoie de o strategie de marketing digital și nu e suficient să postez constant pe social media?
+
+Postările constante fără o strategie clară înseamnă acțiuni fără direcție - consumi timp și energie fără să știi dacă ajungi la publicul potrivit sau dacă îți atingi obiectivele de business. O strategie de marketing digital stabilește cui comunici, ce comunici, pe ce canale și cu ce scop măsurabil, transformând fiecare acțiune de marketing într-un pas spre un rezultat concret.
+
+### Cum identific clientul ideal pentru afacerea mea?
+
+Pornește de la datele pe care le ai deja: cine sunt clienții tăi actuali (vârstă, locație, ocupație, venit), cum au găsit afacerea ta, ce probleme rezolvi pentru ei. Completează cu instrumente de analiză (Google Analytics, Meta Insights), sondaje sau interviuri cu clienții. Scopul este să construiești un profil detaliat care să includă caracteristici demografice, comportamente de cumpărare și principalele provocări pe care produsul sau serviciul tău le rezolvă.
+
+### Ce tactici de marketing digital să aleg dacă am un buget limitat?
+
+Cu buget limitat, cel mai eficient mix este: marketing prin conținut (articole de blog optimizate SEO) pentru trafic organic pe termen lung, prezență activă pe 1-2 platforme sociale relevante pentru publicul tău și email marketing pentru menținerea relației cu lead-urile existente. Acestea au costuri reduse și generează rezultate durabile. Publicitatea plătită (Google Ads, Meta Ads) poate fi adăugată treptat, pe măsură ce bugetul crește.
+
+### Cum știu dacă strategia mea de marketing digital funcționează?
+
+Urmărești KPIs relevanți stabiliți în prealabil: traficul organic pe site, rata de conversie, numărul de lead-uri generate, costul per lead și rata de retenție a clienților. Monitorizează cel puțin lunar aceste date cu Google Analytics și cu instrumentele platformelor sociale. Dacă un canal nu generează rezultate după 3-6 luni de aplicare consecventă, ajustează strategia sau redistribuie bugetul spre canalele care performează.

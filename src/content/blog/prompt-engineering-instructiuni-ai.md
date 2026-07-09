@@ -73,4 +73,22 @@ Alege o sarcină repetitivă din activitatea ta de marketing și încearcă să 
 
 Iar dacă te interesează acest subiect, AI și automatizări în marketing, te invit să te abonezi la newsletter. Ca să primești pe email notificare atunci când scriu un articol nou aici pe blog.
 
+## Întrebări frecvente
+
+### Ce este prompt engineering-ul și de ce ar trebui să îl învăț?
+
+Prompt engineering-ul este tehnica de a scrie instrucțiuni clare, contextuale și eficiente pentru a obține de la AI exact rezultatele dorite. Este important de învățat deoarece calitatea răspunsurilor AI depinde direct de calitatea instrucțiunilor date. Un prompt vag generează răspunsuri neclare sau irelevante, în timp ce un prompt bine structurat poate economisi ore de muncă și genera conținut, planuri sau analize de calitate ridicată.
+
+### Care sunt cele mai eficiente tehnici de prompt engineering pentru marketing?
+
+Patru tehnici sunt deosebit de utile în marketing: Zero-shot prompting (instrucțiune simplă și directă pentru sarcini clare), Few-shot prompting (oferi 1-2 exemple de stil sau format pentru consistență de brand), Role-based prompting (atribui AI-ului un rol specific, de exemplu "ești copywriter pentru un brand B2B") și Chain-of-thought prompting (ceri AI-ului să rezolve problema pas cu pas, ideal pentru campanii complexe sau strategii de vânzare).
+
+### Cum formulez un prompt bun dacă nu știu de unde să încep?
+
+Pornește de la câteva elemente de bază: specifică obiectivul concret (ce vrei să obții), dă-i AI-ului un rol clar (cine ești tu sau ce expert ar trebui să fie), adaugă context relevant (pentru ce brand, public, canal), și indică formatul dorit (email, postare LinkedIn, listă cu bullet-uri). Dacă rezultatul nu este satisfăcător, poți chiar întreba AI-ul: "Cum să formulez mai bine cererea mea ca să mă ajuți cu...?" și va sugera el îmbunătățiri.
+
+### Trebuie să rescriu prompts de fiecare dată sau le pot reutiliza?
+
+Poți și este recomandat să creezi template-uri de prompts pentru sarcinile repetitive din activitatea ta de marketing - de exemplu, un template pentru postări LinkedIn, unul pentru emailuri de follow-up, altul pentru rezumate de articole. Salvează-le într-un document și adaptează doar variabilele specifice (subiectul, produsul, publicul) de fiecare dată. Aceasta este una dintre cele mai eficiente modalități de a economisi timp cu AI.
+
 *Notă: imaginea din articol este generată cu [Gemini](https://gemini.google.com/).*

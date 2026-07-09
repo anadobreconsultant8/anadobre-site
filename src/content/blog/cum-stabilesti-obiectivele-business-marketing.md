@@ -105,3 +105,21 @@ Punctez mai jos aspectele importante de reținut:
 Te încurajez să-ți stabilești de pe acum obiectivele de marketing pentru primele 6 luni din 2025, pornind de la obiectivele de business ale afacerii tale. Asigură-te că fiecare obiectiv de marketing este SMART, aliniat cu viziunea companiei și susținut de KPIs relevanți.
 
 Acest exercițiu te va ajuta să-ți setezi bazele [strategiei de marketing](https://anadobre.com/cum-creezi-o-strategie-de-marketing-digital-eficienta-pentru-afacerea-ta/) pentru noul an, o strategie orientată spre rezultate și pe utilizarea în mod eficient a resurselor de marketing.
+
+## Întrebări frecvente
+
+### Care este diferența dintre obiectivele de business și obiectivele de marketing?
+
+Obiectivele de business sunt cele mari, pe termen lung, care definesc direcția generală a afacerii: creșterea cifrei de afaceri, extinderea pe un nou segment de piață, lansarea unui produs nou. Obiectivele de marketing sunt specifice și derivă din cele de business, detaliind concret ce acțiuni de promovare contribuie la atingerea lor. Un obiectiv de business ("creștem vânzările cu 20%") poate genera mai multe obiective de marketing SMART ("generăm 500 de lead-uri calificate pe lună prin campanii Meta Ads").
+
+### Ce înseamnă obiective SMART și de ce sunt importante?
+
+SMART este un acronim care descrie caracteristicile unui obiectiv bine formulat: Specific (clar definit), Măsurabil (include valori sau procente), Realizabil (posibil cu resursele disponibile), Relevant (contribuie la obiectivele de business) și Limitat în Timp (are un termen clar). Obiectivele SMART sunt importante deoarece permit monitorizarea reală a progresului și ajustarea rapidă a strategiei dacă rezultatele nu sunt cele așteptate.
+
+### Cum știu dacă obiectivele de marketing sunt aliniate cu obiectivele de business?
+
+Testul simplu este: dacă atingi obiectivul de marketing, contribuie în mod direct și măsurabil la obiectivul de business? De exemplu, dacă obiectivul de business este creșterea retenției clienților cu 15%, un obiectiv de marketing aliniat ar fi creșterea ratei de deschidere a emailurilor de tip "post-vânzare" cu 20%. Un obiectiv de marketing nealiniat ar fi creșterea numărului de followers pe Instagram, care nu contribuie direct la retenție.
+
+### Cât de des ar trebui să revizuiesc obiectivele de marketing?
+
+Recomandarea este să revizuiești obiectivele de marketing cel puțin trimestrial, sau ori de câte ori obiectivele de business se schimbă. Piața și comportamentul clienților se modifică constant, iar flexibilitatea în adaptarea obiectivelor este esențială. Monitorizarea lunară a KPIs te ajută să identifici rapid dacă ești pe drumul cel bun sau dacă ai nevoie să ajustezi acțiunile de marketing.

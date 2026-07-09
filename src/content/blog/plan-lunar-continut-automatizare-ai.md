@@ -72,4 +72,22 @@ Consider că automatizarea nu ar trebui să înlocuiască abordarea strategică,
 
 Dacă vrei să vezi cum ar funcționa un astfel de sistem automat - dar și alte automatizări importante de marketing și vânzări - pentru afacerea ta, te invit să continuăm discuția într-un call, pe care [îl poți programa aici.](https://calendly.com/anadobreconsultant/call-clarificare-60-min)
 
+## Întrebări frecvente
+
+### Ce este o automatizare de tip human-in-the-loop și de ce este importantă pentru conținut?
+
+O automatizare human-in-the-loop este un flux automat care include puncte obligatorii de aprobare umană înainte de a continua. În contextul creării de conținut cu AI, aceasta înseamnă că agenții AI propun, structurează și generează drafturi, dar tu decizi ce se execută mai departe. Este importantă pentru că AI nu cunoaște nuanțele strategiei tale, vocea brandului sau obiectivele specifice ale lunii - tu ești singurul care poate valida că direcția este corectă.
+
+### Am nevoie de cunoștințe tehnice avansate pentru a crea această automatizare în n8n?
+
+n8n este o platformă no-code/low-code cu interfață vizuală, deci nu ai nevoie de cunoștințe de programare pentru a înțelege și adapta fluxuri existente. Totuși, construirea de la zero a unui flux cu orchestrare de agenți AI presupune familiarizare cu platforma, înțelegerea conceptelor de trigger, webhook și integrări cu Google Drive și modele AI. Dacă nu ai experiență, este recomandat să pornești de la un flux simplu și să îl extinde gradual.
+
+### Ce informații trebuie să completez lunar în template-ul care declanșează automatizarea?
+
+Template-ul de Google Doc pe care îl adaugi lunar în folderul monitorizat conține: obiectivul principal al lunii (de exemplu, mai multe call-uri, mai multe lead-uri calificate), oferta sau serviciul pe care vrei să îl promovezi, constrângeri de timp sau buget, și asset-urile disponibile (site, lead magnet, emailuri existente). Pe baza acestor informații, agentul orchestrator construiește planul de conținut aliniat cu direcția ta.
+
+### Automatizarea publică postările direct pe rețelele sociale?
+
+Nu. Automatizarea generează drafturi de postări și articole, pe care le salvează într-un document Google Doc. Nimic nu se publică automat. Tu revizuiești drafturile, adaptezi tonul, alegi ce păstrezi și decizi când și unde postezi. O continuare a automatizării poate programa postările în Buffer după ce le-ai revizuit și aprobat, dar aceasta este o etapă separată care necesită pași suplimentari în flux.
+
 *Notă: imaginea din articol este un screenshot din aplicația n8n, cu automatizarea despre care vorbesc în articol.*

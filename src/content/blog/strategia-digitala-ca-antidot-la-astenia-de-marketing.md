@@ -53,4 +53,22 @@ Dacă simți că ai obosit în comunicarea online, că te-ai rătăcit printre p
 
 > Dacă simți că ai nevoie de sprijin în a-ți regăsi direcția în marketingul online, hai să vorbim. [Programează o discuție exploratorie de 30 de minute, online](https://anadobre.com/contact/) (*scrie la Mesaj: discuție exploratorie*) și vedem împreună ce poți elimina, ce poți recalibra și cum poți construi ceva clar, simplu și funcțional, pentru afacerea ta.
 
+## Întrebări frecvente
+
+### Ce este astenia de marketing și cum o recunosc?
+
+Astenia de marketing este o stare de oboseală mentală și lipsă de direcție în comunicarea online. O recunoști prin semnele: ai prea multe idei dar niciuna nu pare "cea potrivită", postezi fără să simți că mesajul ajunge undeva, te simți că alergi în cerc. Nu este lene sau lipsă de motivație, ci semnul că faci marketing reactiv, fără un sistem și fără o strategie clară.
+
+### Cum îmi ajută strategia digitală să ies din astenia de marketing?
+
+O strategie digitală clară te aduce înapoi la ce este esențial, îți oferă un sistem de decizie (nu doar o listă de postări), te ajută să filtrezi ideile și să le alegi pe cele care se potrivesc cu brandul și obiectivele tale. Știind de ce comunici și unde vrei să ajungi, poți continua cu consecvență chiar și în perioadele de oboseală sau atunci când apar tentații de a schimba direcția.
+
+### Care sunt primii pași concreți pentru a ieși din astenia de marketing?
+
+Cei 5 pași recomandați sunt: clarifică-ți din nou obiectivul de marketing, identifică și elimină acțiunile care consumă energie fără rezultate, concentrează-te pe un singur canal de comunicare principal pentru 2-3 săptămâni, revino la calendarul editorial stabilit strategic și reaminteste-ți că timpul este cea mai valoroasă resursă a ta. Structura și disciplina sunt mai importante decât inspirația de moment.
+
+### Cum evit să cad din nou în astenia de marketing după ce îmi recalibrez direcția?
+
+Menținerea direcției se face prin consecvență, nu prin entuziasm. Stabilește un calendar editorial realist (adaptat resurselor reale, nu aspirațiilor), revizuiește periodic dacă acțiunile tale de marketing sunt aliniate cu obiectivele de business și rezistă tentației de a schimba strategia la fiecare trend nou. Când simți că te abați, revino la întrebările fundamentale: pentru cine comunic, cu ce scop și unde mă va duce asta.
+
 *Acest articol este parte din misiunea mea de a-i ajuta pe antreprenori să treacă de la haos digital la marketing online strategic. Dacă ai găsit valoare aici, dă te rog articolul mai departe, altcuiva care consideri că are nevoie de aceste informații.*

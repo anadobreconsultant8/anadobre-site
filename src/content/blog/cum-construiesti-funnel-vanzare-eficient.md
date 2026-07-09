@@ -132,4 +132,22 @@ Iată pașii clari care să te ajute să construiești un funnel de vânzare fun
 
 Funnelul de vânzare este deci despre cum gândește clientul, nu despre cum vrei tu să vinzi. Este despre a face fiecare pas logic și ușor, fără să arzi etape. Și da, este despre răbdare, coerență și măsurare.
 
+## Întrebări frecvente
+
+### Ce este un funnel de vânzare și de ce am nevoie de unul?
+
+Un funnel de vânzare descrie pașii prin care trece un potențial client de la primul contact cu brandul tău până la decizia de cumpărare. Beneficiul principal este claritatea: știi ce să comunici, cui, cum și când. În loc să reacționezi la trenduri, faci marketing cu sens, pe etape și pe nevoile reale ale clienților tăi.
+
+### Care sunt etapele unui funnel de vânzare și ce rol are fiecare?
+
+Modelul TOFU-MOFU-BOFU descrie trei etape: TOFU (Top of Funnel) este etapa de atragere, unde construiești vizibilitate prin conținut educativ și SEO, fără să vinzi direct. MOFU (Middle of Funnel) este etapa de convingere, unde consolidezi încrederea prin lead magnets, webinarii și email nurturing. BOFU (Bottom of Funnel) este etapa deciziei, unde susții conversia prin oferte clare, testimoniale și follow-up personalizat.
+
+### Cum încep să construiesc un funnel de vânzare pentru afacerea mea?
+
+Pornești de la final: definește ce înseamnă o conversie pentru tine - o vânzare, o programare, un contract semnat. Apoi mergi înapoi și identifică ce trebuie să știe, să simtă și să vadă clientul pentru a ajunge la acea acțiune finală. Pe baza acestor informații construiești conținutul MOFU și TOFU, conectat direct la obiectivul tău principal.
+
+### Cât buget ar trebui să aloc pentru fiecare etapă din funnel?
+
+Investiția trebuie să fie proporțională cu obiectivele curente ale business-ului. TOFU necesită resurse constante pentru conținut și vizibilitate - efectele nu sunt imediate, dar susțin întreg ecosistemul. MOFU presupune investiție în lead nurturing și educare. BOFU primește accent mai mare în perioadele de lansare sau campanii, unde conversiile sunt directe. Ideal este să menții toate trei etapele active simultan, cu ponderi variabile în funcție de sezonalitate și maturitatea brandului.
+
 Dacă vrei să construim împreună o strategie de marketing online și un funnel de vânzare adaptat afacerii tale, scrie-mi pe [hello@anadobre.com](mailto:hello@anadobre.com).

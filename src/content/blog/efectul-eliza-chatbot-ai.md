@@ -74,6 +74,24 @@ Bine, pe lângă asta poți să-i dai și un prompt să-ți scrie o reteță să
 
 Dacă te interesează acest subiect, AI și automatizări în marketing, te invit să te abonezi la newsletter. Ca să primești pe email notificare atunci când scriu un articol nou aici pe blog.
 
+## Întrebări frecvente
+
+### Ce este efectul ELIZA și de ce apare în interacțiunile cu AI-ul modern?
+
+Efectul ELIZA este tendința oamenilor de a proiecta inteligență, empatie sau "umanitate" asupra unui sistem care nu le posedă. A apărut prima dată cu chatbotul ELIZA din anii '60, care nu înțelegea nimic, ci doar potrivea cuvinte cheie cu răspunsuri prestabilite. Azi, efectul reapare cu modele generative AI precum ChatGPT, care folosesc ton, nuanțe emoționale simulate și memorie contextuală - facând conversația să pară mult mai "umană" decât este în realitate.
+
+### Prin ce diferă ChatGPT de ELIZA, primul chatbot?
+
+Diferența este fundamentală la nivel tehnic. ELIZA funcționa prin potrivire de șabloane și cuvinte cheie, fără nicio înțelegere reală a limbajului. ChatGPT folosește rețele neuronale de tip transformer, antrenate pe volume uriașe de date, care pot genera text nou, coerent și contextual. Legătura dintre cei doi este doar conceptuală (ambii sunt chatboți), nu tehnică. ChatGPT poate razona, sintetiza informații și adapta răspunsurile la context, ELIZA nu putea face nimic din toate acestea.
+
+### Cum pot preveni atașamentul emoțional față de AI?
+
+Cel mai important este să-ți reamintești constant că AI-ul nu simte, nu are conștiință și nu experimentează lumea - doar o simulează prin date și modele statistice. Menține o distincție clară între ce poate face AI (automatiza, analiza, crea conținut, genera idei) și ce nu poate face (fi terapeut, prieten, confident). Nu utiliza AI pentru terapie, consiliere medicală sau decizii emoționale personale - acestea necesită profesioniști umani.
+
+### Cum pot folosi AI în mod responsabil în activitatea mea de marketing?
+
+Folosește AI ca instrument de eficiență, nu ca factor de decizie autonom. Este util pentru: generarea de conținut (postări, emailuri, articole) pe care tu le revizuiești, automatizarea sarcinilor repetitive, analiza datelor și generarea de rapoarte, brainstorming de idei. Verifică întotdeauna informațiile generate, menține controlul asupra deciziilor strategice și nu prelua cu copy-paste conținut AI fără revizuire și aliniere cu vocea brandului tău.
+
 *Notă: prima imagine din articol este generată cu [Gemini](https://gemini.google.com/).*
 
 #ArtificialIntelligence #AdvancedAI #GenerativeAI #AImarketing #ResponsibleAI #ElizaEffect

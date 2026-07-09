@@ -153,4 +153,22 @@ Mi-a generat un audit foarte util, corect, care mi-a evidențiat/reamintit nișt
 
 Dacă te interesează acest subiect, al automatizărilor și optimizării activității de marketing cu AI, te invit să te abonezi la newsletter. Ca să primești pe email notificare atunci când scriu un articol nou aici pe blog.
 
+## Întrebări frecvente
+
+### Ce este ChatGPT Agent Mode și cum diferă de ChatGPT obișnuit?
+
+ChatGPT Agent Mode transformă AI-ul dintr-un asistent conversațional într-un asistent autonom, capabil să execute sarcini online complexe: navighează pe web prin browserul său virtual, analizează date, generează rapoarte și poate acționa pas cu pas fără intervenție manuală constantă. ChatGPT obișnuit răspunde la întrebări, dar nu deschide pagini web sau nu execută acțiuni externe.
+
+### Pot folosi ChatGPT Agent Mode pentru un audit SEO gratuit al site-ului meu?
+
+Da, cu condiția să ai un abonament ChatGPT plătit (Plus, Pro sau Business). Agentul poate analiza robots.txt, sitemap-ul, structura paginilor, compatibilitatea mobilă și conținutul publicat, folosind exclusiv date publice. Nu înlocuiește instrumentele dedicate (Google Search Console, Ahrefs), dar oferă un raport util ca punct de plecare.
+
+### Cât de des ar trebui să rulez un audit SEO cu modul Agent?
+
+Articolul recomandă rularea lunară. Poți chiar programa agentul să ruleze automat în prima zi a fiecărei luni (din chatul în mod agent - cele 3 puncte din dreapta sus - Program - Lunar). Astfel ai mereu o imagine actualizată a problemelor tehnice și a oportunităților de optimizare.
+
+### Ce limitări are un audit SEO realizat cu ChatGPT Agent Mode?
+
+Auditul se bazează exclusiv pe date publice - agentul nu accesează Google Analytics, Search Console sau alte platforme care necesită autentificare. Nu poate oferi date despre trafic, backlink-uri sau performanța exactă a cuvintelor cheie. Pentru o analiză SEO completă la nivel expert, este nevoie de instrumente dedicate și de interpretarea unui specialist.
+
 *Notă: prima imagine din articol este generată cu [Gemini](https://gemini.google.com/).*

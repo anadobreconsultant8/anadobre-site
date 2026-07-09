@@ -106,4 +106,22 @@ Dacă și tu pierzi lead-uri sau nu știi exact ce se întâmplă cu lead-ul dup
 
 Dacă momentan vrei să vezi concret ce putem automatiza în businessul tău, [hai să discutăm](https://anadobre.com/produs/automation-boost/)!
 
+## Întrebări frecvente
+
+### De ce pierd lead-uri deși investesc constant în reclame?
+
+Problema nu este de obicei la nivelul reclamelor, ci la ce se întâmplă după ce lead-ul completează formularul. Cele mai frecvente cauze sunt: lipsa unui răspuns imediat (lead-ul nu primește confirmare că mesajul a ajuns), follow-up inexistent sau făcut prea târziu, și lipsa reminderelor înainte de o programare stabilită. Automatizările de marketing rezolvă exact aceste probleme, fără să fie nevoie să crești bugetul de ads.
+
+### Ce automatizări de marketing ar trebui să implementez primele?
+
+Primul pas este automatizarea răspunsului imediat la fiecare lead nou - un email sau SMS trimis automat în secunde după completarea formularului, care confirmă primirea și setează așteptările. Al doilea pas este secvența de follow-up (5-7 zile), care ghidează lead-ul spre o programare. Acestea două singure pot reduce semnificativ pierderile de lead-uri, fără investiții mari.
+
+### Cât durează să implementez aceste automatizări și ce instrumente am nevoie?
+
+Implementarea depinde de complexitatea fluxului și de platformele deja folosite în business. Un răspuns automat simplu (email de confirmare + notificare internă) poate fi configurat în câteva ore cu un instrument de email marketing (ActiveCampaign, Mailchimp) conectat la formularul de pe site. Secvențele mai complexe, cu CRM și integrări multiple, pot dura câteva zile. Odată implementate, funcționează 24/7 fără intervenție manuală.
+
+### Ce fac cu lead-urile care nu s-au prezentat la programare sau nu au răspuns la ofertă?
+
+Lead-urile care nu s-au prezentat pot fi incluse automat într-o secvență de reactivare cu mesaje de genul: "Știm că nu ai mai reușit să ajungi, vrei să reprogramăm?". Cele care au primit oferta dar nu au răspuns pot beneficia de o secvență de follow-up de 7-14 zile, cu mesaje care adresează obiecții, prezintă testimoniale și reamintesc oferta. Tagging-ul în CRM te ajută să știi întotdeauna în ce stadiu se află fiecare lead.
+
 *Notă: imaginea din articol a fost generată cu [Gemini.](https://gemini.google.com/)*
