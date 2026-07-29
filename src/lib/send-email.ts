@@ -94,6 +94,7 @@ export async function sendReport(data: EmailData) {
       <td style="padding: 28px 32px 0;">
         <p style="margin: 0 0 8px; font-size: 17px; color: #111827;">Bună, <strong>${data.prenume}</strong>!</p>
         <p style="margin: 0; font-size: 14px; color: #6B7280; line-height: 1.6;">Mai jos găsești raportul tău de maturitate în automatizări, generat pe baza răspunsurilor din mini-audit.</p>
+        <p style="margin: 8px 0 0; font-size: 12px; color: #9CA3AF; line-height: 1.5;">🤖 Analiza și recomandările din acest raport sunt generate automat de un sistem de inteligență artificială (Claude, Anthropic), pe baza răspunsurilor tale, și au caracter orientativ.</p>
       </td>
     </tr>
 
