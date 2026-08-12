@@ -8,7 +8,7 @@ excerpt: "Secvențele de email automation reprezintă un instrument esențial pe
 
 Secvențele de email automation reprezintă un instrument esențial pentru îmbunătățirea comunicării cu clienții și optimizarea resurselor pentru activitatea de marketing. Ele te ajută să livrezi mesajul potrivit la momentul potrivit fără intervenție manuală, ghidând prospectul sau clientul prin fiecare etapă a relației cu brandul tău. O secvență bine construită economisește timp, crește conversiile și asigură o experiență coerentă pentru fiecare abonat.
 
-În acest articol vei afla ce sunt aceste secvențe de emailuri, de ce sunt importante și cum poți implementa singur/ă un flux de emailuri care chiar funcționează.
+În acest articol vei afla ce sunt aceste secvențe de emailuri, de ce sunt importante și cum poți implementa singur/ă un flux de emailuri care chiar funcționează. Este unul dintre exemplele concrete de [automatizări de marketing și vânzări](/abc/automatizari-marketing-vanzari) — dacă vrei mai întâi contextul general, ce înseamnă termenul și ce altceva mai poți automatiza, găsești explicația pe scurt acolo.
 
 ## Ce sunt secvențele de email automation
 
