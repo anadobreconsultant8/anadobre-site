@@ -145,7 +145,7 @@ După ce ai adăugat instrucțiunile, este necesar să programezi rularea automa
 
 Precizez că am construit instrucțiunile de mai sus cu ajutorul ChatGPT. Am testat însă pentru site-ul meu, inițial cu intrucțiuni mai puțin detaliate, apoi și cu cele de mai sus:
 
-> **Rezultat în practică:** ChatGPT în modul Agent a executat instrucțiunile pas cu pas — a analizat robots.txt, sitemap-ul, structura paginilor și conținutul articolelor — și a generat un raport de audit SEO structurat, cu probleme identificate și recomandări concrete de îmbunătățire, direct în chat.
+> **Rezultat în practică:** ChatGPT în modul Agent a executat instrucțiunile pas cu pas - a analizat robots.txt, sitemap-ul, structura paginilor și conținutul articolelor - și a generat un raport de audit SEO structurat, cu probleme identificate și recomandări concrete de îmbunătățire, direct în chat.
 
 Mi-a generat un audit foarte util, corect, care mi-a evidențiat/reamintit niște aspecte importante legate de SEO, la site-ul meu, care trebuie îmbunătățite.
 

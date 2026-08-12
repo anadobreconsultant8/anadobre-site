@@ -34,7 +34,7 @@ const sameCat = otherPosts.filter((p) => p.data.category === category);
 const diffCat = otherPosts.filter((p) => p.data.category !== category);
 const relatedPosts = [...sameCat, ...diffCat].slice(0, 2);
 ---
-<Layout title={`${title} — Ana Dobre`} description={excerpt ?? title} ogImage={image ?? '/og-default.jpg'} canonical={canonicalUrl}>
+<Layout title={`${title} - Ana Dobre`} description={excerpt ?? title} ogImage={image ?? '/og-default.jpg'} canonical={canonicalUrl}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -97,7 +97,7 @@ const relatedPosts = [...sameCat, ...diffCat].slice(0, 2);
         </div>
       ) : (
         <div class="aspect-video bg-bg-tertiary rounded-xl border border-border flex items-center justify-center text-text-tertiary text-sm mb-10">
-          Imagine articol — {category}
+          Imagine articol - {category}
         </div>
       )}
 

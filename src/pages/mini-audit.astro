@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 <Layout
-  title="Mini-audit — Evaluează-ți sistemul de automatizare | Ana Dobre"
-  description="Răspunde la 8 întrebări despre procesele tale de marketing și vânzări. Primești scorul tău de maturitate și recomandări concrete — gratuit, în 3 minute."
+  title="Mini-audit - Evaluează-ți sistemul de automatizare | Ana Dobre"
+  description="Răspunde la 8 întrebări despre procesele tale de marketing și vânzări. Primești scorul tău de maturitate și recomandări concrete - gratuit, în 3 minute."
 >
   <Navbar />
 
@@ -102,7 +102,7 @@ import Footer from '../components/Footer.astro';
               <h2 class="font-sans text-xl font-semibold text-primary mb-6">Ce se întâmplă cu lead-urile care nu cumpără imediat?</h2>
               <div class="space-y-3" data-q-index="3">
                 <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="0">
-                  Nu avem un proces definit — rămân în baza de date
+                  Nu avem un proces definit - rămân în baza de date
                 </button>
                 <button class="answer-btn w-full text-left px-5 py-4 rounded-lg border border-border bg-white hover:border-primary-light hover:bg-bg-secondary transition-all text-base font-medium text-text-primary" data-score="1">
                   Le contactăm ocazional, dar fără o secvență structurată
@@ -412,7 +412,7 @@ import Footer from '../components/Footer.astro';
     if (total <= 5) {
       return {
         title: 'Fundația lipsește.',
-        message: 'Procesele tale de marketing și vânzări funcționează predominant manual. Pierzi lead-uri și oportunități din cauza lipsei de structură și automatizare. Vestea bună: potențialul de îmbunătățire e enorm — chiar și câteva automatizări de bază pot schimba radical rata de conversie.',
+        message: 'Procesele tale de marketing și vânzări funcționează predominant manual. Pierzi lead-uri și oportunități din cauza lipsei de structură și automatizare. Vestea bună: potențialul de îmbunătățire e enorm - chiar și câteva automatizări de bază pot schimba radical rata de conversie.',
         recommendation: 'Prioritatea #1: un audit complet al fluxurilor existente și un plan strategic de automatizare.',
         color: '#E8593C',
         level: 'audit-beginner',
@@ -422,7 +422,7 @@ import Footer from '../components/Footer.astro';
     } else if (total <= 10) {
       return {
         title: 'Ai fundația, dar sistemul are gap-uri.',
-        message: 'Ai un CRM și câteva procese în loc, dar automatizările nu lucrează ca un sistem integrat. Sunt puncte de pierdere între etapele parcursului clientului — lead-uri care se răcesc, follow-up-uri care nu se fac, date fragmentate. Cu optimizări targetate, poți crește semnificativ rata de conversie.',
+        message: 'Ai un CRM și câteva procese în loc, dar automatizările nu lucrează ca un sistem integrat. Sunt puncte de pierdere între etapele parcursului clientului - lead-uri care se răcesc, follow-up-uri care nu se fac, date fragmentate. Cu optimizări targetate, poți crește semnificativ rata de conversie.',
         recommendation: 'Prioritatea #1: identificarea și automatizarea punctelor de pierdere din parcursul lead-ului.',
         color: '#BA7517',
         level: 'audit-intermediate',
@@ -534,7 +534,7 @@ import Footer from '../components/Footer.astro';
     });
   });
 
-  // Result form submit — 3-step flow: Claude analysis → PDF → email → AC sync
+  // Result form submit - 3-step flow: Claude analysis → PDF → email → AC sync
   const auditForm = document.getElementById('audit-result-form') as HTMLFormElement | null;
   const auditSuccess = document.getElementById('audit-success');
   const submitBtn = auditForm?.querySelector('button[type="submit"]') as HTMLButtonElement | null;

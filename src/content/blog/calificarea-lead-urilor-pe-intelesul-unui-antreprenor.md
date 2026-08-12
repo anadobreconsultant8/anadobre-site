@@ -16,7 +16,7 @@ Ai alocați bani pentru reclame în fiecare lună și telefonul sună, iar formu
 
 Problema nu este de lipsă de trafic sau de lead-uri, ci de ceea ce se întâmplă cu lead-urile după ce sună sau completează formularul de contact.
 
-Ce urmează să citești este, de fapt, o aplicație concretă a [automatizărilor de marketing și vânzări](/abc/automatizari-marketing-vanzari) pe zona de calificare și direcționare a lead-urilor — dacă vrei mai întâi definiția pe scurt și alte exemple, o găsești acolo.
+Ce urmează să citești este, de fapt, o aplicație concretă a [automatizărilor de marketing și vânzări](/abc/automatizari-marketing-vanzari) pe zona de calificare și direcționare a lead-urilor - dacă vrei mai întâi definiția pe scurt și alte exemple, o găsești acolo.
 
 Uită-te la cum lucrează echipa ta acum. Cel mai probabil, lead-urile sunt sunate în ordinea în care intră: primul venit, primul sunat. Și pare corect ca abordare.
 
