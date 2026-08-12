@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonicalUrl = 'https://anadobre.com/abc';
+
+const terms = [
+  {
+    slug: 'automatizari-marketing-vanzari',
+    title: 'Ce înseamnă, de fapt, automatizările de marketing și vânzări?',
+    excerpt: 'Definiția pe scurt, cum funcționează un flux de automatizare și ce poți automatiza concret în business-ul tău.',
+  },
+];
+---
+<Layout
+  title="ABC-ul automatizărilor de marketing și vânzări | Ana Dobre"
+  description="Glosar cu termenii din marketing automation și lead management, explicați pe scurt și pe înțelesul unui antreprenor."
+  canonical={canonicalUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${canonicalUrl}#collection`,
+        "name": "ABC-ul automatizărilor de marketing și vânzări",
+        "url": canonicalUrl,
+        "inLanguage": "ro",
+        "isPartOf": { "@id": "https://anadobre.com/#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://anadobre.com" },
+          { "@type": "ListItem", "position": 2, "name": "ABC", "item": canonicalUrl }
+        ]
+      }
+    ]
+  })} />
+  <Navbar />
+
+  <!-- HERO -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+        ABC / Glosar
+      </div>
+      <h1 class="font-display text-4xl md:text-5xl font-bold text-primary leading-tight mb-6">
+        ABC-ul automatizărilor de marketing și vânzări
+      </h1>
+      <p class="text-lg text-text-secondary leading-relaxed max-w-2xl">
+        Termeni din marketing automation și lead management, explicați pe scurt, fără jargon — pe înțelesul unui antreprenor care vrea să știe exact ce cere de la agenția sau echipa lui.
+      </p>
+    </div>
+  </section>
+
+  <!-- TERMENI -->
+  <section class="py-8 md:py-12 pb-20 md:pb-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="grid gap-6">
+        {terms.map(term => (
+          <a
+            href={`/abc/${term.slug}`}
+            class="group block bg-white border border-border rounded-xl p-6 md:p-8 hover:shadow-lg transition-shadow"
+          >
+            <h2 class="font-sans text-xl font-semibold text-primary mb-2 leading-snug group-hover:text-primary-light transition-colors">
+              {term.title}
+            </h2>
+            <p class="text-text-secondary leading-relaxed mb-3">{term.excerpt}</p>
+            <span class="text-sm font-medium text-accent group-hover:text-accent-hover transition-colors">Citește →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
