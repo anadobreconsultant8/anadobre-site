@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonicalUrl = 'https://anadobre.com/abc/ai-in-marketing-vanzari-ghid-de-baza';
+const title = 'Cum folosești corect și eficient AI în marketing și vânzări?';
+const breadcrumbTitle = 'Cum folosești AI în marketing și vânzări';
+const dateISO = new Date('2026-08-17').toISOString();
+
+const faqs = [
+  {
+    question: 'Cum folosești AI în marketing și vânzări?',
+    answer:
+      'Îl pui pe sarcini repetitive de gândit sau de scris - un răspuns, un text, un rezumat, o prioritizare de lead-uri - ca punct de plecare pe care un om îl verifică, nu ca înlocuitor al procesului. Pornești de la o problemă reală, testezi pe volum mic și extinzi treptat.',
+  },
+  {
+    question: 'Care e diferența dintre AI și automatizări în marketing?',
+    answer:
+      'Automatizarea execută reguli fixe pe care le stabilești tu (dacă X, atunci Y) și duce lucrurile prin proces, predictibil, fără să „gândească". AI-ul produce sau interpretează ceva unde regula fixă nu ajunge - scrie un text, rezumă, dă un scor - și are nevoie de verificare umană. Se completează: automatizarea e traseul, AI-ul face partea de gândit sau de scris dintr-un pas.',
+  },
+  {
+    question: 'Ce poți face cu AI în marketing?',
+    answer:
+      'Cel mai des: variante de conținut, răspunsuri la întrebările frecvente, scorarea și prioritizarea lead-urilor, sumarizarea de feedback și de campanii - toate cu verificare umană la final.',
+  },
+  {
+    question: 'E sigur să folosești AI în business?',
+    answer:
+      'Da, dacă îl folosești cu un cont de business, nu încarci date sensibile fără temei și păstrezi verificarea umană. Partea de conformitate (GDPR, AI Act) are reguli proprii, pe care le respecți din start.',
+  },
+  {
+    question: 'De unde începi cu AI în marketing și vânzări?',
+    answer:
+      'De la proces, nu de la tool: identifici un punct cu volum repetitiv și reguli clare, îl testezi pe volum mic și îl extinzi treptat.',
+  },
+];
+---
+<Layout
+  title="Cum folosești corect AI în marketing și vânzări | Ana Dobre"
+  description="Cum folosești AI corect și eficient în marketing și vânzări: cele trei reguli de bază, unde merită să-l pui și cum începi treptat, cu testare și verificare umană."
+  canonical={canonicalUrl}
+  ogImage="/og-abc-ai-in-marketing-vanzari-ghid-de-baza.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${canonicalUrl}#article`,
+        "headline": title,
+        "description": "Cum folosești AI corect și eficient în marketing și vânzări: cele trei reguli de bază, unde merită să-l pui și cum începi treptat, cu testare și verificare umană.",
+        "url": canonicalUrl,
+        "datePublished": dateISO,
+        "dateModified": dateISO,
+        "image": "https://anadobre.com/og-abc-ai-in-marketing-vanzari-ghid-de-baza.jpg",
+        "inLanguage": "ro",
+        "author": { "@id": "https://anadobre.com/#person" },
+        "publisher": { "@id": "https://anadobre.com/#person" },
+        "mainEntityOfPage": canonicalUrl
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://anadobre.com" },
+          { "@type": "ListItem", "position": 2, "name": "ABC", "item": "https://anadobre.com/abc" },
+          { "@type": "ListItem", "position": 3, "name": breadcrumbTitle, "item": canonicalUrl }
+        ]
+      }
+    ]
+  })} />
+  <Navbar />
+
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <!-- Breadcrumb -->
+      <nav class="text-xs text-text-tertiary mb-6" aria-label="breadcrumb">
+        <a href="/" class="hover:text-primary transition-colors">Acasă</a>
+        <span class="mx-1.5">/</span>
+        <a href="/abc" class="hover:text-primary transition-colors">ABC</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-text-secondary">AI în marketing și vânzări</span>
+      </nav>
+
+      <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+        ABC / Glosar
+      </div>
+
+      <!-- H1 -->
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-primary leading-tight mb-6">
+        {title}
+      </h1>
+
+      <!-- Răspuns direct - critic pentru extragere AI -->
+      <p class="text-lg text-text-secondary leading-relaxed mb-10 border-l-4 border-accent pl-5">
+        Folosești AI corect când îl pui pe o sarcină de gândit sau de scris care se repetă - un răspuns, un text, un rezumat, o prioritizare de lead-uri - îi dai un context clar și verifici rezultatul înainte să-l folosești. Nu-l lași să decidă singur și nu-l pui peste tot; îl chemi exact la pasul unde îți scurtează munca. „Eficient" înseamnă că pornești de la o problemă reală, care te costă timp acum, nu de la un tool la modă.
+      </p>
+
+      <div
+        class="prose prose-lg max-w-none
+          prose-headings:font-sans prose-headings:font-semibold prose-headings:text-primary
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+          prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-2
+          prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-5
+          prose-ul:text-text-secondary prose-li:mb-2
+          prose-ol:text-text-secondary
+          prose-strong:text-text-primary prose-strong:font-semibold
+          prose-a:text-primary-light prose-a:no-underline hover:prose-a:underline"
+      >
+
+        <h2>AI și automatizări: nu sunt același lucru (și de ce contează)</h2>
+        <p>
+          Se confundă des, dar sunt două lucruri diferite - iar dacă le confunzi, fie plătești AI pentru o treabă pe care o face o regulă simplă, fie ceri unei automatizări ceva ce doar AI-ul poate face.
+        </p>
+        <p>
+          Automatizarea duce lucrurile prin proces după reguli fixe pe care le stabilești tu: dacă se întâmplă X, atunci Y. E predictibilă și face de fiecare dată exact ce i-ai spus - un lead intră din formular, ajunge în CRM, primește un email de confirmare, e alocat unui agent.
+        </p>
+        <p>
+          AI-ul, în schimb, produce sau interpretează ceva acolo unde o regulă fixă nu ajunge: scrie un text, rezumă o conversație, citește un mesaj și îi dă un scor. Nu urmează un traseu fix - de aceea are nevoie de un om care verifică ce iese.
+        </p>
+        <p>
+          Se completează exact aici: automatizarea e traseul, AI-ul e ce se întâmplă la un pas de pe traseu. Fluxul prinde lead-ul și îl duce mai departe (automatizarea); la pasul „scrie răspunsul" sau „pune un scor", cheamă AI-ul să facă partea de gândit sau de scris, apoi merge mai departe. Poți avea automatizări fără pic de AI (numai reguli) și poți folosi AI de unul singur, manual, fără nicio automatizare - dar împreună lucrează cel mai bine.
+        </p>
+        <p>
+          Un exemplu: să împarți lead-urile după buget (peste sau sub o sumă) e o regulă - automatizare curată. Să-ți dai seama, din felul în care e scris un mesaj, cât de urgent sună - asta cere AI. Când le pui cap la cap, automatizarea declanșează, AI-ul citește și pune scorul, iar automatizarea trimite mai departe lead-ul către omul potrivit.
+        </p>
+
+        <h2>Ce înseamnă „corect": întâi procesul, apoi AI-ul</h2>
+        <p>
+          Ordinea contează mai mult decât tool-ul. AI-ul se pune peste un proces care deja funcționează - nu în locul lui. Dacă la nivel de business lucrurile nu sunt puse la punct, dacă lead-urile intră haotic și nimeni nu știe clar cine ce face, AI-ul nu face ordine; amplifică dezordinea, doar mai repede.
+        </p>
+        <p>
+          De aceea, primul strat nu e AI-ul, ci un minim de sistem care <a href="/abc/automatizari-marketing-vanzari">captează, segmentează și direcționează corect lead-urile</a>. Abia peste el adaugi AI-ul, exact acolo unde chiar scurtează munca - și numai după ce ai un proces pe care AI-ul are ce să accelereze.
+        </p>
+
+        <h2>Cele trei reguli, înainte de orice tool</h2>
+        <ul>
+          <li>pornește de la o problemă reală - întrebarea nu e „ce tool AI să folosesc", ci „unde pierd timp sau lead-uri și s-ar putea rezolva cu ajutorul lui";</li>
+          <li>pune AI unde ai volum și un tipar clar - genul de sarcini care se repetă des: variante de conținut, răspunsuri la întrebări frecvente, calificarea și scorarea lead-urilor;</li>
+          <li>verifică și rafinează - testezi pe un volum mic, te uiți la ce iese, corectezi, și abia apoi extinzi. AI-ul propune; omul decide.</li>
+        </ul>
+
+        <h2>Unde merită să folosești AI în marketing și vânzări</h2>
+        <p>La modul concret, cele mai multe rezultate vin din câteva zone:</p>
+        <ul>
+          <li><strong>conținut</strong> - variante de texte pentru ads, emailuri, descrieri de produs, pornind de la un brief clar, pe care le revizuiești înainte să le folosești;</li>
+          <li><strong>răspunsuri repetitive</strong> - replici pentru întrebările care revin, ca punct de plecare pentru echipă, nu ca răspuns trimis orbește;</li>
+          <li><strong>calificarea și scorarea lead-urilor</strong> - AI-ul citește semnalele și propune o prioritizare, tu păstrezi decizia;</li>
+          <li><strong>sumarizare și analiză</strong> - rezumate de conversații, de feedback sau de campanii, ca să iei decizii mai repede, pe date;</li>
+          <li><strong>chatbot / asistent pe site</strong> - răspunde la întrebările frecvente, califică și poate chiar programa, non-stop, iar cazurile complexe le trece la un om;</li>
+          <li><strong>note de apel și actualizarea CRM</strong> - din transcrierea unei discuții, AI-ul scrie rezumatul și completează câmpurile, ca să nu mai pierzi timp cu introdus date;</li>
+          <li><strong>pregătirea discuției de vânzare</strong> - research pe prospect și puncte de discuție, adunate înainte de call;</li>
+          <li><strong>personalizare și recomandări</strong> - mesaje și oferte adaptate la segment sau la comportament, la scară.</li>
+        </ul>
+        <p>
+          Observă tiparul: peste tot e volum plus un tipar clar, iar la capăt e un om care verifică. Acolo unde nu ai nici volum, nici un tipar clar, AI-ul aduce mai mult zgomot decât ajutor.
+        </p>
+
+        <h2>Cum folosești AI fără să-ți asumi riscuri inutile</h2>
+        <p>„Corect" înseamnă și „fără riscuri inutile". Trei lucruri de bază:</p>
+        <ul>
+          <li>folosește un cont de business/enterprise al tool-ului de AI, nu unul personal - pe planul de business ai un contract de prelucrare a datelor (DPA) și, de regulă, datele tale nu sunt folosite pentru antrenarea modelului; contează tipul contului, nu faptul că îl plătești;</li>
+          <li>nu încărca date sensibile sau date ale clienților fără un temei clar și fără să știi ce se întâmplă cu ele;</li>
+          <li>păstrează verificarea umană pe orice iese în afară - text public, mesaj către client, decizie pe un lead.</li>
+        </ul>
+        <p>
+          Dacă totuși lucrezi de pe un cont personal, ține minte un lucru simplu: nu pune acolo date personale ale clienților, informații confidențiale despre companie sau orice n-ai publica oricum. Poți dezactiva din setări folosirea conversațiilor pentru antrenarea modelului - și e bine s-o faci - dar asta acoperă doar partea de antrenare; nu îți dă un DPA. Iar în momentul în care prelucrezi datele clienților tăi, ai nevoie exact de acel contract de prelucrare, pe care ți-l dă doar contul de business. Pe scurt: pe cont personal rămâi la conținut propriu și exemple neconfidențiale, iar datele clienților și informațiile sensibile le ții pe un cont de business.
+        </p>
+        <p>
+          Partea de conformitate (GDPR pentru datele clienților, AI Act pentru felul în care folosești sistemele) are reguli proprii, pe care le detaliem separat, în termenii dedicați din ABC.
+        </p>
+
+        <h2>La ce te ajută</h2>
+        <p>Dincolo de partea tehnică, motivul pentru care merită e strict de business:</p>
+        <ul>
+          <li>câștigi timp la conținut și la răspunsurile repetitive, iar echipa îl poate direcționa spre discuția de vânzare;</li>
+          <li>crești fără să angajezi imediat - faci mai mult cu aceleași resurse (implicit, mai mulți clienți din același efort de marketing);</li>
+          <li>iei decizii mai rapide, pe date, fiindcă ai rezumate și analize gata pregătite;</li>
+          <li>păstrezi controlul, cu verificare umană - AI-ul accelerează, nu decide în locul tău.</li>
+        </ul>
+
+        <h2>De unde începi</h2>
+        <p>Nu începi cu tehnologia, ci cu procesul. Trei pași, în ordinea asta:</p>
+        <ol>
+          <li>uită-te unde, în marketingul și vânzările tale, pierzi timp pe sarcini repetitive sau pierzi lead-uri fiindcă nu răspunde nimeni la timp;</li>
+          <li>alege un singur punct cu volum și reguli clare, unde AI-ul ar scurta evident munca - nu încerca să pui AI peste tot deodată;</li>
+          <li>testează pe volum mic, verifică rezultatul, revizuiește, apoi extinde - și abia după ce primul pas merge, treci la următorul.</li>
+        </ol>
+        <p>
+          Dacă vrei să vezi unde ai cel mai mult de câștigat cu AI, aplicat pe situația ta reală, <a href="/servicii#formular">programează o discuție</a>.
+        </p>
+
+        <h2>Întrebări frecvente</h2>
+        {faqs.map(f => (
+          <>
+            <h3>{f.question}</h3>
+            <p>{f.answer}</p>
+          </>
+        ))}
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA Box -->
+  <section class="py-12 bg-bg-secondary">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="bg-white rounded-xl p-8 border border-border text-center">
+        <h3 class="font-sans text-xl font-semibold text-primary mb-3">
+          Vrei să folosești AI corect și fără riscuri în marketing și vânzări - cu exemple concrete, unde merită cu adevărat și cum începi treptat, cu testare și revizuire, în business-ul tău?
+        </h3>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+          <a href="/servicii#formular" class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px hover:shadow-md inline-block">
+            Programează o discuție →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
