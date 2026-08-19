@@ -178,4 +178,48 @@ const relatedPosts = [...sameCat, ...diffCat].slice(0, 2);
   )}
 
   <Footer />
+
+  <!-- Image lightbox -->
+  <div id="image-lightbox" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/90 p-4 cursor-zoom-out">
+    <img id="image-lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" />
+    <button id="image-lightbox-close" aria-label="Închide imaginea" class="absolute top-4 right-4 text-white text-4xl leading-none hover:opacity-75 transition-opacity">&times;</button>
+  </div>
 </Layout>
+
+<script>
+  const lightbox = document.getElementById('image-lightbox');
+  const lightboxImg = document.getElementById('image-lightbox-img') as HTMLImageElement | null;
+  const closeBtn = document.getElementById('image-lightbox-close');
+
+  function openLightbox(src: string, alt: string) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('article img').forEach((img) => {
+    img.classList.add('cursor-zoom-in');
+    img.addEventListener('click', () => {
+      const imageEl = img as HTMLImageElement;
+      openLightbox(imageEl.src, imageEl.alt);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
