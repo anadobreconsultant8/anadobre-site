@@ -78,6 +78,10 @@ const relatedPosts = [...sameCat, ...diffCat].slice(0, 2);
         <time class="text-xs text-text-tertiary">
           {new Date(date).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
         </time>
+        <span class="text-xs text-text-tertiary">·</span>
+        <a href="/despre" rel="author" class="text-xs text-text-tertiary hover:text-primary transition-colors">
+          De <span class="font-medium text-text-secondary">Ana Dobre</span>
+        </a>
       </div>
 
       <!-- Title -->
