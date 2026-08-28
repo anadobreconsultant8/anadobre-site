@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-3xl mx-auto px-6">
 
       <h1 class="font-display text-3xl md:text-4xl font-bold text-primary mb-2">Politica de confidențialitate</h1>
-      <p class="text-sm text-text-tertiary mb-10">Ultima actualizare: aprilie 2026</p>
+      <p class="text-sm text-text-tertiary mb-10">Ultima actualizare: august 2026</p>
 
       <div class="prose prose-slate max-w-none space-y-8 text-text-secondary leading-relaxed">
 
@@ -44,6 +44,7 @@ import Footer from '../components/Footer.astro';
             <li><strong>Cookies și tehnologii similare</strong> — date de navigare, adresă IP, tipul de dispozitiv și browser, paginile vizitate (detalii în <a href="/politica-cookies" class="text-primary-light hover:underline">Politica de cookies</a>)</li>
           </ul>
           <p class="mt-3">Nu colectăm categorii speciale de date (date de sănătate, date biometrice, opinii politice etc.).</p>
+          <p class="mt-3">Câmpurile marcate ca obligatorii în formulare (de regulă email-ul, și după caz numele sau mesajul) sunt necesare pentru a putea răspunde solicitării tale — fără ele nu îți putem trimite răspunsul, raportul sau oferta cerută. Câmpurile opționale (ex: industrie, tool-uri folosite) ne ajută să personalizăm răspunsul, dar poți continua fără să le completezi.</p>
         </section>
 
         <section>
@@ -66,6 +67,14 @@ import Footer from '../components/Footer.astro';
                   <td class="border border-border px-3 py-2">Executarea unui serviciu solicitat — art. 6(1)(b)</td>
                 </tr>
                 <tr>
+                  <td class="border border-border px-3 py-2">Păstrarea răspunsurilor din mini-audit pentru o eventuală propunere ulterioară (relevant în vânzarea B2B consultativă, cu ciclu de decizie mai lung)</td>
+                  <td class="border border-border px-3 py-2">Interes legitim — art. 6(1)(f)</td>
+                </tr>
+                <tr class="bg-bg-secondary/50">
+                  <td class="border border-border px-3 py-2">Analiza cererii primite prin formularul de servicii</td>
+                  <td class="border border-border px-3 py-2">Interes legitim — art. 6(1)(f)</td>
+                </tr>
+                <tr>
                   <td class="border border-border px-3 py-2">Trimiterea newsletterului și a resurselor gratuite (lead magnets)</td>
                   <td class="border border-border px-3 py-2">Consimțământ — art. 6(1)(a)</td>
                 </tr>
@@ -74,7 +83,7 @@ import Footer from '../components/Footer.astro';
                   <td class="border border-border px-3 py-2">Consimțământ explicit (bifa „acord marketing") — art. 6(1)(a); sau interes legitim pentru clienți existenți — art. 6(1)(f) coroborat cu Legea 506/2004</td>
                 </tr>
                 <tr>
-                  <td class="border border-border px-3 py-2">Gestiunea relației comerciale (facturare, contracte)</td>
+                  <td class="border border-border px-3 py-2">Gestiunea relației comerciale (facturare, contabilitate, contracte)</td>
                   <td class="border border-border px-3 py-2">Obligație legală / executare contract — art. 6(1)(b) și (c)</td>
                 </tr>
                 <tr class="bg-bg-secondary/50">
@@ -94,23 +103,27 @@ import Footer from '../components/Footer.astro';
           <h2 class="font-sans text-xl font-semibold text-primary mb-3">4. Destinatari și împuterniciți</h2>
           <p>Datele tale pot fi accesate de următorii parteneri, care acționează ca împuterniciți ai operatorului:</p>
           <ul class="list-disc pl-5 mt-2 space-y-2">
+            <li><strong>Altia Tech Dev SRL</strong> (România) — administrează platforma de automatizare (n8n) care primește temporar datele trimise prin formularele de pe site, înainte de a le direcționa către ActiveCampaign; găzduită pe un server dedicat închiriat de la Hetzner</li>
             <li><strong>ActiveCampaign, LLC</strong> (SUA) — platformă de email marketing și CRM; datele sunt transferate în baza Standard Contractual Clauses (SCC)</li>
             <li><strong>Resend Inc.</strong> (SUA) — trimitere de emailuri tranzacționale (ex: raportul de mini-audit); transfer în baza SCC</li>
             <li><strong>Cloudflare, Inc.</strong> (SUA) — hosting, CDN și securitate; transfer în baza SCC</li>
             <li><strong>Anthropic, PBC</strong> (SUA) — generare automată a raportului personalizat din mini-audit prin API (datele trimise: prenume, companie, industrie, răspunsuri audit, scor — fără date de identificare suplimentare); transfer în baza SCC</li>
             <li><strong>Google LLC</strong> — Google Analytics 4 (statistici site); transfer în baza SCC și Data Processing Amendment</li>
             <li><strong>Meta Platforms Ireland Ltd.</strong> — Facebook Pixel (remarketing); transfer în baza SCC</li>
+            <li><strong>SOLO (platformă de contabilitate online, solo.ro)</strong> — găzduită în UE — ținerea contabilității PFA (facturi emise/primite, declarații fiscale); datele din facturile clienților noștri (nume, date de contact, CUI) sunt prelucrate prin această platformă</li>
           </ul>
           <p class="mt-3">Nu vindem și nu transmitem datele tale altor terți în scopuri proprii ale acestora.</p>
+          <p class="mt-3">Poți solicita oricând o copie a garanțiilor aplicate transferurilor către furnizorii de mai sus (clauzele contractuale standard), scriindu-ne la <a href="mailto:hello@anadobre.com" class="text-primary-light hover:underline">hello@anadobre.com</a>.</p>
         </section>
 
         <section>
           <h2 class="font-sans text-xl font-semibold text-primary mb-3">5. Durata păstrării datelor</h2>
           <ul class="list-disc pl-5 mt-2 space-y-2">
             <li><strong>Date din formularul de contact</strong> — până la soluționarea solicitării, maxim 1 an</li>
-            <li><strong>Date abonaților la newsletter / lead magnets</strong> — până la retragerea consimțământului sau dezabonare; ulterior, maxim 30 de zile pentru ștergere din sisteme</li>
-            <li><strong>Date din mini-audit</strong> — 2 ani de la completare, pentru a putea urmări evoluția și a îmbunătăți serviciile</li>
-            <li><strong>Date de facturare și contracte</strong> — 10 ani conform legislației fiscale române</li>
+            <li><strong>Date din formularul de servicii</strong> — 3 ani de la completare</li>
+            <li><strong>Date abonaților la newsletter / lead magnets</strong> — pe durata abonării; după dezabonare, păstrăm adresa de email încă 3 ani, exclusiv într-o listă de excludere (suppression list) menită să prevină recontactarea ta — fără a mai fi folosită pentru comunicări sau segmentare —, apoi este ștearsă</li>
+            <li><strong>Date din mini-audit</strong> — până la 2 ani de la completare: datele sunt folosite imediat pentru a genera și trimite raportul, apoi păstrate pentru o eventuală propunere ulterioară, dat fiind că deciziile de acest tip, în B2B, se pot lua la câteva luni distanță. Te poți opune oricând acestei păstrări (vezi secțiunea 6) și ștergem datele la cerere</li>
+            <li><strong>Date de facturare, contabilitate și contracte</strong> — 10 ani conform legislației fiscale române</li>
             <li><strong>Date de navigare / cookies</strong> — conform duratelor specificate în <a href="/politica-cookies" class="text-primary-light hover:underline">Politica de cookies</a></li>
           </ul>
         </section>
@@ -124,11 +137,14 @@ import Footer from '../components/Footer.astro';
             <li><strong>Dreptul la ștergere</strong> („dreptul de a fi uitat") — poți solicita ștergerea datelor, în condițiile prevăzute de GDPR</li>
             <li><strong>Dreptul la restricționarea prelucrării</strong> — în anumite situații, poți solicita limitarea prelucrării datelor tale</li>
             <li><strong>Dreptul la portabilitate</strong> — poți primi datele furnizate pe bază de consimțământ într-un format structurat, uzual, citibil automat</li>
-            <li><strong>Dreptul de opoziție</strong> — te poți opune prelucrărilor bazate pe interes legitim sau în scop de marketing direct</li>
-            <li><strong>Dreptul de a retrage consimțământul</strong> — oricând, fără a afecta legalitatea prelucrărilor efectuate anterior; te poți dezabona din orice email prin linkul „Dezabonare" din footer</li>
+            <li><strong>Dreptul de opoziție</strong> — te poți opune prelucrărilor bazate pe interes legitim, din motive legate de situația ta particulară</li>
+            <li><strong>Dreptul de a retrage consimțământul</strong> — oricând, fără a afecta legalitatea prelucrărilor efectuate anterior</li>
             <li><strong>Dreptul de a depune o plângere</strong> — la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), site: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" class="text-primary-light hover:underline">dataprotection.ro</a></li>
           </ul>
-          <p class="mt-3">Pentru exercitarea oricărui drept, scrie-ne la <a href="mailto:hello@anadobre.com" class="text-primary-light hover:underline">hello@anadobre.com</a>. Vom răspunde în maxim 30 de zile.</p>
+          <p class="mt-4 p-4 bg-bg-secondary rounded-lg">
+            <strong>Dreptul de opoziție la marketingul direct.</strong> Indiferent de temeiul juridic, te poți opune oricând, fără nicio justificare și fără costuri, primirii de comunicări de marketing direct (newsletter, oferte, informații despre servicii) din partea noastră — inclusiv oricărei segmentări făcute în acest scop. Cel mai simplu: apasă linkul „Dezabonare" din orice email primit de la noi, sau scrie-ne la <a href="mailto:hello@anadobre.com" class="text-primary-light hover:underline">hello@anadobre.com</a>. Odată exercitat, oprim imediat aceste comunicări.
+          </p>
+          <p class="mt-3">Pentru exercitarea oricărui alt drept, scrie-ne la <a href="mailto:hello@anadobre.com" class="text-primary-light hover:underline">hello@anadobre.com</a>. Vom răspunde în maxim o lună de la primirea cererii; acest termen poate fi prelungit cu încă două luni pentru cereri complexe, caz în care te vom informa în prima lună despre motivul prelungirii.</p>
         </section>
 
         <section>

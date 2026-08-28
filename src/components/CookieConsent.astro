@@ -134,17 +134,34 @@
       }));
       applyConsent(analytics, marketing);
       banner.classList.add('hidden');
+      mainPanel.classList.remove('hidden');
+      customizePanel.classList.add('hidden');
     }
+
+    // Redeschide panoul de personalizare cu alegerile curente pre-completate —
+    // permite retragerea/schimbarea consimțământului la fel de simplu cum a fost dat (art. 7(3) GDPR).
+    function openSettings() {
+      var current = getConsent();
+      document.getElementById('consent-analytics').checked = !!(current && current.analytics);
+      document.getElementById('consent-marketing').checked = !!(current && current.marketing);
+      mainPanel.classList.add('hidden');
+      customizePanel.classList.remove('hidden');
+      banner.classList.remove('hidden');
+    }
+    window.reopenCookieSettings = openSettings;
+    document.getElementById('cookie-settings-link')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      openSettings();
+    });
 
     // La încărcare - dacă există consimțământ salvat, aplică și ascunde banner-ul
     var saved = getConsent();
     if (saved && saved.timestamp) {
       applyConsent(saved.analytics, saved.marketing);
-      return; // banner rămâne hidden
+    } else {
+      // Altfel, afișează banner-ul
+      banner.classList.remove('hidden');
     }
-
-    // Altfel, afișează banner-ul
-    banner.classList.remove('hidden');
 
     // Butoane panel principal
     document.getElementById('cookie-accept-btn').addEventListener('click', function () {

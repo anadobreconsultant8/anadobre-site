@@ -321,7 +321,7 @@ import Footer from '../components/Footer.astro';
             <div class="flex items-start gap-2.5">
               <input type="checkbox" id="audit-gdpr" name="gdpr" required class="mt-0.5 h-4 w-4 rounded border-border text-accent focus:ring-accent flex-shrink-0" />
               <label for="audit-gdpr" class="text-xs text-text-secondary leading-relaxed">
-                Sunt de acord cu prelucrarea datelor personale conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. <span class="text-text-tertiary">*</span>
+                Am citit și înțeleg cum îmi sunt prelucrate datele, conform <a href="/politica-confidentialitate" class="text-primary-light hover:underline">Politicii de confidențialitate</a>. <span class="text-text-tertiary">*</span>
               </label>
             </div>
             <div class="flex items-start gap-2.5">
@@ -360,13 +360,24 @@ import Footer from '../components/Footer.astro';
 
 <script>
   // ── Meta Pixel + CAPI helper ──────────────────────────────────────
+  function hasMarketingConsent(): boolean {
+    try {
+      const c = JSON.parse(localStorage.getItem('cookie_consent') || 'null');
+      return !!(c && c.marketing);
+    } catch {
+      return false;
+    }
+  }
+
   function trackEvent(eventName: string, customData: Record<string, any> = {}, email?: string) {
+    if (!hasMarketingConsent()) return; // fără acord de marketing, nu trimitem nimic spre Meta
+
     const eventId = `${eventName}-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
     // Pixel (se execută doar dacă fbevents.js e deja încărcat)
     (window as any).fbq?.('track', eventName, customData, { eventID: eventId });
 
-    // CAPI (server-side, mereu)
+    // CAPI (server-side) — doar cu acord de marketing
     fetch('/api/meta-capi', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
