@@ -37,7 +37,7 @@ const faqs = [
   {
     question: 'Modelul învață din corecțiile mele?',
     answer:
-      'Nu. Recitește aceleași instrucțiuni la fiecare rulare, deci se îmbunătățește doar dacă îmbunătățești documentul din spate. Modelele predictive sunt singurele care chiar învață, și învață din date, nu din feedback.',
+      'Depinde de tip. La un model generativ, nu: corecția ta rămâne text într-un document (instrucțiuni, proiect, skill) și nu atinge modelul. La un model predictiv, da, dar indirect: rezultatul real al unui lead devine o etichetă în setul de date, iar la reantrenare modelul își ajustează efectiv comportamentul pe baza ei. Diferența nu este „date versus feedback", ci ce se întâmplă cu feedback-ul după ce îl dai - iar la modelele predictive, bucla de reantrenare nu este automată, trebuie construită și întreținută.',
   },
 ];
 ---
@@ -170,22 +170,25 @@ const faqs = [
           Aici este nuanța pe care o ratează majoritatea prezentărilor: cele cinci tipuri nu cer același lucru de la tine. Se împart în două, după ce le hrănești.
         </p>
         <p>
-          Modelele predictive, cele de recomandare și cele care analizează conversațiile tale învață din datele tale, deci au nevoie de istoric: lead-uri cu rezultatul lor real, curate, unificate și accesibile. Un model predictiv antrenat pe un CRM în care jumătate din câmpuri sunt goale o să-ți dea scoruri, doar că scorurile alea nu înseamnă nimic. Vestea bună este că se îmbunătățesc singure pe măsură ce acumulezi mai mult; vestea proastă este că istoricul nu se poate improviza, deci ori l-ai strâns curat în ultimii ani, ori pornești de la zero de azi.
+          Modelele predictive, cele de recomandare și cele care analizează conversațiile tale învață din datele tale, deci au nevoie de istoric: lead-uri cu rezultatul lor real, curate, unificate și accesibile. Un model predictiv antrenat pe un CRM în care jumătate din câmpuri sunt goale o să-ți dea scoruri, doar că scorurile alea nu înseamnă nimic. Vestea bună este că se pot îmbunătăți pe măsură ce acumulezi mai mult istoric; vestea proastă este că istoricul nu se poate improviza, deci ori l-ai strâns curat în ultimii ani, ori pornești de la zero de azi.
+        </p>
+        <p>
+          Îmbunătățirea asta nu este automată, ci infrastructură: ca rezultatul real al unui lead să se întoarcă în model, cineva trebuie să construiască fluxul care îl etichetează corect, să programeze reantrenarea și să o monitorizeze. Multe scoruri din uneltele pentru IMM-uri sunt reantrenate de furnizor, pe agregat, la intervale pe care nu le controlezi - sau deloc. Iar un model lăsat fără reantrenare se degradează în timp (fenomenul se numește data drift): comportamentul clienților, prețurile și canalele se schimbă, iar tiparul învățat inițial devine tot mai puțin relevant. Practic, partea de AI nu este nici ea „pornește și uită" - are nevoie de aceeași atenție periodică ca oricare alt sistem din business-ul tău.
         </p>
         <p>
           Interesant este că problema asta nu apare doar la firmele mici. În studiul IBM Institute for Business Value despre AI generativ în marketing (decembrie 2023, pe 110 CMO din Statele Unite), doar aproximativ un sfert dintre respondenți spuneau că funcția de marketing implementează AI generativ în colaborare atât cu vânzările, cât și cu customer service - deși aceleași organizații identificau integrarea datelor drept condiția principală pentru personalizare la scară. Este un eșantion american și este de acum trei ani, deci nu-l lua ca pe o cifră despre piața de aici; ia-l ca pe un indiciu că partea grea nu este tehnologia, ci datele și coordonarea între departamente.
         </p>
         <p>
-          Modelele generative stau invers. Ele vin deja antrenate de furnizor pe text public, deci nu datele tale despre clienți le lipsesc, ci instrucțiunile tale: ce vinzi, cui, cu ce ton, ce nu spui niciodată, plus câteva exemple de texte care ți-au ieșit bine. Fără ele scrie corect gramatical și complet generic, iar asta este cauza reală pentru care majoritatea oamenilor încearcă o dată și conchid că „nu sună a noi".
+          Modelele generative vin deja antrenate de furnizor pe text public, deci nu datele tale despre clienți le lipsesc, ci instrucțiunile tale: ce vinzi, cui, cu ce ton, ce nu spui niciodată, plus câteva exemple de texte care ți-au ieșit bine. Fără ele scrie corect gramatical și complet generic, iar asta este cauza frecventă pentru care majoritatea oamenilor încearcă o dată și conchid că „nu sună a noi".
         </p>
         <p>
-          Instrucțiunile alea nu se retastează la fiecare discuție. Le scrii o dată și le salvezi, iar sistemul le încarcă singur de fiecare dată: un proiect este un spațiu de lucru în care ții instrucțiuni și documente valabile pentru toate discuțiile pornite acolo, util pentru un client sau un brand anume; un skill este un set de instrucțiuni pentru un tip de sarcină, pe care modelul îl încarcă atunci când sarcina se potrivește, util pentru ceva de tipul „scrie în vocea firmei"; un asistent personalizat (GPT-urile personalizate de la OpenAI sunt varianta cea mai cunoscută) este configurat o dată și apoi refolosit sau dat echipei.
+          Instrucțiunile, ideal, se scriu o dată, se salvează, iar sistemul le încarcă singur de fiecare dată, astfel: un proiect în Claude, de exemplu, este un spațiu de lucru în care ții instrucțiuni și documente valabile pentru toate discuțiile pornite acolo, util pentru un client sau un brand anume; un skill - tot în Claude, dar nu numai - este un set de instrucțiuni pentru un tip de sarcină, pe care modelul îl încarcă atunci când sarcina se potrivește, util pentru ceva de tipul „scrie în tonul vocii companiei"; un asistent personalizat (GPT-urile personalizate de la OpenAI sunt varianta cea mai cunoscută) este configurat o dată și apoi refolosit sau dat echipei.
         </p>
         <p>
-          Important de reținut este că nimic din toate astea nu modifică modelul. Sunt documente pe care le recitește la fiecare rulare, deci nu învață din corecțiile tale și nu devine mai bun pentru că l-ai corectat de patruzeci de ori. Când ceva nu iese cum trebuie, nu modelul se ajustează, ci documentul - iar dacă îi ceri chiar lui să-l îmbunătățească, într-o conversație obișnuită îți propune o versiune nouă pe care o salvezi tu peste cea veche (până nu o salvezi, nu s-a schimbat nimic), în timp ce uneltele care au acces la fișierele tale pot rescrie fișierul direct. În ambele cazuri s-a modificat un document, nu modelul.
+          Important de reținut este că nimic din toate aceste acțiuni/fișiere nu modifică modelul. Sunt documente pe care le recitește la fiecare rulare, deci nu învață din corecțiile tale și nu devine mai bun pentru că l-ai corectat de multe ori. Când ceva nu iese cum trebuie, nu modelul se ajustează, ci documentul - iar dacă îi ceri chiar lui să-l îmbunătățească, într-o conversație obișnuită îți propune o versiune nouă pe care o salvezi tu peste cea veche (până nu o salvezi, nu s-a schimbat nimic), în timp ce uneltele care au acces la fișierele tale pot rescrie fișierul direct. În ambele cazuri s-a modificat un document, nu modelul AI.
         </p>
         <p>
-          Implicit, asta înseamnă că instrucțiunile devin ele însele un activ al firmei: se scriu o dată, se îmbunătățesc în timp și rămân când pleacă omul care le-a scris.
+          Implicit, asta înseamnă că instrucțiunile sunt foarte importante pentru activitatea corectă cu AI, în business: se scriu o dată, se îmbunătățesc în timp și rămân când pleacă omul care le-a scris.
         </p>
 
         <h2>De unde începi</h2>
