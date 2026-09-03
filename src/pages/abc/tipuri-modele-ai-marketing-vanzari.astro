@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const canonicalUrl = 'https://anadobre.com/abc/tipuri-modele-ai-marketing-vanzari';
+const title = 'Ce tipuri de modele AI există și pe care le folosești în marketing și vânzări?';
+const breadcrumbTitle = 'Tipuri de modele AI';
+const dateISO = new Date('2026-09-03').toISOString();
+
+const faqs = [
+  {
+    question: 'Care sunt principalele tipuri de modele AI?',
+    answer:
+      'Tehnic, se împart după cum învață: supervizate, nesupervizate, prin întărire și deep learning. Practic, în marketing și vânzări contează cinci categorii după treaba pe care o fac: predictive, generative, de înțelegere a limbajului, de recomandare și agenți.',
+  },
+  {
+    question: 'Ce model AI se folosește cel mai des în marketing?',
+    answer:
+      'Modelele generative - LLM-urile - fiindcă produc rezultat imediat și nu cer date proprii ca să pornească. În vânzări, însă, cele predictive aduc de obicei mai mult, pentru că schimbă ordinea în care echipa contactează oamenii.',
+  },
+  {
+    question: 'Care e diferența dintre AI și automatizări?',
+    answer:
+      'Automatizarea execută o regulă fixă pe care o stabilești tu și se comportă identic de fiecare dată. Modelul AI produce o estimare pe baza datelor și poate greși, deci are nevoie de verificare și de un om care decide.',
+  },
+  {
+    question: 'Am nevoie de date multe ca să folosesc AI?',
+    answer:
+      'Depinde de tip. Pentru generarea de conținut, nu - modelul vine deja antrenat. Pentru scorare, prognoză sau recomandare, da: îți trebuie istoric propriu, curat și cu rezultatul real al fiecărui lead, altfel modelul învață din zgomot.',
+  },
+];
+---
+<Layout
+  title="Tipuri de modele AI în marketing și vânzări | Ana Dobre"
+  description="Ce tipuri de modele AI există și care dintre ele chiar contează în marketing și vânzări: predictive, generative, de limbaj, de recomandare și agenți - explicate pe înțelesul unui antreprenor."
+  canonical={canonicalUrl}
+  ogImage="/og-abc-tipuri-modele-ai-marketing-vanzari.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${canonicalUrl}#article`,
+        "headline": title,
+        "description": "Ce tipuri de modele AI există și care dintre ele chiar contează în marketing și vânzări: predictive, generative, de limbaj, de recomandare și agenți.",
+        "url": canonicalUrl,
+        "datePublished": dateISO,
+        "dateModified": dateISO,
+        "image": "https://anadobre.com/og-abc-tipuri-modele-ai-marketing-vanzari.jpg",
+        "inLanguage": "ro",
+        "author": { "@id": "https://anadobre.com/#person" },
+        "publisher": { "@id": "https://anadobre.com/#person" },
+        "mainEntityOfPage": canonicalUrl
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://anadobre.com" },
+          { "@type": "ListItem", "position": 2, "name": "ABC", "item": "https://anadobre.com/abc" },
+          { "@type": "ListItem", "position": 3, "name": breadcrumbTitle, "item": canonicalUrl }
+        ]
+      }
+    ]
+  })} />
+  <Navbar />
+
+  <article class="py-16 md:py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <!-- Breadcrumb -->
+      <nav class="text-xs text-text-tertiary mb-6" aria-label="breadcrumb">
+        <a href="/" class="hover:text-primary transition-colors">Acasă</a>
+        <span class="mx-1.5">/</span>
+        <a href="/abc" class="hover:text-primary transition-colors">ABC</a>
+        <span class="mx-1.5">/</span>
+        <span class="text-text-secondary">{breadcrumbTitle}</span>
+      </nav>
+
+      <div class="inline-block bg-bg-tertiary text-primary text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+        ABC / Glosar
+      </div>
+
+      <!-- H1 -->
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-primary leading-tight mb-6">
+        {title}
+      </h1>
+
+      <!-- Răspuns direct - critic pentru extragere AI -->
+      <p class="text-lg text-text-secondary leading-relaxed mb-10 border-l-4 border-accent pl-5">
+        Un model AI este un program antrenat pe un volum mare de date ca să recunoască tipare și să producă un rezultat: o predicție, un scor, un text, o clasificare. Există zeci de tipuri, însă în marketing și vânzări ajung să conteze doar patru-cinci - cele care prezic (cine cumpără, cine pleacă), cele care generează (texte, variante de mesaj, imagini), cele care înțeleg limbajul (conversații, intenție, sentiment) și cele care recomandă (ce ofertă, cui, când). Restul - viziune computerizată, diagnostic medical, conducere autonomă - există și funcționează foarte bine, doar că nu ating procesul tău comercial.
+      </p>
+
+      <div
+        class="prose prose-lg max-w-none
+          prose-headings:font-sans prose-headings:font-semibold prose-headings:text-primary
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+          prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-2
+          prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-5
+          prose-ul:text-text-secondary prose-li:mb-2
+          prose-ol:text-text-secondary
+          prose-strong:text-text-primary prose-strong:font-semibold
+          prose-a:text-primary-light prose-a:no-underline hover:prose-a:underline"
+      >
+
+        <h2>Ce sunt, mai exact</h2>
+        <p>
+          Un model nu e programat cu reguli scrise de cineva, ci antrenat: i se dau date, învață tiparele din ele și apoi produce un rezultat pe date noi, pe care nu le-a văzut până atunci. De aici vine și limita lui - un model e la fel de bun ca datele pe care a fost antrenat, iar dacă datele tale despre lead-uri și clienți sunt incomplete sau împrăștiate în cinci locuri, rezultatul o să reflecte fix asta.
+        </p>
+        <p>
+          Distincția care contează pentru tine (și pe care o ratează majoritatea discuțiilor despre AI) e alta: <a href="/abc/ai-in-marketing-vanzari-ghid-de-baza">automatizarea execută regula pe care i-o dai</a>, iar modelul AI produce o estimare pe care tu decizi dacă o folosești. Dacă lead-ul completează formularul, atunci trimite emailul X - asta e o automatizare, se comportă identic de fiecare dată. Lead-ul ăsta seamănă cu cei care au cumpărat în ultimele șase luni, deci merită sunat primul - asta e un model. Prima e o regulă, a doua e o probabilitate; implicit, una se verifică o dată la construcție, cealaltă se verifică permanent.
+        </p>
+
+        <h2>De ce clasificarea tehnică nu-ți folosește la nimic</h2>
+        <p>
+          Dacă intri pe orice articol despre tipuri de modele AI, o să găsești o împărțire după modul în care învață: supervizat (pe date etichetate), nesupervizat (pe date neetichetate, ca să găsească singur grupuri și anomalii), prin întărire (învățare din încercare și eroare) și deep learning (rețele neuronale cu mai multe straturi, pentru date complexe - text, imagine, sunet).
+        </p>
+        <p>
+          E o clasificare corectă și e utilă dacă construiești modele. Ca owner nu construiești modele, ci cumperi sau integrezi unelte care le conțin - așa că axa pe care merită să te uiți nu e cum învață modelul, ci ce treabă face în procesul tău. Mai jos e împărțirea pe treabă.
+        </p>
+
+        <h2>Cele cinci tipuri care apar efectiv în marketing și vânzări</h2>
+        <ul>
+          <li><strong>Modele predictive și de clasificare</strong> - estimează un rezultat pe baza istoricului: care lead are șanse mai mari să cumpere, care client dă semne că pleacă, cât probabil vinzi luna viitoare, în ce segment intră un contact. Sunt cele mai vechi, cele mai puțin spectaculoase și, în businessuri cu volum constant de lead-uri, cele mai profitabile. Nu le cumperi separat și nu le vezi ca produs: vin deja în CRM-ul sau platforma pe care o ai (Pipedrive, Salesforce și celelalte), sub etichete de tip lead scoring, prioritizare sau prognoză de vânzări;</li>
+          <li><strong>Modele generative, adică LLM-urile</strong> - produc text, imagini sau variante pornind de la o instrucțiune: emailuri, descrieri, titluri, adaptarea unui mesaj pentru alt segment sau altă piață. Aici a explodat atenția în ultimii ani, fiindcă rezultatul se vede imediat și nu cere date proprii ca să pornească. Pentru text le știi sub numele de ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google) sau Llama (Meta); pentru imagine, DALL-E și Midjourney; pentru video, Sora; pentru voce, ElevenLabs. Aceleași modele stau, de fapt, și în spatele asistenților de scriere din platformele de email marketing sau din uneltele de conținut SEO, doar că acolo nu le vezi numele;</li>
+          <li><strong>Modele de înțelegere a limbajului</strong> - citesc text și scot din el o informație structurată: despre ce a fost conversația, ce obiecție a apărut, care e tonul unui review, ce intenție are un mesaj primit. Sunt cele care fac posibilă analiza apelurilor de vânzări la nivel de echipă, nu doar la nivel de „mi s-a părut mie". Aici intră și transcrierea automată a apelurilor (modele de tip speech-to-text), analiza de sentiment pe recenzii și pe mesajele din social media, plus funcțiile de conversation intelligence din platformele de vânzări - de obicei le găsești ca opțiune în unealta pe care o folosești deja, nu ca produs separat;</li>
+          <li><strong>Modele de recomandare și ranking</strong> - ordonează: ce produs să arate cui, ce ofertă urmează firesc după ultima achiziție, ce contact să apară primul în lista de sunat. Le știi din Netflix, Spotify și din magazinele online mari, dar mecanica e aceeași și pentru un portofoliu de 400 de clienți B2B, unde apar ca sugestii de ofertă următoare în CRM sau ca produse recomandate pe site;</li>
+          <li><strong>Agenți</strong> - nu sunt un tip nou de model, ci un LLM căruia i s-au dat unelte și permisiuni ca să execute pași, nu doar să răspundă. Un agent poate să califice un lead în chat la 2 noaptea, să-i completeze datele în CRM și să notifice omul de vânzări potrivit. Îi întâlnești ca agenți de vânzări sau de marketing în platformele mari (Salesforce a construit Agentforce exact pe ideea asta), ca asistenți conversaționali pe site și ca versiuni cu unelte conectate ale ChatGPT sau Claude. Rămân, deocamdată, categoria cu cea mai mare distanță între ce se promite și ce livrează stabil în producție.</li>
+        </ul>
+        <p>
+          Numele de mai sus sunt reper de orientare, nu recomandări - se schimbă de la un an la altul, unele dispar, apar altele. Ce nu se schimbă e categoria: dacă știi ce tip de model îți trebuie pentru problema ta, alegi unealta mult mai ușor (și scapi de demonstrațiile care sună toate la fel).
+        </p>
+
+        <h2>La ce le folosești, la modul concret</h2>
+        <p>Dacă ai un business care vinde pe bază de ofertă - mobilier la comandă, tâmplărie PVC, sisteme fotovoltaice, amenajări la cheie, servicii B2B recurente - utilizările care apar constant în practica documentată sunt cam acestea:</p>
+        <ul>
+          <li>captarea și calificarea lead-urilor în afara programului, prin asistenți conversaționali care pun întrebările de calificare și predau discuția mai departe;</li>
+          <li>scorarea și prioritizarea lead-urilor, ca omul de vânzări să înceapă ziua cu cine are șanse reale, nu cu cine e primul în listă;</li>
+          <li>îmbogățirea datelor de contact - completarea automată a informațiilor despre firmă și rol, plecând de la un email sau un nume;</li>
+          <li>generarea de conținut și de variante de mesaj pentru campanii, secvențe și materiale de vânzare, inclusiv adaptarea aceluiași mesaj pentru segmente diferite;</li>
+          <li>analiza campaniilor și prognoza - ce a funcționat, unde se pierde bugetul, ce urmează probabil luna viitoare;</li>
+          <li>analiza conversațiilor de vânzări, ca să vezi ce obiecții revin și unde se blochează discuțiile, la nivel de echipă;</li>
+          <li>segmentarea și personalizarea comunicării, pe comportament real, nu pe presupuneri.</li>
+        </ul>
+        <p>
+          Observă ce au în comun: niciuna nu e „AI care face marketing". Fiecare e un pas anume dintr-un proces care exista deja și care, făcut manual, consuma timp sau se făcea inconsecvent.
+        </p>
+
+        <h2>Ce trebuie să existe înainte</h2>
+        <p>
+          Toate cele de mai sus au aceeași condiție de intrare: date despre clienți care sunt curate, unificate și accesibile. Un model predictiv antrenat pe un CRM în care jumătate din câmpuri sunt goale o să-ți dea scoruri, doar că scorurile alea nu înseamnă nimic. Ordinea corectă e fundația întâi, stratul de AI după - nu invers.
+        </p>
+        <p>
+          Interesant e că problema asta nu apare doar la firmele mici. În studiul IBM Institute for Business Value despre AI generativ în marketing (decembrie 2023, pe 110 CMO din Statele Unite), doar aproximativ un sfert dintre respondenți spuneau că funcția de marketing implementează AI generativ în colaborare atât cu vânzările, cât și cu customer service - deși aceleași organizații identificau integrarea datelor drept condiția principală pentru personalizare la scară. E un eșantion american și e de acum trei ani, deci nu-l lua ca pe o cifră despre piața de aici; ia-l ca pe un indiciu că partea grea nu e tehnologia, ci datele și coordonarea între departamente.
+        </p>
+
+        <h2>De unde începi</h2>
+        <p>Nu începi cu alegerea unui model. Trei pași, în ordinea asta:</p>
+        <ol>
+          <li>uită-te unde pierzi acum bani în procesul comercial - viteza de contactare, calitatea prioritizării, follow-up-ul inconsecvent, clienții inactivi;</li>
+          <li>verifică dacă datele necesare pentru acel punct există și sunt utilizabile: dacă vrei scorare, îți trebuie istoric de lead-uri cu rezultatul lor real, nu doar lista de contacte;</li>
+          <li>alege tipul de model potrivit pentru acel pas, testează-l pe volum mic în paralel cu procesul existent și compară rezultatele înainte să-l lași singur.</li>
+        </ol>
+        <p>
+          Dacă vrei să vezi cadrul de decizie și regulile de verificare umană, le-am detaliat în articolul despre <a href="/abc/ai-in-marketing-vanzari-ghid-de-baza">cum folosești corect și eficient AI în marketing și vânzări</a>. Iar dacă nu ești sigur unde anume pierzi lead-uri sau timp, <a href="/mini-audit">mini-auditul gratuit</a> îți dă un punct de plecare în câteva minute.
+        </p>
+
+        <h2>Întrebări frecvente</h2>
+        {faqs.map(f => (
+          <>
+            <h3>{f.question}</h3>
+            <p>{f.answer}</p>
+          </>
+        ))}
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA Box -->
+  <section class="py-12 bg-bg-secondary">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="bg-white rounded-xl p-8 border border-border text-center">
+        <h3 class="font-sans text-xl font-semibold text-primary mb-3">
+          Vrei să vezi ce tip de model AI se potrivește procesului tău comercial și cum îl introduci fără să dai peste cap ce funcționează deja?
+        </h3>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+          <a href="/servicii#formular" class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px hover:shadow-md inline-block">
+            Programează o discuție →
+          </a>
+          <a href="/mini-audit" class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-lg transition-all inline-block">
+            Evaluează-ți sistemul gratuit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
