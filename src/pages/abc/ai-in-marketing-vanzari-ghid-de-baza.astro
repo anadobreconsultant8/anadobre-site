@@ -10,29 +10,39 @@ const dateISO = new Date('2026-08-17').toISOString();
 
 const faqs = [
   {
-    question: 'Cum folosești AI în marketing și vânzări?',
+    question: 'Cum folosești corect AI în marketing și vânzări?',
     answer:
-      'Îl pui pe sarcini repetitive de gândit sau de scris - un răspuns, un text, un rezumat, o prioritizare de lead-uri - ca punct de plecare pe care un om îl verifică, nu ca înlocuitor al procesului. Pornești de la o problemă reală, testezi pe volum mic și extinzi treptat.',
+      'Îi dai o sarcină clară, context și date adecvate, definești ce înseamnă un rezultat bun și stabilești nivelul de control după riscul sarcinii. Începi cu un pilot, verifici erorile și crești autonomia numai după ce ai rezultate măsurate.',
   },
   {
-    question: 'Care e diferența dintre AI și automatizări în marketing?',
+    question: 'Cum știi dacă AI-ul este eficient?',
     answer:
-      'Automatizarea execută reguli fixe pe care le stabilești tu (dacă X, atunci Y) și duce lucrurile prin proces, predictibil, fără să „gândească". AI-ul produce sau interpretează ceva unde regula fixă nu ajunge - scrie un text, rezumă, dă un scor - și are nevoie de verificare umană. Se completează: automatizarea e traseul, AI-ul face partea de gândit sau de scris dintr-un pas.',
+      'Compari pilotul cu procesul anterior folosind un indicator stabilit dinainte: timp total economisit, acuratețe, rată de corectare, timp de răspuns, conversie sau satisfacția clientului. Incluzi în calcul licențele, integrarea, verificarea, mentenanța și costul erorilor.',
   },
   {
-    question: 'Ce poți face cu AI în marketing?',
+    question: 'Care este diferența dintre AI și automatizări în marketing?',
     answer:
-      'Cel mai des: variante de conținut, răspunsuri la întrebările frecvente, scorarea și prioritizarea lead-urilor, sumarizarea de feedback și de campanii - toate cu verificare umană la final.',
+      'O automatizare clasică execută reguli stabilite în avans. Un model AI generează, clasifică, extrage sau estimează pe baza tiparelor învățate din date. Cele două se pot combina într-un workflow fix: automatizarea transportă informația, iar AI-ul rezolvă sarcina pentru care o regulă simplă nu este suficientă.',
   },
   {
-    question: 'E sigur să folosești AI în business?',
+    question: 'Am nevoie de volum mare ca să folosesc AI?',
     answer:
-      'Da, dacă îl folosești cu un cont de business, nu încarci date sensibile fără temei și păstrezi verificarea umană. Partea de conformitate (GDPR, AI Act) are reguli proprii, pe care le respecți din start.',
+      'Nu neapărat. Volumul poate face investiția mai rentabilă, dar și o sarcină rară, costisitoare sau importantă poate justifica folosirea AI. Pentru un model predictiv construit pe datele companiei ai nevoie însă de suficiente exemple istorice și rezultate corecte; un model generativ pre-antrenat poate fi folosit fără să îl antrenezi tu de la zero.',
+  },
+  {
+    question: 'AI-ul poate lucra fără verificare umană?',
+    answer:
+      'Depinde de impactul și riscul sarcinii. Unele activități interne și ușor reversibile pot fi automatizate după testare, cu monitorizare și verificări prin eșantionare. Pentru mesaje sensibile, decizii cu efect asupra oamenilor sau acțiuni greu de reversat, păstrezi un nivel ridicat de control uman.',
+  },
+  {
+    question: 'Este sigur să folosești AI în business?',
+    answer:
+      'Poate fi folosit în siguranță dacă alegi un serviciu potrivit, verifici contractul și politicile de date, limitezi informațiile trimise, implementezi controale și monitorizezi rezultatele. Un plan plătit sau un DPA nu elimină singur toate riscurile și obligațiile.',
   },
   {
     question: 'De unde începi cu AI în marketing și vânzări?',
     answer:
-      'De la proces, nu de la tool: identifici un punct cu volum repetitiv și reguli clare, îl testezi pe volum mic și îl extinzi treptat.',
+      'De la un punct concret în care pierzi timp, calitate sau oportunități. Măsori situația actuală, alegi cea mai simplă soluție, testezi AI-ul pe exemple reale și extinzi numai dacă rezultatul este mai bun și costurile și riscurile rămân acceptabile.',
   },
 ];
 ---
@@ -102,7 +112,7 @@ const faqs = [
 
       <!-- Răspuns direct - critic pentru extragere AI -->
       <p class="text-lg text-text-secondary leading-relaxed mb-10 border-l-4 border-accent pl-5">
-        Folosești AI corect când îl pui pe o sarcină de gândit sau de scris care se repetă - un răspuns, un text, un rezumat, o prioritizare de lead-uri - îi dai un context clar și verifici rezultatul înainte să-l folosești. Nu-l lași să decidă singur și nu-l pui peste tot; îl chemi exact la pasul unde îți scurtează munca. „Eficient" înseamnă că pornești de la o problemă reală, care te costă timp acum, nu de la un tool la modă.
+        Folosești AI corect când îi dai un rol clar într-un proces, îi oferi datele și contextul potrivit, îi stabilești limite și verifici rezultatul în funcție de riscul sarcinii. Îl folosești eficient atunci când obții un rezultat măsurabil mai bun decât înainte: răspunzi mai repede, reduci timpul de lucru, crești calitatea sau conversia ori poți procesa un volum mai mare fără ca erorile și costurile să anuleze câștigul.
       </p>
 
       <div
@@ -117,84 +127,142 @@ const faqs = [
           prose-a:text-primary-light prose-a:no-underline hover:prose-a:underline"
       >
 
-        <h2>AI și automatizări: nu sunt același lucru (și de ce contează)</h2>
         <p>
-          Se confundă des, dar sunt două lucruri diferite - iar dacă le confunzi, fie plătești AI pentru o treabă pe care o face o regulă simplă, fie ceri unei automatizări ceva ce doar AI-ul poate face.
-        </p>
-        <p>
-          Automatizarea duce lucrurile prin proces după reguli fixe pe care le stabilești tu: dacă se întâmplă X, atunci Y. E predictibilă și face de fiecare dată exact ce i-ai spus - un lead intră din formular, ajunge în CRM, primește un email de confirmare, e alocat unui agent.
-        </p>
-        <p>
-          AI-ul, în schimb, produce sau interpretează ceva acolo unde o regulă fixă nu ajunge: scrie un text, rezumă o conversație, citește un mesaj și îi dă un scor. Nu urmează un traseu fix - de aceea are nevoie de un om care verifică ce iese.
-        </p>
-        <p>
-          Se completează exact aici: automatizarea e traseul, AI-ul e ce se întâmplă la un pas de pe traseu. Fluxul prinde lead-ul și îl duce mai departe (automatizarea); la pasul „scrie răspunsul" sau „pune un scor", cheamă AI-ul să facă partea de gândit sau de scris, apoi merge mai departe. Poți avea automatizări fără pic de AI (numai reguli) și poți folosi AI de unul singur, manual, fără nicio automatizare - dar împreună lucrează cel mai bine.
-        </p>
-        <p>
-          Un exemplu: să împarți lead-urile după buget (peste sau sub o sumă) e o regulă - automatizare curată. Să-ți dai seama, din felul în care e scris un mesaj, cât de urgent sună - asta cere AI. Când le pui cap la cap, automatizarea declanșează, AI-ul citește și pune scorul, iar automatizarea trimite mai departe lead-ul către omul potrivit.
+          Cu alte cuvinte, nu pornești de la „unde aș putea pune AI?", ci de la două întrebări mai utile: „ce problemă vreau să rezolv?" și „cum voi ști că rezultatul este mai bun?".
         </p>
 
-        <h2>Ce înseamnă „corect": întâi procesul, apoi AI-ul</h2>
+        <h2>AI și automatizări: nu sunt același lucru, dar lucrează bine împreună</h2>
         <p>
-          Ordinea contează mai mult decât tool-ul. AI-ul se pune peste un proces care deja funcționează - nu în locul lui. Dacă la nivel de business lucrurile nu sunt puse la punct, dacă lead-urile intră haotic și nimeni nu știe clar cine ce face, AI-ul nu face ordine; amplifică dezordinea, doar mai repede.
+          Într-o automatizare clasică, sistemul execută reguli stabilite în avans: dacă se întâmplă X, atunci face Y. Un lead intră din formular, este salvat în CRM, primește un email de confirmare și este alocat unui consultant.
         </p>
         <p>
-          De aceea, primul strat nu e AI-ul, ci un minim de sistem care <a href="/abc/automatizari-marketing-vanzari">captează, segmentează și direcționează corect lead-urile</a>. Abia peste el adaugi AI-ul, exact acolo unde chiar scurtează munca - și numai după ce ai un proces pe care AI-ul are ce să accelereze.
+          Un model AI este util atunci când rezultatul nu poate fi descris suficient printr-o regulă simplă. Poate genera un text, clasifica un mesaj, extrage informații dintr-o conversație, estima probabilitatea unei conversii sau recomanda următoarea acțiune.
+        </p>
+        <p>
+          Asta nu înseamnă că AI-ul nu poate face parte dintr-un traseu fix. De cele mai multe ori, exact așa îl folosești în business: automatizarea duce informația prin proces, modelul AI rezolvă o sarcină la unul dintre pași, iar automatizarea continuă în funcție de rezultatul primit.
+        </p>
+        <p>
+          De exemplu, împărțirea lead-urilor după un buget declarat - peste sau sub o anumită sumă - se rezolvă printr-o regulă. Estimarea urgenței dintr-un mesaj poate fi făcută tot prin reguli simple dacă vocabularul este previzibil. AI-ul devine util când formulările sunt variate, contextul contează și lista de reguli ar deveni greu de întreținut.
+        </p>
+        <p>
+          Principiul practic este simplu: dacă o regulă clară rezolvă corect problema, folosește regula. Dacă ai nevoie de interpretare, predicție sau generare, testează dacă AI-ul aduce un rezultat mai bun.
         </p>
 
-        <h2>Cele trei reguli, înainte de orice tool</h2>
+        <h2>Ce înseamnă să folosești AI corect</h2>
+        <p>
+          Nu ai nevoie de un proces perfect înainte să folosești AI. Uneori, AI-ul te poate ajuta chiar să analizezi procesul actual, să sintetizezi feedbackul sau să identifici punctele în care se pierd lead-uri.
+        </p>
+        <p>Ai însă nevoie de suficientă claritate încât să poți răspunde la câteva întrebări:</p>
         <ul>
-          <li>pornește de la o problemă reală - întrebarea nu e „ce tool AI să folosesc", ci „unde pierd timp sau lead-uri și s-ar putea rezolva cu ajutorul lui";</li>
-          <li>pune AI unde ai volum și un tipar clar - genul de sarcini care se repetă des: variante de conținut, răspunsuri la întrebări frecvente, calificarea și scorarea lead-urilor;</li>
-          <li>verifică și rafinează - testezi pe un volum mic, te uiți la ce iese, corectezi, și abia apoi extinzi. AI-ul propune; omul decide.</li>
+          <li>ce sarcină exactă primește sistemul;</li>
+          <li>ce date îi dai și de unde provin;</li>
+          <li>cum arată un rezultat bun;</li>
+          <li>ce tip de greșeli poate face și cât te costă;</li>
+          <li>cine răspunde pentru rezultat;</li>
+          <li>când poate continua automat și când trebuie să intervină un om.</li>
         </ul>
+        <p>
+          Dacă lead-urile intră haotic, datele sunt incomplete și nimeni nu știe cine aprobă următorul pas, AI-ul nu rezolvă problema de organizare. Poate doar să producă mai repede rezultate inconsecvente.
+        </p>
+        <p>
+          De aceea, primul strat rămâne un minim de sistem care <a href="/abc/automatizari-marketing-vanzari">captează, structurează și direcționează corect informația</a>. AI-ul se adaugă în punctele în care analiza, predicția sau redactarea consumă timp ori limitează performanța.
+        </p>
+
+        <h2>Ce înseamnă să folosești AI eficient</h2>
+        <p>
+          Faptul că AI-ul generează un răspuns în câteva secunde nu înseamnă automat că ai câștigat timp sau bani. Dacă un om petrece apoi zece minute ca să repare acel răspuns, eficiența poate fi doar aparentă.
+        </p>
+        <p>Înainte de pilot, măsoară procesul actual și alege un indicator principal. De exemplu:</p>
+        <ul>
+          <li>pentru conținut: timpul total de la brief la varianta aprobată, nu doar timpul în care apare primul draft;</li>
+          <li>pentru lead scoring: cât de bine identifică lead-urile care ajung oportunități reale, nu câte scoruri produce;</li>
+          <li>pentru un chatbot: rata răspunsurilor corecte, rata de transfer la om și satisfacția clientului, nu doar numărul conversațiilor;</li>
+          <li>pentru actualizarea CRM-ului: timpul economisit, completitudinea câmpurilor și procentul de corecții necesare;</li>
+          <li>pentru sumarizare: acuratețea informațiilor importante și timpul până la decizie.</li>
+        </ul>
+        <p>
+          Calculează și costul total: licență, integrare, verificare, mentenanță și costul greșelilor. AI-ul este eficient doar dacă îmbunătățirea obținută justifică acest cost și rămâne stabilă în timp.
+        </p>
 
         <h2>Unde merită să folosești AI în marketing și vânzări</h2>
-        <p>La modul concret, cele mai multe rezultate vin din câteva zone:</p>
+        <p>Cele mai utile cazuri de utilizare se grupează în câteva zone clare:</p>
         <ul>
-          <li><strong>conținut</strong> - variante de texte pentru ads, emailuri, descrieri de produs, pornind de la un brief clar, pe care le revizuiești înainte să le folosești;</li>
-          <li><strong>răspunsuri repetitive</strong> - replici pentru întrebările care revin, ca punct de plecare pentru echipă, nu ca răspuns trimis orbește;</li>
-          <li><strong>calificarea și scorarea lead-urilor</strong> - AI-ul citește semnalele și propune o prioritizare, tu păstrezi decizia;</li>
-          <li><strong>sumarizare și analiză</strong> - rezumate de conversații, de feedback sau de campanii, ca să iei decizii mai repede, pe date;</li>
-          <li><strong>chatbot / asistent pe site</strong> - răspunde la întrebările frecvente, califică și poate chiar programa, non-stop, iar cazurile complexe le trece la un om;</li>
-          <li><strong>note de apel și actualizarea CRM</strong> - din transcrierea unei discuții, AI-ul scrie rezumatul și completează câmpurile, ca să nu mai pierzi timp cu introdus date;</li>
-          <li><strong>pregătirea discuției de vânzare</strong> - research pe prospect și puncte de discuție, adunate înainte de call;</li>
-          <li><strong>personalizare și recomandări</strong> - mesaje și oferte adaptate la segment sau la comportament, la scară.</li>
+          <li><strong>creare și adaptare de conținut</strong> - drafturi și variante pentru reclame, emailuri, pagini sau descrieri de produs, pornind de la un brief, informații corecte despre ofertă și reguli de brand;</li>
+          <li><strong>analiză și structurare</strong> - extragerea obiecțiilor din apeluri, clasificarea mesajelor, rezumarea feedbackului sau completarea unor câmpuri din CRM. Pentru informațiile importante, rezultatul trebuie verificat față de sursă;</li>
+          <li><strong>predicție și prioritizare</strong> - lead scoring, probabilitatea de conversie, riscul de churn sau recomandarea următoarei acțiuni. Aici ai nevoie de un rezultat clar de prezis, date relevante și testarea modelului pe cazuri pe care nu le-a folosit pentru învățare;</li>
+          <li><strong>interacțiune cu lead-uri și clienți</strong> - un asistent pe site poate răspunde la întrebări, colecta informații, califica și programa. Are nevoie de surse aprobate, limite clare și transfer rapid la un om atunci când nu știe sau cazul este sensibil;</li>
+          <li><strong>pregătirea discuțiilor de vânzare</strong> - sinteze despre prospect, întrebări utile și posibile puncte de discuție. Informațiile trebuie legate de surse actuale; altfel, o sinteză fluentă poate conține date greșite;</li>
+          <li><strong>personalizare și recomandări</strong> - mesaje, conținut sau oferte adaptate la segment, etapă ori comportament. Personalizarea trebuie testată prin rezultate și nu trebuie să se bazeze pe inferențe intruzive sau pe date pe care nu ai dreptul să le folosești.</li>
         </ul>
         <p>
-          Observă tiparul: peste tot e volum plus un tipar clar, iar la capăt e un om care verifică. Acolo unde nu ai nici volum, nici un tipar clar, AI-ul aduce mai mult zgomot decât ajutor.
+          Volumul mare face mai ușor de observat câștigul, dar nu este obligatoriu. AI-ul poate merita și pentru o sarcină rară, dacă aceasta consumă multe ore, are valoare mare, iar rezultatul poate fi verificat. Criteriul bun este combinația dintre impact, frecvență, verificabilitate și costul unei erori.
+        </p>
+
+        <h2>Câtă autonomie îi dai</h2>
+        <p>
+          Nu orice rezultat AI trebuie aprobat manual pentru totdeauna, dar nici nu crești autonomia doar pentru că primele exemple au arătat bine.
+        </p>
+        <p>Nivelul de control trebuie stabilit după impact:</p>
+        <ul>
+          <li>pentru o etichetare internă, un prim draft sau formatarea unor note, sistemul poate lucra automat după testare, cu verificări periodice pe eșantioane;</li>
+          <li>pentru emailuri personalizate, actualizări în CRM sau prioritizarea lead-urilor, poți folosi praguri, reguli de excepție și verificare umană acolo unde încrederea este scăzută;</li>
+          <li>pentru mesaje sensibile, oferte, decizii cu efect important asupra unei persoane sau acțiuni greu de reversat, păstrezi aprobarea umană și istoricul deciziei.</li>
+        </ul>
+        <p>
+          La început verifici mai mult. Pe măsură ce ai rezultate măsurate și înțelegi tipurile de eroare, poți automatiza activitățile cu risc redus și păstra omul pentru excepții.
         </p>
 
         <h2>Cum folosești AI fără să-ți asumi riscuri inutile</h2>
-        <p>„Corect" înseamnă și „fără riscuri inutile". Trei lucruri de bază:</p>
+        <p>
+          Un cont personal sau simplul fapt că plătești un abonament nu face automat un instrument potrivit pentru datele companiei. Politicile diferă între furnizori, produse și planuri.
+        </p>
+        <p>Înainte să folosești un instrument cu informații interne sau date ale clienților, verifică explicit:</p>
         <ul>
-          <li>folosește un cont de business/enterprise al tool-ului de AI, nu unul personal - pe planul de business ai un contract de prelucrare a datelor (DPA) și, de regulă, datele tale nu sunt folosite pentru antrenarea modelului; contează tipul contului, nu faptul că îl plătești;</li>
-          <li>nu încărca date sensibile sau date ale clienților fără un temei clar și fără să știi ce se întâmplă cu ele;</li>
-          <li>păstrează verificarea umană pe orice iese în afară - text public, mesaj către client, decizie pe un lead.</li>
+          <li>dacă furnizorul oferă un acord de prelucrare a datelor (DPA) pentru serviciul și planul folosit;</li>
+          <li>dacă inputurile și outputurile sunt utilizate pentru antrenarea modelelor și ce setări controlează acest lucru;</li>
+          <li>cât timp sunt păstrate datele și cum pot fi șterse;</li>
+          <li>cine are acces, ce subprocesatori sunt implicați și unde sunt procesate datele;</li>
+          <li>ce controale administrative, permisiuni și măsuri de securitate sunt disponibile.</li>
         </ul>
         <p>
-          Dacă totuși lucrezi de pe un cont personal, ține minte un lucru simplu: nu pune acolo date personale ale clienților, informații confidențiale despre companie sau orice n-ai publica oricum. Poți dezactiva din setări folosirea conversațiilor pentru antrenarea modelului - și e bine s-o faci - dar asta acoperă doar partea de antrenare; nu îți dă un DPA. Iar în momentul în care prelucrezi datele clienților tăi, ai nevoie exact de acel contract de prelucrare, pe care ți-l dă doar contul de business. Pe scurt: pe cont personal rămâi la conținut propriu și exemple neconfidențiale, iar datele clienților și informațiile sensibile le ții pe un cont de business.
+          DPA-ul este important când un furnizor prelucrează date personale în numele companiei tale, dar nu este suficient singur. Tu rămâi responsabil pentru scopul prelucrării, temeiul legal, informarea persoanelor, reducerea datelor la strictul necesar și măsurile de securitate.
         </p>
         <p>
-          Partea de conformitate (GDPR pentru datele clienților, AI Act pentru felul în care folosești sistemele) are reguli proprii, pe care le detaliem separat, în termenii dedicați din ABC.
+          Practic, nu încărca o bază completă de clienți dacă ai nevoie doar de trei câmpuri. Elimină sau pseudonimizează datele care nu sunt necesare, separă informațiile confidențiale și nu introduce date sensibile într-un instrument care nu a fost aprobat pentru acel scop.
+        </p>
+        <p>
+          Dacă un sistem AI discută direct cu oamenii (de exemplu, printr-un chatbot), persoana trebuie informată clar că interacționează cu AI, cu excepția situației în care acest lucru este evident. Oferă-i și o cale simplă de a ajunge la un om.
+        </p>
+        <p>
+          Pentru conținut extern, verifică afirmațiile factuale, promisiunile despre produs, respectarea vocii de brand și drepturile asupra materialelor folosite. Pentru analize și rezumate, păstrează accesul la sursele originale și verifică prin eșantionare dacă informațiile importante nu au fost omise sau deformate.
         </p>
 
-        <h2>La ce te ajută</h2>
-        <p>Dincolo de partea tehnică, motivul pentru care merită e strict de business:</p>
+        <h2>La ce te poate ajuta, în termeni de business</h2>
+        <p>Folosit într-un proces bine ales și măsurat, AI-ul poate:</p>
         <ul>
-          <li>câștigi timp la conținut și la răspunsurile repetitive, iar echipa îl poate direcționa spre discuția de vânzare;</li>
-          <li>crești fără să angajezi imediat - faci mai mult cu aceleași resurse (implicit, mai mulți clienți din același efort de marketing);</li>
-          <li>iei decizii mai rapide, pe date, fiindcă ai rezumate și analize gata pregătite;</li>
-          <li>păstrezi controlul, cu verificare umană - AI-ul accelerează, nu decide în locul tău.</li>
+          <li>reduce timpul necesar pentru drafturi, analiză și documentare;</li>
+          <li>scurta timpul de răspuns către lead-uri și clienți;</li>
+          <li>ajuta echipa să proceseze mai multe conversații sau date;</li>
+          <li>îmbunătăți consecvența informațiilor introduse în CRM;</li>
+          <li>scoate mai repede la suprafață semnale utile din feedback, apeluri și campanii.</li>
         </ul>
+        <p>
+          Acestea sunt rezultate operaționale. Ele nu garantează automat mai multe vânzări, un cost mai mic sau eliminarea nevoii de angajare. Legătura cu rezultatul comercial trebuie demonstrată prin indicatorii aleși înainte de test.
+        </p>
 
         <h2>De unde începi</h2>
-        <p>Nu începi cu tehnologia, ci cu procesul. Trei pași, în ordinea asta:</p>
+        <p>Nu începi cu alegerea tool-ului. Începi cu o problemă și un rezultat măsurabil:</p>
         <ol>
-          <li>uită-te unde, în marketingul și vânzările tale, pierzi timp pe sarcini repetitive sau pierzi lead-uri fiindcă nu răspunde nimeni la timp;</li>
-          <li>alege un singur punct cu volum și reguli clare, unde AI-ul ar scurta evident munca - nu încerca să pui AI peste tot deodată;</li>
-          <li>testează pe volum mic, verifică rezultatul, revizuiește, apoi extinde - și abia după ce primul pas merge, treci la următorul.</li>
+          <li>identifică un punct în care pierzi timp, calitate sau oportunități;</li>
+          <li>măsoară situația actuală și stabilește ce rezultat vrei să îmbunătățești;</li>
+          <li>verifică dacă problema se rezolvă mai simplu printr-o regulă sau automatizare clasică;</li>
+          <li>dacă AI-ul este justificat, testează-l pe exemple reale, inclusiv cazuri dificile, și compară rezultatul cu procesul actual;</li>
+          <li>stabilește ce verifică omul, ce poate continua automat și ce se întâmplă când sistemul nu este sigur;</li>
+          <li>extinde treptat și monitorizează timpul, costul, calitatea și erorile după lansare.</li>
         </ol>
+        <p>
+          Un pilot bun nu îți arată doar că AI-ul poate face o sarcină. Îți arată dacă o face suficient de bine, la un cost justificat și cu un nivel de risc pe care îl poți controla.
+        </p>
         <p>
           Dacă vrei să vezi unde ai cel mai mult de câștigat cu AI, aplicat pe situația ta reală, <a href="/servicii#formular">programează o discuție</a>.
         </p>
@@ -216,7 +284,7 @@ const faqs = [
     <div class="max-w-2xl mx-auto px-6">
       <div class="bg-white rounded-xl p-8 border border-border text-center">
         <h3 class="font-sans text-xl font-semibold text-primary mb-3">
-          Vrei să folosești AI corect și fără riscuri în marketing și vânzări - cu exemple concrete, unde merită cu adevărat și cum începi treptat, cu testare și revizuire, în business-ul tău?
+          Vrei să folosești AI corect și eficient în marketing și vânzări - cu exemple concrete, criterii de alegere și un pilot aplicat pe procesul tău real?
         </h3>
         <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
           <a href="/servicii#formular" class="bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-3 rounded-lg transition-all hover:-translate-y-px hover:shadow-md inline-block">
