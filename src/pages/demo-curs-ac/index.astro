@@ -1,0 +1,83 @@
+---
+// Pagină demo pentru cursul de automatizări (ActiveCampaign).
+// Neindexabilă, fără linkuri din meniu/footer/alte pagini, exclusă din sitemap.
+// Formularul se încarcă din URL: /demo-curs-ac/?form=ID
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Pagină demo - formular ActiveCampaign"
+  description="Pagină de test folosită la curs."
+  noindex={true}
+>
+  <main class="py-16 md:py-24 bg-white min-h-[70vh]">
+    <div class="max-w-xl mx-auto px-6">
+
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-primary mb-4">
+        Pagină demo - formular ActiveCampaign
+      </h1>
+      <p class="text-lg text-text-secondary leading-relaxed mb-8">
+        Pagină de test folosită la curs. Datele introduse aici intră într-un cont ActiveCampaign de test și primești un email cu un PDF demonstrativ.
+      </p>
+
+      <div id="ac-form-zone" class="w-full overflow-x-hidden">
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             FORM AC - EMBED MANUAL
+             Lipește între START și END codul copiat din ActiveCampaign
+             (Forms > formularul > Integrate > Embed > Simple embed).
+             Dacă blocul e completat, are prioritate față de ?form= din URL.
+             ═══════════════════════════════════════════════════════════════ -->
+        <div id="ac-manual-embed">
+          <!-- START EMBED MANUAL -->
+
+          <!-- END EMBED MANUAL -->
+        </div>
+
+        <div id="ac-dynamic-embed"></div>
+
+        <div
+          id="ac-placeholder"
+          class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center text-text-secondary"
+          hidden
+        >
+          Aici va apărea formularul. Adaugă <code class="font-mono">?form=ID</code> în adresă.
+        </div>
+      </div>
+
+      <p class="text-sm text-text-secondary mt-8">
+        Demo pentru curs - nu e o ofertă reală.
+      </p>
+
+    </div>
+  </main>
+
+  <script is:inline>
+    // Domeniul contului ActiveCampaign: CONT.activehosted.com (ex: "anadobre").
+    const AC_ACCOUNT = "anabucuroiu";
+
+    (function () {
+      const manual = document.getElementById('ac-manual-embed');
+      const dynamic = document.getElementById('ac-dynamic-embed');
+      const placeholder = document.getElementById('ac-placeholder');
+
+      // 1. Embed manual lipit în pagină: are prioritate
+      if (manual && manual.children.length > 0) return;
+
+      // 2. Formular din ?form=ID (doar cifre)
+      const id = new URLSearchParams(window.location.search).get('form');
+      if (!id || !/^\d{1,5}$/.test(id)) {
+        placeholder.hidden = false;
+        return;
+      }
+
+      const container = document.createElement('div');
+      container.className = '_form_' + id;
+      dynamic.appendChild(container);
+
+      const script = document.createElement('script');
+      script.src = 'https://' + AC_ACCOUNT + '.activehosted.com/f/embed.php?id=' + id;
+      script.charset = 'utf-8';
+      dynamic.appendChild(script);
+    })();
+  </script>
+</Layout>
